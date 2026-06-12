@@ -1,0 +1,11 @@
+class_name Mode
+extends Object
+
+enum {
+	SINGLE,
+	DOUBLE,
+	SINGLE_PERFORMANCE,
+	DOUBLE_PERFORMANCE,
+	HALF_DOUBLE,
+	COOP,
+}
