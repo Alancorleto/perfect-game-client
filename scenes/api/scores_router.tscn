@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bjgu8omr7hblg"]
+
+[ext_resource type="Script" uid="uid://bja27xip5ibx6" path="res://scenes/api/scores_router.gd" id="1_hut5u"]
+
+[node name="ScoresRouter" type="Node" unique_id=1531736467]
+script = ExtResource("1_hut5u")

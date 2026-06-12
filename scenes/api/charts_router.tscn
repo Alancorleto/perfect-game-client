@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dk3chbd4t87ws"]
+
+[ext_resource type="Script" uid="uid://cs2cwlwe78i8n" path="res://scenes/api/charts_router.gd" id="1_7acg4"]
+
+[node name="ChartsRouter" type="Node" unique_id=1508547235]
+script = ExtResource("1_7acg4")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cq6yl5wlbaa14"]
+
+[ext_resource type="Script" uid="uid://wsal24oexyfh" path="res://scenes/api/rounds_router.gd" id="1_328ch"]
+
+[node name="RoundsRouter" type="Node" unique_id=74059149]
+script = ExtResource("1_328ch")
