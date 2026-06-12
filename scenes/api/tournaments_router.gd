@@ -56,7 +56,7 @@ func delete_tournament(tournament_id: String) -> void:
 
 
 func add_guest_player_to_tournament(tournament_id: String, player_id: String) -> Array[PlayerResponse]:
-	var route: String = "%s/%s/players/guest?player_id=%s" % [route_base, tournament_id, player_id]
+	var route: String = "%s/%s/players/%s" % [route_base, tournament_id, player_id]
 
 	await HTTPRequests.POST(route)
 	if HTTPRequests.failed():
@@ -70,9 +70,7 @@ func add_guest_player_to_tournament(tournament_id: String, player_id: String) ->
 
 func bulk_add_guest_players_to_tournament(tournament_id: String, player_ids: Array[String]) -> Array[PlayerResponse]:
 	var route: String = "%s/%s/players/bulk" % [route_base, tournament_id]
-	var body: Dictionary = {
-		"player_ids": player_ids,
-	}
+	var body: Array = player_ids
 
 	await HTTPRequests.POST(route, body)
 	if HTTPRequests.failed():
@@ -84,14 +82,18 @@ func bulk_add_guest_players_to_tournament(tournament_id: String, player_ids: Arr
 	return players
 
 
-func list_tournament_invitations(tournament_id: String) -> Array:
+func list_tournament_invitations(tournament_id: String) -> Array[TournamentInvitationResponse]:
 	var route: String = "%s/%s/invitations" % [route_base, tournament_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return []
 
-	return HTTPRequests.get_response_body()
+	var invitations: Array[TournamentInvitationResponse] = []
+	for invitation_json: Dictionary in HTTPRequests.get_response_body():
+		invitations.append(TournamentInvitationResponse.new(invitation_json))
+
+	return invitations
 
 
 func invite_player_to_tournament(tournament_id: String, player_id: String) -> void:
@@ -112,14 +114,18 @@ func decline_tournament_invitation(tournament_id: String) -> void:
 	await HTTPRequests.POST(route)
 
 
-func list_tournament_join_requests(tournament_id: String) -> Array:
+func list_tournament_join_requests(tournament_id: String) -> Array[TournamentJoinRequestResponse]:
 	var route: String = "%s/%s/join_requests" % [route_base, tournament_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return []
 
-	return HTTPRequests.get_response_body()
+	var join_requests: Array[TournamentJoinRequestResponse] = []
+	for join_request_json: Dictionary in HTTPRequests.get_response_body():
+		join_requests.append(TournamentJoinRequestResponse.new(join_request_json))
+
+	return join_requests
 
 
 func request_join_tournament(tournament_id: String) -> void:
