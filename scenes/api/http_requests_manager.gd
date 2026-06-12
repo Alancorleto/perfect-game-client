@@ -7,6 +7,7 @@ var response_result: int
 var response_code: int
 var response_headers: PackedStringArray
 var response_body: Variant
+var access_token: String = ""
 
 
 func _ready() -> void:
@@ -21,6 +22,8 @@ func make_request(method : HTTPClient.Method, route: String, body: Variant = nul
 	var body_string: String = JSON.stringify(body, "\t")
 	#var body_string: String = JSON.stringify(body)
 	headers.append("Content-Type: application/json")
+	if access_token != "":
+		headers.append("Authorization: Bearer " + access_token)
 
 	print("--- NEW REQUEST ---")
 	print("URL: " + url)
@@ -74,6 +77,10 @@ func get_response_code() -> int:
 
 func get_response_body() -> Variant:
 	return response_body
+
+
+func set_access_token(token: String) -> void:
+	access_token = token
 
 
 func _find_native_enum_label(type_name: StringName, enum_name: StringName, enum_value: int) -> String:

@@ -76,7 +76,11 @@ func login(username: String, password: String) -> Token:
 	if HTTPRequests.failed():
 		return null
 
-	return Token.new(HTTPRequests.get_response_body())
+	var token := Token.new(HTTPRequests.get_response_body())
+
+	HTTPRequests.set_access_token(token.access_token)
+
+	return token
 
 
 func refresh_access_token(refresh_token: String) -> Token:
@@ -89,8 +93,10 @@ func refresh_access_token(refresh_token: String) -> Token:
 	if HTTPRequests.failed():
 		return null
 
-	return Token.new(HTTPRequests.get_response_body())
+	var token := Token.new(HTTPRequests.get_response_body())
+	HTTPRequests.set_access_token(token.access_token)
 
+	return token
 
 func revoke_refresh_token(refresh_token: String) -> void:
 	var route: String = "/token/revoke"
