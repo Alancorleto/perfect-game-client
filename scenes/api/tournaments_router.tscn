@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c7c6h2okh2sdp"]
+
+[ext_resource type="Script" uid="uid://bieqsmnuatrlc" path="res://scenes/api/tournaments_router.gd" id="1_rnrv0"]
+
+[node name="TournamentsRouter" type="Node" unique_id=1899376105]
+script = ExtResource("1_rnrv0")
