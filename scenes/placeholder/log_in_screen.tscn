@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cfoia6ksk67im"]
+
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_5u2eo"]
+
+[node name="LogInScreen" type="Control" unique_id=1169402088]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5u2eo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=63211918]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 612.0
+offset_top = 371.0
+offset_right = -612.0
+offset_bottom = -371.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 36
+
+[node name="EmailField" type="LineEdit" parent="VBoxContainer" unique_id=638598766]
+layout_mode = 2
+placeholder_text = "email"
+
+[node name="PasswordField" type="LineEdit" parent="VBoxContainer" unique_id=204709168]
+layout_mode = 2
+placeholder_text = "password"
+secret = true
+
+[node name="LogInButton" type="Button" parent="VBoxContainer" unique_id=699779393]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 64
+text = "Log In"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1013912590]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 832.0
+offset_right = 1308.0
+offset_bottom = 1018.0
+size_flags_vertical = 10
+theme_override_constants/separation = 36
+
+[node name="ResetPasswordButton" type="Button" parent="VBoxContainer2" unique_id=1148483413]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 36
+text = "I Forgot My Password"
+
+[node name="CreateAccountButton" type="Button" parent="VBoxContainer2" unique_id=185808309]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 36
+text = "Create Account
+"

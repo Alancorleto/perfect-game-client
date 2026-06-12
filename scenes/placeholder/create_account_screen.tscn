@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ci3b6bu4oomjm"]
+
+[sub_resource type="Theme" id="Theme_54veb"]
+default_font_size = 48
+
+[node name="CreateAccountScreen" type="Control" unique_id=1169402088]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_54veb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=63211918]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 612.0
+offset_top = 199.0
+offset_right = -612.0
+offset_bottom = -199.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_54veb")
+theme_override_constants/separation = 36
+
+[node name="EmailField" type="LineEdit" parent="VBoxContainer" unique_id=638598766]
+layout_mode = 2
+theme = SubResource("Theme_54veb")
+placeholder_text = "email"
+
+[node name="EmailField2" type="LineEdit" parent="VBoxContainer" unique_id=1018224518]
+layout_mode = 2
+theme = SubResource("Theme_54veb")
+placeholder_text = "repeat email"
+
+[node name="PasswordField" type="LineEdit" parent="VBoxContainer" unique_id=204709168]
+layout_mode = 2
+theme = SubResource("Theme_54veb")
+placeholder_text = "password"
+secret = true
+
+[node name="PasswordField2" type="LineEdit" parent="VBoxContainer" unique_id=240796111]
+layout_mode = 2
+theme = SubResource("Theme_54veb")
+placeholder_text = "repeat password"
+secret = true
+
+[node name="CreateAccountButton" type="Button" parent="VBoxContainer" unique_id=699779393]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+text = "Create Account
+"
