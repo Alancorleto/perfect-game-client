@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c5cboias1dfpq"]
 
-[ext_resource type="Script" uid="uid://d0t61dv0qbu61" path="res://scenes/api/users_router.gd" id="1_msd6c"]
+[ext_resource type="Script" uid="uid://d0t61dv0qbu61" path="res://scenes/api/routers/users_router.gd" id="1_msd6c"]
 
 [node name="UsersRouter" type="Node" unique_id=1393246197]
 script = ExtResource("1_msd6c")

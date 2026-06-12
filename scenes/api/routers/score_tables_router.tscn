@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://csjsxow2wnbcs"]
 
-[ext_resource type="Script" uid="uid://dpx3s46ajtwfh" path="res://scenes/api/score_tables_router.gd" id="1_voimt"]
+[ext_resource type="Script" uid="uid://dpx3s46ajtwfh" path="res://scenes/api/routers/score_tables_router.gd" id="1_voimt"]
 
 [node name="ScoreTablesRouter" type="Node" unique_id=921540403]
 script = ExtResource("1_voimt")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://0tydw4jalerx"]
 
-[ext_resource type="Script" uid="uid://bmmhr4yhbjavf" path="res://scenes/api/score_columns_router.gd" id="1_n2ni5"]
+[ext_resource type="Script" uid="uid://bmmhr4yhbjavf" path="res://scenes/api/routers/score_columns_router.gd" id="1_n2ni5"]
 
 [node name="ScoreColumnsRouter" type="Node" unique_id=1286445915]
 script = ExtResource("1_n2ni5")
