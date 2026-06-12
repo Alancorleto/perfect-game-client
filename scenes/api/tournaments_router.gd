@@ -140,7 +140,7 @@ func decline_tournament_join_request(tournament_id: String, player_id: String) -
 	await HTTPRequests.POST(route)
 
 
-func list_players_in_tournament(tournament_id: String) -> Array:
+func list_players_in_tournament(tournament_id: String) -> Array[PlayerInTournament]:
 	var route: String = "%s/%s/players" % [route_base, tournament_id]
 
 	await HTTPRequests.GET(route)
@@ -150,17 +150,17 @@ func list_players_in_tournament(tournament_id: String) -> Array:
 	return HTTPRequests.get_response_body()
 
 
-func update_player_in_tournament(tournament_id: String, player_id: String, tournament_player_link: Dictionary) -> Dictionary:
+func update_player_in_tournament(tournament_id: String, player_id: String, player_in_tournament: PlayerInTournamentUpdate) -> PlayerInTournament:
 	var route: String = "%s/%s/players/%s" % [route_base, tournament_id, player_id]
 
-	await HTTPRequests.PATCH(route, tournament_player_link)
+	await HTTPRequests.PATCH(route, player_in_tournament.to_dictionary())
 	if HTTPRequests.failed():
-		return {}
+		return null
 
-	return HTTPRequests.get_response_body()
+	return PlayerInTournament.new(HTTPRequests.get_response_body())
 
 
-func remove_player_from_tournament(tournament_id: String, player_id: String) -> Array:
+func remove_player_from_tournament(tournament_id: String, player_id: String) -> Array[PlayerInTournament]:
 	var route: String = "%s/%s/players/%s" % [route_base, tournament_id, player_id]
 
 	await HTTPRequests.DELETE(route)
