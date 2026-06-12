@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cl5j4tyu15unj"]
 
-[ext_resource type="Script" uid="uid://brn5s8p2h6d24" path="res://scenes/main/http_requests_manager.gd" id="1_nlb5r"]
+[ext_resource type="Script" uid="uid://brn5s8p2h6d24" path="res://scenes/api/http_requests_manager.gd" id="1_nlb5r"]
 
 [node name="HTTPRequestsManager" type="HTTPRequest" unique_id=289644433]
 script = ExtResource("1_nlb5r")

@@ -1,4 +1,4 @@
-class_name UserPublic
+class_name UserResponse
 extends UserBase
 
 var id = ""
