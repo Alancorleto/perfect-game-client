@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cogwm205i7e2k"]
 
-[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_8v22y"]
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_4jb8x"]
 
 [node name="SelectModeScreen" type="Control" unique_id=80987437]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_8v22y")
+theme = ExtResource("1_4jb8x")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=684113651]
 layout_mode = 1
@@ -31,9 +31,9 @@ theme_override_font_sizes/font_size = 96
 text = "View Tournament Results"
 autowrap_mode = 3
 
-[node name="OrganizeButton" type="Button" parent="HBoxContainer" unique_id=1841313385]
+[node name="ManageButton" type="Button" parent="HBoxContainer" unique_id=1841313385]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 96
-text = "Organize Tournament"
+text = "Manage Tournaments"
 autowrap_mode = 3
