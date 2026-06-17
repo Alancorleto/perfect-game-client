@@ -1,0 +1,281 @@
+[gd_scene format=3 uid="uid://brywmwodqxcnh"]
+
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_s2hor"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlow6"]
+bg_color = Color(0.08208982, 0.082089834, 0.082089774, 1)
+
+[node name="Control" type="Control" unique_id=2088573133]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_s2hor")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=637919218]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=193445536]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer" unique_id=13396678]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer" unique_id=946040393]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=685766813]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "<="
+
+[node name="Button2" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=2108478902]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "=>"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1257721489]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=578881002]
+layout_mode = 2
+text = "Event"
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=802439012]
+layout_mode = 2
+text = ">"
+
+[node name="Label3" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=296643418]
+layout_mode = 2
+text = "Intermediate"
+
+[node name="Button3" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=473996396]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Miura Aran"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=666313887]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=1362358287]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=1028947557]
+layout_mode = 2
+size_flags_horizontal = 4
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer" unique_id=1542249432]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_tlow6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer" unique_id=270535986]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer" unique_id=237910156]
+visible = false
+layout_mode = 2
+text = "Organizers"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer" unique_id=154489392]
+visible = false
+layout_mode = 2
+
+[node name="TournamentsContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer" unique_id=989522169]
+layout_mode = 2
+
+[node name="Label" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer" unique_id=1899748854]
+layout_mode = 2
+text = "Rounds"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer" unique_id=1438057972]
+layout_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer" unique_id=1235933323]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer4" unique_id=1866491813]
+layout_mode = 2
+text = "First Round"
+
+[node name="Button2" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer4" unique_id=769028971]
+layout_mode = 2
+text = "Second Round"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer4" unique_id=2121996046]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer4/VBoxContainer" unique_id=1483696244]
+layout_mode = 2
+toggle_mode = true
+text = "Semi Finals"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer4/VBoxContainer" unique_id=998288010]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer4/VBoxContainer/MarginContainer2" unique_id=1404376138]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer4/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=850214331]
+visible = false
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+text = "Score Table"
+
+[node name="Button5" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer4/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=1398450076]
+visible = false
+layout_mode = 2
+text = "[New Column]"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer4/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=1377555375]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer4/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer" unique_id=328234788]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer4/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=754852365]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Individual Scores"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer4/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1986461405]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Super Fantasy S16"
+text_overrun_behavior = 5
+
+[node name="Button3" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer4/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1794049709]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Super Fantasy S16"
+text_overrun_behavior = 5
+
+[node name="Button3" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer4" unique_id=1244764751]
+layout_mode = 2
+text = "Finals"
+
+[node name="Button5" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer4" unique_id=256348323]
+visible = false
+layout_mode = 2
+text = "[Add New Round]"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer" unique_id=1288839773]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer3" unique_id=1992711400]
+visible = false
+layout_mode = 2
+text = "Advanced"
+
+[node name="Button5" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/PanelContainer/VBoxContainer/TournamentsContainer/VBoxContainer3" unique_id=110795956]
+visible = false
+layout_mode = 2
+text = "[Add New Category]"
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=1570897468]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer2" unique_id=1144615802]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer2/VBoxContainer" unique_id=1594424434]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "Intermediate"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer2/VBoxContainer" unique_id=949534077]
+layout_mode = 2
+text = "Description"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer2/VBoxContainer" unique_id=37617917]
+layout_mode = 2
+text = "Number of players"
+horizontal_alignment = 1
+
+[node name="PlayersContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=1005659826]
+layout_mode = 2
+size_flags_horizontal = 8
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/PlayersContainer" unique_id=526288656]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_tlow6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/PlayersContainer/PanelContainer" unique_id=1005206949]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/PlayersContainer/PanelContainer/VBoxContainer" unique_id=2135006303]
+layout_mode = 2
+text = "Players"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/HBoxContainer/PlayersContainer/PanelContainer/VBoxContainer" unique_id=820686591]
+layout_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/PlayersContainer/PanelContainer/VBoxContainer" unique_id=258159554]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/PlayersContainer/PanelContainer/VBoxContainer/VBoxContainer4" unique_id=1643959665]
+layout_mode = 2
+text = "Player 1"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/PlayersContainer/PanelContainer/VBoxContainer/VBoxContainer4" unique_id=1267159129]
+layout_mode = 2
+text = "Player 2"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/PlayersContainer/PanelContainer/VBoxContainer/VBoxContainer4" unique_id=552035712]
+layout_mode = 2
+text = "Player 3"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/PlayersContainer/PanelContainer/VBoxContainer/VBoxContainer4" unique_id=1496045674]
+layout_mode = 2
+text = "Player 4"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/PlayersContainer/PanelContainer/VBoxContainer/VBoxContainer4" unique_id=1981951521]
+layout_mode = 2
+text = "Player 5"
