@@ -1,0 +1,1516 @@
+[gd_scene format=3 uid="uid://g4uxisyle6w4"]
+
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_h0kmi"]
+[ext_resource type="Texture2D" uid="uid://b8jpwo1slvb55" path="res://icon.svg" id="2_hvkew"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eb1t4"]
+bg_color = Color(0.08208982, 0.082089834, 0.082089774, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3tl6"]
+bg_color = Color(0.1319848, 0.1319848, 0.13198474, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wd51"]
+bg_color = Color(0.2520276, 0.25202766, 0.25202763, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8id0h"]
+bg_color = Color(0.15607512, 0.15607515, 0.15607506, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crlx2"]
+bg_color = Color(0.20392033, 0.20392036, 0.20392022, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.15127605, 0.15127608, 0.15127596, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckliv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.6215238, 0.6215239, 0.62152356, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gt8h"]
+bg_color = Color(0.20392033, 0.20392036, 0.20392022, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.15127605, 0.15127608, 0.15127596, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blcf6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.6215238, 0.6215239, 0.62152356, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0kmi"]
+bg_color = Color(0.20392033, 0.20392036, 0.20392022, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.15127605, 0.15127608, 0.15127596, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvkew"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.6215238, 0.6215239, 0.62152356, 1)
+
+[node name="Control" type="Control" unique_id=647876315]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_h0kmi")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2140518990]
+visible = false
+layout_mode = 0
+offset_right = 435.0
+offset_bottom = 1080.0
+size_flags_horizontal = 8
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer" unique_id=343903342]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_eb1t4")
+
+[node name="EventsContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer" unique_id=392743800]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+
+[node name="EventContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer" unique_id=1740742835]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="EventPanel" type="PanelContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer" unique_id=499734587]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/EventPanel" unique_id=2018434901]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/EventPanel/HBoxContainer" unique_id=1234348735]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_hvkew")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/EventPanel/HBoxContainer" unique_id=1548399821]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Event Name"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer" unique_id=87301538]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer" unique_id=110525981]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer" unique_id=2114458179]
+visible = false
+layout_mode = 2
+text = "Organizers"
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer" unique_id=1791302708]
+visible = false
+layout_mode = 2
+
+[node name="TournamentsContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer" unique_id=1901578622]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer" unique_id=532790398]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer" unique_id=1065830931]
+layout_mode = 2
+text = "Beginner"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer" unique_id=106063940]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2" unique_id=1015356827]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+text = "Intermediate"
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2" unique_id=1003172463]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer" unique_id=1743322841]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2" unique_id=1204790673]
+visible = false
+layout_mode = 2
+text = "Players"
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2" unique_id=2132645089]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2" unique_id=293893946]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=763199783]
+layout_mode = 2
+text = "First Round"
+
+[node name="Button2" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=552220927]
+layout_mode = 2
+text = "Second Round"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=797980457]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1304761801]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+text = "Semi Finals"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1327114973]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2" unique_id=1310312246]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=1484877417]
+visible = false
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+text = "Score Table"
+
+[node name="Button5" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=854435290]
+visible = false
+layout_mode = 2
+text = "[New Column]"
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=1889467473]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer" unique_id=1423155199]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=250270238]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Individual Scores"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1959952401]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Super Fantasy S16"
+text_overrun_behavior = 5
+
+[node name="Button3" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1252375051]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Super Fantasy S16"
+text_overrun_behavior = 5
+
+[node name="Button3" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1574702480]
+layout_mode = 2
+text = "Finals"
+
+[node name="Button5" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=377512607]
+visible = false
+layout_mode = 2
+text = "[Add New Round]"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer" unique_id=380498735]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer3" unique_id=1246715302]
+visible = false
+layout_mode = 2
+text = "Advanced"
+
+[node name="Button5" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer3" unique_id=35403128]
+visible = false
+layout_mode = 2
+text = "[Add New Category]"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=717322291]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1395354477]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer" unique_id=386619977]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer" unique_id=226805868]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=398049948]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "<="
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=605545007]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label5" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=578311566]
+layout_mode = 2
+text = "Semi Finals"
+
+[node name="Label6" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1085848868]
+visible = false
+layout_mode = 2
+text = ">"
+
+[node name="Label7" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=514046412]
+visible = false
+layout_mode = 2
+text = "Score Table"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1347791564]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=882022842]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=1091003560]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 64
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=2060243533]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=382232828]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3tl6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8wd51")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s3tl6")
+toggle_mode = true
+button_pressed = true
+text = "Scores"
+
+[node name="Button2" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=163025063]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3tl6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8wd51")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s3tl6")
+toggle_mode = true
+text = "Info"
+
+[node name="Button3" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1814025848]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3tl6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8wd51")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s3tl6")
+toggle_mode = true
+text = "Charts"
+
+[node name="Button4" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=898653163]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3tl6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8wd51")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s3tl6")
+toggle_mode = true
+text = "Players"
+
+[node name="BattleSelector" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1449671461]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8id0h")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleSelector" unique_id=1726041935]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="MenuButton" type="OptionButton" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleSelector/HBoxContainer" unique_id=486688769]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "Juancho vs Leo"
+popup/item_0/id = 0
+popup/item_1/text = "Bruno vs Marcelito"
+popup/item_1/id = 1
+popup/item_2/text = "Info"
+popup/item_2/id = 2
+
+[node name="MenuButton2" type="OptionButton" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleSelector/HBoxContainer" unique_id=1828086627]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 80
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "Total"
+popup/item_0/id = 0
+popup/item_1/text = "Single 16"
+popup/item_1/id = 1
+popup/item_2/text = "Single 17"
+popup/item_2/id = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleSelector/HBoxContainer" unique_id=1196132806]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleSelector/HBoxContainer/HBoxContainer2" unique_id=822194615]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "<="
+
+[node name="MenuButton2" type="OptionButton" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleSelector/HBoxContainer/HBoxContainer2" unique_id=924722710]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+alignment = 1
+icon_alignment = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "Total"
+popup/item_0/id = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleSelector/HBoxContainer/HBoxContainer2" unique_id=1176066087]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleSelector/HBoxContainer/HBoxContainer2/HBoxContainer" unique_id=1031434665]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleSelector/HBoxContainer/HBoxContainer2/HBoxContainer" unique_id=2053114352]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Juancho vs Leo"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Button2" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleSelector/HBoxContainer/HBoxContainer2" unique_id=362818109]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "=>"
+
+[node name="BattleContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=256833526]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer" unique_id=1616306540]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 64
+
+[node name="PlayersContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2" unique_id=1305993868]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/PlayersContainer" unique_id=457122714]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/PlayersContainer/PanelContainer" unique_id=1544528833]
+layout_mode = 2
+text = "Players"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/PlayersContainer" unique_id=2004462237]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/PlayersContainer/VBoxContainer" unique_id=524506303]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_crlx2")
+text = "="
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/PlayersContainer/VBoxContainer" unique_id=897814583]
+visible = false
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_crlx2")
+text = "#"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/PlayersContainer/VBoxContainer" unique_id=996649116]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_crlx2")
+text = "Player"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/PlayersContainer" unique_id=1481502057]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/PlayersContainer/VBoxContainer2" unique_id=2071021264]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/PlayersContainer/VBoxContainer2/VBoxContainer" unique_id=1458379303]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_ckliv")
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/PlayersContainer/VBoxContainer2/VBoxContainer" unique_id=1729676802]
+visible = false
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_ckliv")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/PlayersContainer/VBoxContainer2/VBoxContainer" unique_id=401713067]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_ckliv")
+text = "Miura Aran"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/PlayersContainer/VBoxContainer2" unique_id=4011891]
+layout_mode = 2
+text = "Add Players"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2" unique_id=1480578255]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer" unique_id=51357348]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/PanelContainer" unique_id=1608763183]
+layout_mode = 2
+text = "Total"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer" unique_id=1194209325]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer3" unique_id=373853830]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "#"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer3" unique_id=1209538451]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Player"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer3" unique_id=1020993682]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Chart"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer3" unique_id=1942112507]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Score"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer" unique_id=1015531934]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1006035320]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1625526434]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Juancho"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1152008276]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer/Control" unique_id=743842687]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer/Control/HBoxContainer" unique_id=1135081323]
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer/Control/HBoxContainer" unique_id=1077129767]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=352456236]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer" unique_id=1510777181]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer2" unique_id=1081610236]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer2" unique_id=1492106061]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Leo"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer2" unique_id=1487101621]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer2/Control" unique_id=804764310]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer2/Control/HBoxContainer" unique_id=757230]
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer2/Control/HBoxContainer" unique_id=1356466872]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer/VBoxContainer2" unique_id=992012442]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2" unique_id=1455319776]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2" unique_id=1846260663]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/PanelContainer" unique_id=290968115]
+layout_mode = 2
+text = "Song #1"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2" unique_id=212748590]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer3" unique_id=2025908284]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "#"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer3" unique_id=728922523]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Player"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer3" unique_id=913647119]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Chart"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer3" unique_id=1789098807]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Score"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2" unique_id=2058664431]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer" unique_id=2095953097]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer" unique_id=270579250]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Juancho"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer" unique_id=1641089175]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer/Control" unique_id=1994686917]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer/Control/HBoxContainer" unique_id=508271903]
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer/Control/HBoxContainer" unique_id=6158736]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer" unique_id=1538028744]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2" unique_id=1888993666]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer2" unique_id=1184312096]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer2" unique_id=1801757276]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Leo"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer2" unique_id=1267209122]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer2/Control" unique_id=790537421]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer2/Control/HBoxContainer" unique_id=541736702]
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer2/Control/HBoxContainer" unique_id=1987612412]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer2/VBoxContainer2" unique_id=1480738459]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2" unique_id=358308026]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3" unique_id=264432981]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/PanelContainer" unique_id=1758903834]
+layout_mode = 2
+text = "Song #1"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3" unique_id=1234524332]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer3" unique_id=1475657411]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "#"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer3" unique_id=1265579337]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Player"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer3" unique_id=364516636]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Chart"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer3" unique_id=1372024768]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Score"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3" unique_id=406469849]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer" unique_id=878154160]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer" unique_id=1328249510]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Juancho"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer" unique_id=1054055213]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer/Control" unique_id=921658045]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer/Control/HBoxContainer" unique_id=1041185542]
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer/Control/HBoxContainer" unique_id=1318447120]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer" unique_id=955910798]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3" unique_id=1349329207]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer2" unique_id=1156368536]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer2" unique_id=539237878]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Leo"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer2" unique_id=572407606]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer2/Control" unique_id=1284065187]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer2/Control/HBoxContainer" unique_id=1513658596]
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer2/Control/HBoxContainer" unique_id=1127697710]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer3/VBoxContainer2" unique_id=386599187]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2" unique_id=774494659]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4" unique_id=433821925]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/PanelContainer" unique_id=203788319]
+layout_mode = 2
+text = "Song #1"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4" unique_id=1123414147]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer3" unique_id=350531361]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "#"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer3" unique_id=1280683711]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Player"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer3" unique_id=1593920730]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Chart"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer3" unique_id=912465909]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Score"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4" unique_id=1057729319]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer" unique_id=353140150]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer" unique_id=682288623]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Juancho"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer" unique_id=656122689]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer/Control" unique_id=302118300]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer/Control/HBoxContainer" unique_id=304978971]
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer/Control/HBoxContainer" unique_id=1573502318]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer" unique_id=336743491]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4" unique_id=190118623]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer2" unique_id=1448075019]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer2" unique_id=381646276]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Leo"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer2" unique_id=68680267]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer2/Control" unique_id=2081028574]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer2/Control/HBoxContainer" unique_id=1888231044]
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer2/Control/HBoxContainer" unique_id=586407567]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer4/VBoxContainer2" unique_id=812637331]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2" unique_id=1336742106]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5" unique_id=1549796710]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/PanelContainer" unique_id=516150164]
+layout_mode = 2
+text = "Song #1"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5" unique_id=1451973978]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer3" unique_id=1442168432]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "#"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer3" unique_id=2123253303]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Player"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer3" unique_id=854522066]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Chart"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer3" unique_id=1389766337]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Score"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5" unique_id=420798935]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer" unique_id=336429941]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer" unique_id=55536535]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Juancho"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer" unique_id=357830726]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer/Control" unique_id=2020018697]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer/Control/HBoxContainer" unique_id=542545337]
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer/Control/HBoxContainer" unique_id=1575986910]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer" unique_id=823750203]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5" unique_id=123138122]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer2" unique_id=329020053]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer2" unique_id=1932246449]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Leo"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer2" unique_id=423745768]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer2/Control" unique_id=1769268929]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer2/Control/HBoxContainer" unique_id=377006182]
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer2/Control/HBoxContainer" unique_id=2120026461]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_hvkew")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2/VBoxContainer5/VBoxContainer2" unique_id=1628662741]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattleContainer/VBoxContainer2" unique_id=2032272690]
+layout_mode = 2
+text = "Add Chart"
+
+[node name="BattlesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=250302594]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattlesContainer" unique_id=2029686076]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattlesContainer/VBoxContainer" unique_id=1295324393]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_h0kmi")
+text = "="
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattlesContainer/VBoxContainer" unique_id=730221305]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_h0kmi")
+text = "#"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattlesContainer/VBoxContainer" unique_id=2092816441]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_h0kmi")
+text = "Battle"
+horizontal_alignment = 1
+
+[node name="PlayersContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattlesContainer" unique_id=186800735]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattlesContainer/PlayersContainer" unique_id=202951087]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattlesContainer/PlayersContainer/VBoxContainer" unique_id=785092752]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattlesContainer/PlayersContainer/VBoxContainer/VBoxContainer" unique_id=860031519]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvkew")
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattlesContainer/PlayersContainer/VBoxContainer/VBoxContainer" unique_id=968866944]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvkew")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattlesContainer/PlayersContainer/VBoxContainer/VBoxContainer" unique_id=769140644]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvkew")
+text = "Juancho vs Leo"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/BattlesContainer/PlayersContainer/VBoxContainer" unique_id=686165803]
+layout_mode = 2
+text = "Add Battle"
