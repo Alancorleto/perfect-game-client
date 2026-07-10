@@ -1,10 +1,26 @@
-[gd_scene format=3 uid="uid://vf8hihn8f5lo"]
+[gd_scene format=3 uid="uid://c3pwlgkkde6g2"]
 
-[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_lhcml"]
-[ext_resource type="Texture2D" uid="uid://b8jpwo1slvb55" path="res://icon.svg" id="2_3pln2"]
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_yohtl"]
+[ext_resource type="Texture2D" uid="uid://b8jpwo1slvb55" path="res://icon.svg" id="2_qm0c8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eb1t4"]
 bg_color = Color(0.08208982, 0.082089834, 0.082089774, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gt8h"]
+bg_color = Color(0.20392033, 0.20392036, 0.20392022, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.15127605, 0.15127608, 0.15127596, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blcf6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.6215238, 0.6215239, 0.62152356, 1)
 
 [node name="Control" type="Control" unique_id=647876315]
 layout_mode = 3
@@ -13,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_lhcml")
+theme = ExtResource("1_yohtl")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2140518990]
 visible = false
@@ -50,7 +66,7 @@ theme_override_constants/separation = 4
 custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("2_3pln2")
+texture = ExtResource("2_qm0c8")
 expand_mode = 4
 
 [node name="Label" type="Label" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/EventPanel/HBoxContainer" unique_id=1548399821]
@@ -244,53 +260,147 @@ text = "Semi Finals"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_left = 32
+theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
+theme_override_constants/margin_right = 0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer" unique_id=1887628383]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=1327038485]
 layout_mode = 2
 
-[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer" unique_id=882022842]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=51049988]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "Charts"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1887628383]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ChartsContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=321439939]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer" unique_id=997536415]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer" unique_id=1444439846]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "="
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer" unique_id=1730980488]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Chart"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer" unique_id=2090457505]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 96
+mouse_filter = 2
+theme_override_constants/separation = 0
 
-[node name="RoundInfo" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=478667759]
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer2" unique_id=778078853]
 layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
 
-[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/HBoxContainer/RoundInfo" unique_id=1978461387]
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer2/VBoxContainer" unique_id=760188076]
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
-text = "Format: Score Sum"
-horizontal_alignment = 1
-
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/HBoxContainer/RoundInfo" unique_id=804856792]
-layout_mode = 2
-text = "Levels: S16 - S18"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/HBoxContainer/RoundInfo" unique_id=1151442230]
-layout_mode = 2
-text = "Qualifiers Count: 8"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/ScrollContainer/HBoxContainer/RoundInfo" unique_id=658931411]
-layout_mode = 2
-text = "State: In progress"
-horizontal_alignment = 1
-
-[node name="Button2" type="Button" parent="VBoxContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=2120949945]
-layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
 theme_override_font_sizes/font_size = 64
-text = "Charts"
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Button3" type="Button" parent="VBoxContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=1764608123]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer2/VBoxContainer" unique_id=73280637]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Players"
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
 
-[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/ScrollContainer/HBoxContainer" unique_id=510403199]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer2/VBoxContainer/PanelContainer" unique_id=1923644275]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer2/VBoxContainer/PanelContainer/HBoxContainer" unique_id=484066126]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_qm0c8")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer2/VBoxContainer/PanelContainer/HBoxContainer" unique_id=163685297]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Song Name"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer2/VBoxContainer/PanelContainer/HBoxContainer" unique_id=134497184]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_qm0c8")
+stretch_mode = 2
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer2" unique_id=648518317]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer2/VBoxContainer2" unique_id=562766057]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
 theme_override_font_sizes/font_size = 64
-text = "Scores"
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer2/VBoxContainer2" unique_id=731231274]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer2/VBoxContainer2/PanelContainer" unique_id=890029113]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer2/VBoxContainer2/PanelContainer/HBoxContainer" unique_id=1348134870]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_qm0c8")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer2/VBoxContainer2/PanelContainer/HBoxContainer" unique_id=1676955178]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Song Name"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer2/VBoxContainer2/PanelContainer/HBoxContainer" unique_id=603833808]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_qm0c8")
+stretch_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/ChartsContainer/VBoxContainer2" unique_id=1066408485]
+layout_mode = 2
+text = "Add Chart"

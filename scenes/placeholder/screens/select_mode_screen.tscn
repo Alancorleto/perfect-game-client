@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_4jb8x")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=684113651]
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=2139501840]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,10 +19,11 @@ anchor_bottom = 1.0
 offset_left = 167.0
 offset_top = 242.0
 offset_right = -167.0
-offset_bottom = -192.0
+offset_bottom = -82.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 128
+alignment = 1
 
 [node name="SpectateButton" type="Button" parent="HBoxContainer" unique_id=193269330]
 layout_mode = 2

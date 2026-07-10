@@ -1,0 +1,1787 @@
+[gd_scene format=3 uid="uid://cu65tsil5fpjx"]
+
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_dxsw7"]
+[ext_resource type="Texture2D" uid="uid://b8jpwo1slvb55" path="res://icon.svg" id="2_3hul5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eb1t4"]
+bg_color = Color(0.08208982, 0.082089834, 0.082089774, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3tl6"]
+bg_color = Color(0.1319848, 0.1319848, 0.13198474, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wd51"]
+bg_color = Color(0.2520276, 0.25202766, 0.25202763, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8id0h"]
+bg_color = Color(0.15607512, 0.15607515, 0.15607506, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gt8h"]
+bg_color = Color(0.20392033, 0.20392036, 0.20392022, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.15127605, 0.15127608, 0.15127596, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blcf6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.6215238, 0.6215239, 0.62152356, 1)
+
+[node name="Control" type="Control" unique_id=647876315]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dxsw7")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2140518990]
+visible = false
+layout_mode = 0
+offset_right = 435.0
+offset_bottom = 1080.0
+size_flags_horizontal = 8
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer" unique_id=343903342]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_eb1t4")
+
+[node name="EventsContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer" unique_id=392743800]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+
+[node name="EventContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer" unique_id=1740742835]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="EventPanel" type="PanelContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer" unique_id=499734587]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/EventPanel" unique_id=2018434901]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/EventPanel/HBoxContainer" unique_id=1234348735]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_3hul5")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/EventPanel/HBoxContainer" unique_id=1548399821]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Event Name"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer" unique_id=87301538]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer" unique_id=110525981]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer" unique_id=2114458179]
+visible = false
+layout_mode = 2
+text = "Organizers"
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer" unique_id=1791302708]
+visible = false
+layout_mode = 2
+
+[node name="TournamentsContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer" unique_id=1901578622]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer" unique_id=532790398]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer" unique_id=1065830931]
+layout_mode = 2
+text = "Beginner"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer" unique_id=106063940]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2" unique_id=1015356827]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+text = "Intermediate"
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2" unique_id=1003172463]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer" unique_id=1743322841]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2" unique_id=1204790673]
+visible = false
+layout_mode = 2
+text = "Players"
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2" unique_id=2132645089]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2" unique_id=293893946]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=763199783]
+layout_mode = 2
+text = "First Round"
+
+[node name="Button2" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=552220927]
+layout_mode = 2
+text = "Second Round"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=797980457]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1304761801]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+text = "Semi Finals"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1327114973]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2" unique_id=1310312246]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=1484877417]
+visible = false
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+text = "Score Table"
+
+[node name="Button5" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=854435290]
+visible = false
+layout_mode = 2
+text = "[New Column]"
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=1889467473]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer" unique_id=1423155199]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=250270238]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Individual Scores"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1959952401]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Super Fantasy S16"
+text_overrun_behavior = 5
+
+[node name="Button3" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer/VBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1252375051]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Super Fantasy S16"
+text_overrun_behavior = 5
+
+[node name="Button3" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1574702480]
+layout_mode = 2
+text = "Finals"
+
+[node name="Button5" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer2/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=377512607]
+visible = false
+layout_mode = 2
+text = "[Add New Round]"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer" unique_id=380498735]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer3" unique_id=1246715302]
+visible = false
+layout_mode = 2
+text = "Advanced"
+
+[node name="Button5" type="Button" parent="ScrollContainer/PanelContainer/EventsContainer/EventContainer/MarginContainer/VBoxContainer/TournamentsContainer/VBoxContainer3" unique_id=35403128]
+visible = false
+layout_mode = 2
+text = "[Add New Category]"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=717322291]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1395354477]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer" unique_id=386619977]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer" unique_id=226805868]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=398049948]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "<="
+
+[node name="Label5" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=578311566]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Semi Finals"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1347791564]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=882022842]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=478667759]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1978461387]
+layout_mode = 2
+text = "Format: Score Sum"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=804856792]
+layout_mode = 2
+text = "Levels: S16 - S18"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1151442230]
+layout_mode = 2
+text = "Qualifiers Count: 8"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=658931411]
+layout_mode = 2
+text = "State: In progress"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=1091003560]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=2060243533]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=382232828]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3tl6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8wd51")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s3tl6")
+toggle_mode = true
+button_pressed = true
+text = "Scores"
+
+[node name="Button2" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=163025063]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3tl6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8wd51")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s3tl6")
+toggle_mode = true
+text = "Info"
+
+[node name="Button3" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1814025848]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3tl6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8wd51")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s3tl6")
+toggle_mode = true
+text = "Charts"
+
+[node name="Button4" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=898653163]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3tl6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8wd51")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s3tl6")
+toggle_mode = true
+text = "Players"
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1449671461]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8id0h")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer" unique_id=1726041935]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="MenuButton" type="OptionButton" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/HBoxContainer" unique_id=486688769]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "Juancho vs Leo"
+popup/item_0/id = 0
+popup/item_1/text = "Bruno vs Marcelito"
+popup/item_1/id = 1
+popup/item_2/text = "Info"
+popup/item_2/id = 2
+
+[node name="MenuButton2" type="OptionButton" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/HBoxContainer" unique_id=1828086627]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 80
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "Total"
+popup/item_0/id = 0
+popup/item_1/text = "Single 16"
+popup/item_1/id = 1
+popup/item_2/text = "Single 17"
+popup/item_2/id = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/HBoxContainer" unique_id=1196132806]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/HBoxContainer/HBoxContainer2" unique_id=822194615]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "<="
+
+[node name="MenuButton2" type="OptionButton" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/HBoxContainer/HBoxContainer2" unique_id=924722710]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+alignment = 1
+icon_alignment = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "Total"
+popup/item_0/id = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/HBoxContainer/HBoxContainer2" unique_id=1176066087]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/HBoxContainer/HBoxContainer2/HBoxContainer" unique_id=1031434665]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/HBoxContainer/HBoxContainer2/HBoxContainer" unique_id=2053114352]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Single 16"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Button2" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/HBoxContainer/HBoxContainer2" unique_id=362818109]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "=>"
+
+[node name="ScoresContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1990503583]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer" unique_id=1194209325]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/VBoxContainer" unique_id=373853830]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "#"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/VBoxContainer" unique_id=1209538451]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Player"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/VBoxContainer" unique_id=1020993682]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Chart"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/VBoxContainer" unique_id=1942112507]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Score"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer" unique_id=256833526]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer" unique_id=1480578255]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=1015531934]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer" unique_id=1006035320]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer" unique_id=1625526434]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer" unique_id=1152008276]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer/Control" unique_id=743842687]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer/Control/HBoxContainer" unique_id=1135081323]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer/Control/HBoxContainer" unique_id=1077129767]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer" unique_id=352456236]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=1533864082]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer2" unique_id=1886374407]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer2" unique_id=1153217346]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer2" unique_id=1508990270]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer2/Control" unique_id=59330559]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer2/Control/HBoxContainer" unique_id=851065774]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer2/Control/HBoxContainer" unique_id=1350638277]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer2" unique_id=1478540678]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=1392988175]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer3" unique_id=1446306232]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer3" unique_id=1829997515]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer3" unique_id=181536414]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer3/Control" unique_id=260250484]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer3/Control/HBoxContainer" unique_id=136088535]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer3/Control/HBoxContainer" unique_id=1975939553]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer3" unique_id=2029842960]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer4" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=2095213994]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer4" unique_id=786750067]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer4" unique_id=817401833]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer4" unique_id=1369615456]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer4/Control" unique_id=1926770387]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer4/Control/HBoxContainer" unique_id=755835888]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer4/Control/HBoxContainer" unique_id=1312765707]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer4" unique_id=2032232800]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer5" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=2075101879]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer5" unique_id=1559837127]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer5" unique_id=1049060684]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer5" unique_id=1979413895]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer5/Control" unique_id=102243083]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer5/Control/HBoxContainer" unique_id=601491431]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer5/Control/HBoxContainer" unique_id=677648354]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer5" unique_id=902832705]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer6" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=1743585993]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer6" unique_id=1052540831]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer6" unique_id=1872383014]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer6" unique_id=2052370073]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer6/Control" unique_id=1072865540]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer6/Control/HBoxContainer" unique_id=1532036469]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer6/Control/HBoxContainer" unique_id=1994894577]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer6" unique_id=2049831486]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer7" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=1536259256]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer7" unique_id=1829206194]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer7" unique_id=980960561]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer7" unique_id=1165225112]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer7/Control" unique_id=1456103846]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer7/Control/HBoxContainer" unique_id=992853158]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer7/Control/HBoxContainer" unique_id=2100309961]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer7" unique_id=1599679728]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer8" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=1096560655]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer8" unique_id=795896264]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer8" unique_id=1445346602]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer8" unique_id=1060311311]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer8/Control" unique_id=49459932]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer8/Control/HBoxContainer" unique_id=978212989]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer8/Control/HBoxContainer" unique_id=345727126]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer8" unique_id=1204290305]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer9" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=743264352]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer9" unique_id=2087131884]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer9" unique_id=1901459585]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer9" unique_id=559889262]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer9/Control" unique_id=1781104384]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer9/Control/HBoxContainer" unique_id=1924636685]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer9/Control/HBoxContainer" unique_id=1401833836]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer9" unique_id=756795501]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer10" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=1043363109]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer10" unique_id=1119729400]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer10" unique_id=702275672]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer10" unique_id=273251751]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer10/Control" unique_id=1778635265]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer10/Control/HBoxContainer" unique_id=1893298748]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer10/Control/HBoxContainer" unique_id=1016688619]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer10" unique_id=686579599]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer11" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=141787141]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer11" unique_id=746095328]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer11" unique_id=1723578782]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer11" unique_id=1282945014]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer11/Control" unique_id=1709216248]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer11/Control/HBoxContainer" unique_id=751050345]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer11/Control/HBoxContainer" unique_id=479631203]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer11" unique_id=24837954]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer12" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=155685612]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer12" unique_id=151307298]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer12" unique_id=58240250]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer12" unique_id=1594706275]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer12/Control" unique_id=1287812024]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer12/Control/HBoxContainer" unique_id=1376201797]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer12/Control/HBoxContainer" unique_id=1179478623]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer12" unique_id=1103490897]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer13" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=548822080]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer13" unique_id=1333025923]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer13" unique_id=214362793]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer13" unique_id=1845302216]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer13/Control" unique_id=1690030442]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer13/Control/HBoxContainer" unique_id=1764573145]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer13/Control/HBoxContainer" unique_id=338112277]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer13" unique_id=502651381]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer14" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=638159368]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer14" unique_id=189137439]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer14" unique_id=1889224461]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer14" unique_id=1196488408]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer14/Control" unique_id=453906289]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer14/Control/HBoxContainer" unique_id=1511757177]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer14/Control/HBoxContainer" unique_id=256239609]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer14" unique_id=1007145025]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer15" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=2058544801]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer15" unique_id=252541094]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer15" unique_id=467625635]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer15" unique_id=2130776019]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer15/Control" unique_id=1068574975]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer15/Control/HBoxContainer" unique_id=1679396726]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer15/Control/HBoxContainer" unique_id=174621172]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer15" unique_id=817341087]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer16" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=1075981473]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer16" unique_id=570169875]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer16" unique_id=1470476372]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer16" unique_id=580218151]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer16/Control" unique_id=249039470]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer16/Control/HBoxContainer" unique_id=22735664]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer16/Control/HBoxContainer" unique_id=108906734]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer16" unique_id=952825770]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer17" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer" unique_id=2037978263]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer17" unique_id=1821766188]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer17" unique_id=1170660752]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer17" unique_id=1494478047]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer17/Control" unique_id=1500365652]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer17/Control/HBoxContainer" unique_id=1744822298]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer17/Control/HBoxContainer" unique_id=1850129555]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScoresContainer/ScrollContainer/VBoxContainer/VBoxContainer17" unique_id=609682501]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PlayersContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1257486561]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PlayersContainer" unique_id=1926878431]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PlayersContainer/VBoxContainer" unique_id=941491057]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "="
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PlayersContainer/VBoxContainer" unique_id=1938983490]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "#"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PlayersContainer/VBoxContainer" unique_id=1686072368]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Player"
+horizontal_alignment = 1
+
+[node name="PlayersContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PlayersContainer" unique_id=1614923782]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PlayersContainer/PlayersContainer" unique_id=375220347]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PlayersContainer/PlayersContainer/VBoxContainer" unique_id=1028898088]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PlayersContainer/PlayersContainer/VBoxContainer/VBoxContainer" unique_id=22369473]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PlayersContainer/PlayersContainer/VBoxContainer/VBoxContainer" unique_id=1467073227]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PlayersContainer/PlayersContainer/VBoxContainer/VBoxContainer" unique_id=1843215967]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/PlayersContainer/PlayersContainer/VBoxContainer" unique_id=1050641508]
+layout_mode = 2
+text = "Add Players"
+
+[node name="ChartsContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=321439939]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer" unique_id=997536415]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/VBoxContainer" unique_id=1444439846]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "="
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/VBoxContainer" unique_id=1098151222]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "#"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/VBoxContainer" unique_id=1730980488]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Chart"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer" unique_id=144049975]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer" unique_id=2090457505]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer" unique_id=778078853]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer/VBoxContainer" unique_id=760188076]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer/VBoxContainer" unique_id=1550480055]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer/VBoxContainer" unique_id=73280637]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer/VBoxContainer/PanelContainer" unique_id=1923644275]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=484066126]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=163685297]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Song Name"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=134497184]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer" unique_id=648518317]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer/VBoxContainer2" unique_id=562766057]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer/VBoxContainer2" unique_id=330684499]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer/VBoxContainer2" unique_id=731231274]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer/VBoxContainer2/PanelContainer" unique_id=890029113]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer/VBoxContainer2/PanelContainer/HBoxContainer" unique_id=1348134870]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer/VBoxContainer2/PanelContainer/HBoxContainer" unique_id=1676955178]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Song Name"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer/VBoxContainer2/PanelContainer/HBoxContainer" unique_id=603833808]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_3hul5")
+stretch_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ChartsContainer/ScrollContainer/VBoxContainer" unique_id=1066408485]
+layout_mode = 2
+text = "Add Chart"
