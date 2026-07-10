@@ -1,15 +1,17 @@
-[gd_scene format=3 uid="uid://cfoia6ksk67im"]
+[gd_scene format=3 uid="uid://cymjguv4mjc17"]
 
-[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_5u2eo"]
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_wwi55"]
+[ext_resource type="Script" uid="uid://56lv21la2rek" path="res://scenes/screens/user_account/login_screen.gd" id="2_jfjy6"]
 
-[node name="LogInScreen" type="Control" unique_id=1169402088]
+[node name="LoginScreen" type="Control" unique_id=1169402088]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_5u2eo")
+theme = ExtResource("1_wwi55")
+script = ExtResource("2_jfjy6")
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=1798530342]
 layout_mode = 1
@@ -26,15 +28,18 @@ layout_mode = 2
 theme_override_constants/separation = 36
 
 [node name="EmailField" type="LineEdit" parent="VBoxContainer3/VBoxContainer" unique_id=638598766]
+unique_name_in_owner = true
 layout_mode = 2
 placeholder_text = "email"
 
 [node name="PasswordField" type="LineEdit" parent="VBoxContainer3/VBoxContainer" unique_id=204709168]
+unique_name_in_owner = true
 layout_mode = 2
 placeholder_text = "password"
 secret = true
 
-[node name="LogInButton" type="Button" parent="VBoxContainer3/VBoxContainer" unique_id=699779393]
+[node name="LoginButton" type="Button" parent="VBoxContainer3/VBoxContainer" unique_id=699779393]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
@@ -47,6 +52,7 @@ size_flags_vertical = 8
 theme_override_constants/separation = 36
 
 [node name="ResetPasswordButton" type="Button" parent="VBoxContainer3/VBoxContainer2" unique_id=1148483413]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
@@ -54,6 +60,7 @@ theme_override_font_sizes/font_size = 36
 text = "I Forgot My Password"
 
 [node name="CreateAccountButton" type="Button" parent="VBoxContainer3/VBoxContainer2" unique_id=185808309]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10

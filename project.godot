@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="Perfect Game Client"
+run/main_scene="uid://mrqnyewrrvot"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 HTTPRequests="*uid://cl5j4tyu15unj"
+ScreenManager="*uid://cab3py5m2xd1b"
 
 [debug]
 

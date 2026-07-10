@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://mrqnyewrrvot"]
+
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_8qm6s"]
+[ext_resource type="Script" uid="uid://uacx8stgbidp" path="res://scenes/main/app.gd" id="1_kjr42"]
+[ext_resource type="PackedScene" uid="uid://cymjguv4mjc17" path="res://scenes/screens/user_account/login_screen.tscn" id="3_8qm6s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jo2o2"]
+bg_color = Color(0.10249352, 0.10249352, 0.10249349, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+
+[node name="App" type="Control" unique_id=1772704982]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8qm6s")
+script = ExtResource("1_kjr42")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=74394759]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CurrentScreenContainer" type="Control" parent="VBoxContainer" unique_id=1807339979]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LoginScreen" parent="VBoxContainer/CurrentScreenContainer" unique_id=1169402088 instance=ExtResource("3_8qm6s")]
+layout_mode = 1
+
+[node name="LoadingSign" type="MarginContainer" parent="." unique_id=161866297]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="LoadingSign" unique_id=106801482]
+custom_minimum_size = Vector2(750, 750)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_jo2o2")
+
+[node name="LoadingLabel" type="Label" parent="LoadingSign/PanelContainer" unique_id=1832720252]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Loading..."
+horizontal_alignment = 1
