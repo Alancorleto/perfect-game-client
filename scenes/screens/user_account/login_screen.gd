@@ -10,11 +10,13 @@ extends Control
 
 const SELECT_MODE_SCREEN_PATH: String = "res://scenes/placeholder/screens/select_mode_screen.tscn"
 const CREATE_ACCOUNT_SCREEN_PATH: String = "res://scenes/screens/user_account/create_account_screen.tscn"
+const RESET_PASSWORD_SCREEN_PATH: String = "res://scenes/screens/user_account/reset_password_screen_1.tscn"
 
 
 func _ready() -> void:
 	login_button.pressed.connect(_login)
 	create_account_button.pressed.connect(_go_to_create_account_screen)
+	reset_password_button.pressed.connect(_go_to_reset_password_screen)
 
 
 func _login() -> void:
@@ -35,3 +37,7 @@ func _login() -> void:
 
 func _go_to_create_account_screen() -> void:
 	App.change_screen(CREATE_ACCOUNT_SCREEN_PATH)
+
+
+func _go_to_reset_password_screen() -> void:
+	App.change_screen(RESET_PASSWORD_SCREEN_PATH)

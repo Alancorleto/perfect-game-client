@@ -28,6 +28,7 @@ ScoreColumnsRouter="*uid://0tydw4jalerx"
 ScoresRouter="*uid://bjgu8omr7hblg"
 ChartColumnsRouter="*uid://j21dbuhrcx7k"
 ChartsRouter="*uid://dk3chbd4t87ws"
+Globals="*uid://cot42raqws42d"
 
 [debug]
 
