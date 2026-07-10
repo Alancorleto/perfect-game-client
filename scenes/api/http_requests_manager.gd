@@ -8,6 +8,7 @@ var response_code: int
 var response_headers: PackedStringArray
 var response_body: Variant
 var access_token: String = ""
+var common_headers: PackedStringArray = ["Content-Type: application/json"]
 
 
 func _ready() -> void:
@@ -21,7 +22,6 @@ func make_request(method : HTTPClient.Method, route: String, body: Variant = nul
 		body = ""
 	var body_string: String = JSON.stringify(body, "\t")
 	#var body_string: String = JSON.stringify(body)
-	headers.append("Content-Type: application/json")
 	if access_token != "":
 		headers.append("Authorization: Bearer " + access_token)
 
@@ -36,28 +36,49 @@ func make_request(method : HTTPClient.Method, route: String, body: Variant = nul
 	await request_completed
 
 
+func make_login_request(route: String, username: String, password: String) -> void:
+	var url = base_url
+	url += route
+	var http_client := HTTPClient.new()
+	var body := http_client.query_string_from_dict({
+		"username": username,
+		"password": password
+	})
+	var headers := PackedStringArray(["Content-Type: application/x-www-form-urlencoded"])
+
+	print("--- NEW REQUEST ---")
+	print("URL: " + url)
+	print("Method: " + _find_native_enum_label("HTTPClient", "Method", HTTPClient.METHOD_POST))
+	print("Headers: " + str(headers))
+	print("Body: " + body)
+	print("")
+
+	request(url, headers, HTTPClient.METHOD_POST, body)
+	await request_completed
+
+
 func make_request_with_body(method : HTTPClient.Method, route: String, body: Variant) -> void:
 	make_request(method, route, body)
 
 
 func GET(route: String, body: Variant = null) -> void:
-	await make_request(HTTPClient.METHOD_GET, route, body)
+	await make_request(HTTPClient.METHOD_GET, route, body, common_headers)
 
 
 func POST(route: String, body: Variant = null) -> void:
-	await make_request(HTTPClient.METHOD_POST, route, body)
+	await make_request(HTTPClient.METHOD_POST, route, body, common_headers)
 
 
 func PATCH(route: String, body: Variant = null) -> void:
-	await make_request(HTTPClient.METHOD_PATCH, route, body)
+	await make_request(HTTPClient.METHOD_PATCH, route, body, common_headers)
 
 
 func PUT(route: String, body: Variant = null) -> void:
-	await make_request(HTTPClient.METHOD_PUT, route, body)
+	await make_request(HTTPClient.METHOD_PUT, route, body, common_headers)
 
 
 func DELETE(route: String, body: Variant = null) -> void:
-	await make_request(HTTPClient.METHOD_DELETE, route, body)
+	await make_request(HTTPClient.METHOD_DELETE, route, body, common_headers)
 
 
 func success() -> bool:

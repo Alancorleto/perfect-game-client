@@ -18,7 +18,16 @@ config/icon="res://icon.svg"
 [autoload]
 
 HTTPRequests="*uid://cl5j4tyu15unj"
-ScreenManager="*uid://cab3py5m2xd1b"
+UsersRouter="*uid://c5cboias1dfpq"
+PlayersRouter="*uid://osmowgw658p1"
+EventsRouter="*uid://k6draavnwch5"
+TournamentsRouter="*uid://c7c6h2okh2sdp"
+RoundsRouter="*uid://cq6yl5wlbaa14"
+ScoreTablesRouter="*uid://csjsxow2wnbcs"
+ScoreColumnsRouter="*uid://0tydw4jalerx"
+ScoresRouter="*uid://bjgu8omr7hblg"
+ChartColumnsRouter="*uid://j21dbuhrcx7k"
+ChartsRouter="*uid://dk3chbd4t87ws"
 
 [debug]
 
