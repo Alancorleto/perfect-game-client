@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cymjguv4mjc17" path="res://scenes/screens/user_account/login_screen.tscn" id="3_8qm6s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jo2o2"]
-bg_color = Color(0.10249352, 0.10249352, 0.10249349, 1)
+bg_color = Color(0.18956691, 0.18956691, 0.18956688, 1)
 border_width_left = 8
 border_width_top = 8
 border_width_right = 8
@@ -37,7 +37,7 @@ size_flags_vertical = 3
 [node name="LoginScreen" parent="VBoxContainer/CurrentScreenContainer" unique_id=1169402088 instance=ExtResource("3_8qm6s")]
 layout_mode = 1
 
-[node name="LoadingSign" type="MarginContainer" parent="." unique_id=161866297]
+[node name="LoadingSign" type="PanelContainer" parent="." unique_id=1395884756]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -60,3 +60,53 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Loading..."
 horizontal_alignment = 1
+
+[node name="Dialog" type="PanelContainer" parent="." unique_id=382492830]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Dialog" unique_id=1394843290]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_jo2o2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Dialog/PanelContainer" unique_id=1409464743]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialog/PanelContainer/MarginContainer" unique_id=817033562]
+layout_mode = 2
+theme_override_constants/separation = 48
+alignment = 1
+
+[node name="ErrorLabel" type="Label" parent="Dialog/PanelContainer/MarginContainer/VBoxContainer" unique_id=1518998787]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.18899998, 0.18899998, 1)
+text = "ERROR"
+horizontal_alignment = 1
+
+[node name="DialogMessageLabel" type="Label" parent="Dialog/PanelContainer/MarginContainer/VBoxContainer" unique_id=1868038070]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "Dialog Message"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ConfirmButton" type="Button" parent="Dialog/PanelContainer/MarginContainer/VBoxContainer" unique_id=1312053003]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "OK"

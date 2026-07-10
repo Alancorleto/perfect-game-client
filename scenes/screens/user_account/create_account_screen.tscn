@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://ci3b6bu4oomjm"]
+[gd_scene format=3 uid="uid://d3x8wyhuod05e"]
+
+[ext_resource type="Script" uid="uid://dbg5ackaaijsk" path="res://scenes/screens/user_account/create_account_screen.gd" id="1_ptyxl"]
 
 [sub_resource type="Theme" id="Theme_54veb"]
 default_font_size = 48
@@ -11,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_54veb")
+script = ExtResource("1_ptyxl")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=536743048]
 layout_mode = 1
@@ -32,28 +35,33 @@ theme_override_constants/separation = 36
 alignment = 1
 
 [node name="EmailField" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=638598766]
+unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_54veb")
 placeholder_text = "email"
 
 [node name="EmailField2" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=1018224518]
+unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_54veb")
 placeholder_text = "repeat email"
 
 [node name="PasswordField" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=204709168]
+unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_54veb")
 placeholder_text = "password"
 secret = true
 
 [node name="PasswordField2" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=240796111]
+unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_54veb")
 placeholder_text = "repeat password"
 secret = true
 
 [node name="CreateAccountButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=699779393]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
