@@ -8,7 +8,8 @@ var response_code: int
 var response_headers: PackedStringArray
 var response_body: Variant
 var access_token: String = ""
-var common_headers: PackedStringArray = ["Content-Type: application/json"]
+
+var JSON_HEADER: String = "Content-Type: application/json"
 
 
 func _ready() -> void:
@@ -62,23 +63,23 @@ func make_request_with_body(method : HTTPClient.Method, route: String, body: Var
 
 
 func GET(route: String, body: Variant = null) -> void:
-	await make_request(HTTPClient.METHOD_GET, route, body, common_headers)
+	await make_request(HTTPClient.METHOD_GET, route, body, [JSON_HEADER])
 
 
 func POST(route: String, body: Variant = null) -> void:
-	await make_request(HTTPClient.METHOD_POST, route, body, common_headers)
+	await make_request(HTTPClient.METHOD_POST, route, body, [JSON_HEADER])
 
 
 func PATCH(route: String, body: Variant = null) -> void:
-	await make_request(HTTPClient.METHOD_PATCH, route, body, common_headers)
+	await make_request(HTTPClient.METHOD_PATCH, route, body, [JSON_HEADER])
 
 
 func PUT(route: String, body: Variant = null) -> void:
-	await make_request(HTTPClient.METHOD_PUT, route, body, common_headers)
+	await make_request(HTTPClient.METHOD_PUT, route, body, [JSON_HEADER])
 
 
 func DELETE(route: String, body: Variant = null) -> void:
-	await make_request(HTTPClient.METHOD_DELETE, route, body, common_headers)
+	await make_request(HTTPClient.METHOD_DELETE, route, body, [JSON_HEADER])
 
 
 func success() -> bool:
@@ -100,6 +101,51 @@ func get_response_body() -> Variant:
 	return response_body
 
 
+func load_image_from_url(image_url: String) -> ImageTexture:
+	if image_url == "":
+		return null
+
+	var scene_tree: SceneTree = get_tree()
+	if scene_tree == null:
+		return null
+
+	var error := request(image_url)
+	if error != OK:
+		return null
+
+	var result: Array = await request_completed
+
+	if result.size() < 4:
+		return null
+
+	var request_result: int = result[0]
+	var image_response_code: int = result[1]
+	var body: PackedByteArray = result[3]
+
+	if request_result != HTTPRequest.RESULT_SUCCESS or image_response_code < 200 or image_response_code >= 300:
+		return null
+
+	var image := Image.new()
+	var extension: String = image_url.get_extension().to_lower()
+	var load_error := OK
+
+	if extension in ["jpg", "jpeg"]:
+		load_error = image.load_jpg_from_buffer(body)
+	elif extension == "webp":
+		load_error = image.load_webp_from_buffer(body)
+	else:
+		load_error = image.load_png_from_buffer(body)
+		if load_error != OK:
+			load_error = image.load_jpg_from_buffer(body)
+			if load_error != OK:
+				load_error = image.load_webp_from_buffer(body)
+
+	if load_error != OK:
+		return null
+
+	return ImageTexture.create_from_image(image)
+
+
 func set_access_token(token: String) -> void:
 	access_token = token
 
@@ -119,18 +165,22 @@ func _on_request_completed(
 	body: PackedByteArray
 ) -> void:
 	print("--- NEW RESPONSE ---")
-	print("Request result: " + _find_native_enum_label("HTTPRequest", "Result", result))
-	print("Response code: " + _find_native_enum_label("HTTPClient", "ResponseCode", code) + " (" + str(code) + ")")
-	print("Response headers: " + str(headers))
-	var body_string: String = body.get_string_from_utf8()
-	if body_string != "":
-		print("Body: " + JSON.stringify(JSON.parse_string(body_string), "\t"))
-	print("")
 
 	response_result = result
+	print("Request result: " + _find_native_enum_label("HTTPRequest", "Result", result))
+
 	response_code = code
+	print("Response code: " + _find_native_enum_label("HTTPClient", "ResponseCode", code) + " (" + str(code) + ")")
+
 	response_headers = headers
-	if response_code >= 200 and response_code < 300 and response_code != 204:
-		response_body = JSON.parse_string(body_string)
-	else:
-		response_body = null
+	print("Response headers: " + str(headers))
+
+	if JSON_HEADER in headers:
+		var body_string: String = body.get_string_from_utf8()
+		if body_string != "":
+			print("Body: " + JSON.stringify(JSON.parse_string(body_string), "\t"))
+		print("")
+		if response_code >= 200 and response_code < 300 and response_code != 204:
+			response_body = JSON.parse_string(body_string)
+		else:
+			response_body = null

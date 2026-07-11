@@ -29,6 +29,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 texture = ExtResource("3_bhvuf")
+expand_mode = 1
 stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=2040217086]

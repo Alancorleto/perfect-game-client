@@ -11,3 +11,5 @@ func populate(event: EventResponse) -> void:
 	name_label.text = event.name
 	date_label.text = event.start_date
 	location_label.text = event.location
+
+	logo_rect.texture = await HTTPRequests.load_image_from_url(event.logo_url)
