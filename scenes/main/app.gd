@@ -3,6 +3,8 @@ extends Control
 
 signal dialog_confirmed
 
+@export var first_screen_scene: PackedScene
+
 @onready var current_screen_container: Control = %CurrentScreenContainer
 
 @onready var loading_label: Label = %LoadingLabel
@@ -36,11 +38,16 @@ static func show_error_dialog(message: String) -> void:
 	await app._show_dialog(message, true)
 
 
-func _ready() -> void:
+func _init() -> void:
 	app = self
+
+
+func _ready() -> void:
+	confirm_button.pressed.connect(_confirm_dialog)
 	loading_sign.hide()
 	dialog.hide()
-	confirm_button.pressed.connect(_confirm_dialog)
+	var first_creen := first_screen_scene.instantiate()
+	current_screen_container.add_child(first_creen)
 
 
 func _change_screen(new_screen_path: String) -> void:

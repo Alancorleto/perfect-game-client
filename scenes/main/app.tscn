@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_8qm6s"]
 [ext_resource type="Script" uid="uid://uacx8stgbidp" path="res://scenes/main/app.gd" id="1_kjr42"]
-[ext_resource type="PackedScene" uid="uid://cymjguv4mjc17" path="res://scenes/screens/user_account/login_screen.tscn" id="3_8qm6s"]
+[ext_resource type="PackedScene" uid="uid://b0ysojyu1pcur" path="res://scenes/screens/select_event/select_event_screen.tscn" id="3_8qm6s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jo2o2"]
 bg_color = Color(0.18956691, 0.18956691, 0.18956688, 1)
@@ -20,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_8qm6s")
 script = ExtResource("1_kjr42")
+first_screen_scene = ExtResource("3_8qm6s")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=74394759]
 layout_mode = 1
@@ -33,9 +34,6 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-
-[node name="LoginScreen" parent="VBoxContainer/CurrentScreenContainer" unique_id=1169402088 instance=ExtResource("3_8qm6s")]
-layout_mode = 1
 
 [node name="LoadingSign" type="PanelContainer" parent="." unique_id=1395884756]
 unique_name_in_owner = true
