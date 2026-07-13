@@ -153,7 +153,11 @@ func list_players_in_tournament(tournament_id: String) -> Array[PlayerInTourname
 	if HTTPRequests.failed():
 		return []
 
-	return HTTPRequests.get_response_body()
+	var players_in_tournament: Array[PlayerInTournament] = []
+	for player_json: Dictionary in HTTPRequests.get_response_body():
+		players_in_tournament.append(PlayerInTournament.new(player_json))
+
+	return players_in_tournament
 
 
 func update_player_in_tournament(tournament_id: String, player_id: String, player_in_tournament: PlayerInTournamentUpdate) -> PlayerInTournament:

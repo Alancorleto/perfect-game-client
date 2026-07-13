@@ -6,7 +6,7 @@ extends PanelContainer
 @onready var name_panel: Label = %NamePanel
 @onready var delete_button: TextureButton = %DeleteButton
 
-const TOURNAMENT_SCREEN_SCENE_PATH := ""
+const TOURNAMENT_SCREEN_SCENE_PATH := "res://scenes/screens/tournament/tournament_screen.tscn"
 
 
 func populate(tournament: Tournament) -> void:

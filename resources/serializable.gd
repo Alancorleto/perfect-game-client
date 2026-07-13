@@ -14,3 +14,8 @@ func to_dictionary() -> Dictionary:
 		if property["usage"] & PROPERTY_USAGE_SCRIPT_VARIABLE:
 			dict[property["name"]] = get(property["name"])
 	return dict
+
+
+@warning_ignore("unused_parameter")
+func _serialize_property(property_name: String, value: Variant) -> bool:
+	return false

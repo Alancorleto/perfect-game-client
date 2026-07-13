@@ -1,32 +1,20 @@
-[gd_scene format=3 uid="uid://brywmwodqxcnh"]
+[gd_scene format=3 uid="uid://bf7bsi13vo875"]
 
-[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_s2hor"]
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_hvkgv"]
+[ext_resource type="Script" uid="uid://c4vi4n6gqt4ug" path="res://scenes/screens/tournament/tournament_screen.gd" id="2_m0rxb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlow6"]
 bg_color = Color(0.08208982, 0.082089834, 0.082089774, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2hor"]
-bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wq2yk"]
-bg_color = Color(0.27075, 0.57, 0.1425, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-
-[node name="Control" type="Control" unique_id=2088573133]
+[node name="TournamentScreen" type="Control" unique_id=2088573133]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_s2hor")
+theme = ExtResource("1_hvkgv")
+script = ExtResource("2_m0rxb")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1028947557]
 layout_mode = 1
@@ -236,30 +224,6 @@ text = "    "
 
 [node name="HSeparator" type="HSeparator" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayersPanel/VBoxContainer/PlayersTable" unique_id=1724416804]
 layout_mode = 2
-
-[node name="PlayerExample" type="HBoxContainer" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayersPanel/VBoxContainer/PlayersTable" unique_id=1755494070]
-visible = false
-layout_mode = 2
-theme_override_constants/separation = 64
-
-[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayersPanel/VBoxContainer/PlayersTable/PlayerExample" unique_id=1891031764]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Player 1"
-
-[node name="Button" type="Button" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayersPanel/VBoxContainer/PlayersTable/PlayerExample" unique_id=850775366]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_s2hor")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_wq2yk")
-theme_override_styles/hover = SubResource("StyleBoxFlat_s2hor")
-toggle_mode = true
-text = "     "
-
-[node name="Label2" type="Label" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayersPanel/VBoxContainer/PlayersTable/PlayerExample" unique_id=848861427]
-layout_mode = 2
-text = "🗑️"
 
 [node name="PlayersContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayersPanel/VBoxContainer/PlayersTable" unique_id=1081688885]
 unique_name_in_owner = true

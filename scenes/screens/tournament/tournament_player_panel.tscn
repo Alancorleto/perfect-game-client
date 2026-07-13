@@ -1,20 +1,34 @@
-[gd_scene format=3 uid="uid://b28ml78dlcpei"]
+[gd_scene format=3 uid="uid://cw3vlbt62c5dd"]
 
-[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_mv4s2"]
-[ext_resource type="Script" uid="uid://brx3nul2vopg8" path="res://scenes/screens/event/event_organizer_panel.gd" id="2_mv4s2"]
-[ext_resource type="Texture2D" uid="uid://1rnkdgu10rq3" path="res://assets/icons/remove_icon.svg" id="3_to08u"]
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_u4q52"]
+[ext_resource type="Script" uid="uid://b17occsss75we" path="res://scenes/screens/tournament/tournament_player_panel.gd" id="2_u4q52"]
+[ext_resource type="Texture2D" uid="uid://1rnkdgu10rq3" path="res://assets/icons/remove_icon.svg" id="3_j4i82"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jo2o2"]
 
-[node name="EventOrganizerPanel" type="PanelContainer" unique_id=305856583]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4q52"]
+bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g15t5"]
+bg_color = Color(0.27075, 0.57, 0.1425, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[node name="TournamentPlayerPanel" type="PanelContainer" unique_id=305856583]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 67.0
 grow_horizontal = 2
 size_flags_horizontal = 3
-theme = ExtResource("1_mv4s2")
+theme = ExtResource("1_u4q52")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_jo2o2")
-script = ExtResource("2_mv4s2")
+script = ExtResource("2_u4q52")
 
 [node name="Button" type="Button" parent="." unique_id=791378429]
 unique_name_in_owner = true
@@ -39,10 +53,22 @@ custom_minimum_size = Vector2(500, 68)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Organizer Nickname"
+text = "Player Nickname"
 vertical_alignment = 1
 autowrap_mode = 3
 text_overrun_behavior = 5
+
+[node name="PaidCheckButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1826371306]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_u4q52")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g15t5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u4q52")
+toggle_mode = true
+text = "     "
 
 [node name="DeleteButtonMargin" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=646464605]
 unique_name_in_owner = true
@@ -59,7 +85,7 @@ theme_override_constants/margin_bottom = 12
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
-texture_normal = ExtResource("3_to08u")
-texture_pressed = ExtResource("3_to08u")
-texture_hover = ExtResource("3_to08u")
+texture_normal = ExtResource("3_j4i82")
+texture_pressed = ExtResource("3_j4i82")
+texture_hover = ExtResource("3_j4i82")
 stretch_mode = 5
