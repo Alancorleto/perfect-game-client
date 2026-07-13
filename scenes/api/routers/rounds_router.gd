@@ -3,48 +3,48 @@ extends Node
 var route_base = "/rounds"
 
 
-func list_rounds() -> Array[RoundResponse]:
+func list_rounds() -> Array[Round]:
 	var route: String = route_base
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return []
 
-	var rounds: Array[RoundResponse] = []
+	var rounds: Array[Round] = []
 	for round_json: Dictionary in HTTPRequests.get_response_body():
-		rounds.append(RoundResponse.new(round_json))
+		rounds.append(Round.new(round_json))
 
 	return rounds
 
 
-func get_round(round_id: String) -> RoundResponse:
+func get_round(round_id: String) -> Round:
 	var route: String = "%s/%s" % [route_base, round_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return null
 
-	return RoundResponse.new(HTTPRequests.get_response_body())
+	return Round.new(HTTPRequests.get_response_body())
 
 
-func create_round(round: RoundCreate) -> RoundResponse:
+func create_round(round: RoundCreate) -> Round:
 	var route: String = route_base
 
 	await HTTPRequests.POST(route, round.to_dictionary())
 	if HTTPRequests.failed():
 		return null
 
-	return RoundResponse.new(HTTPRequests.get_response_body())
+	return Round.new(HTTPRequests.get_response_body())
 
 
-func update_round(round_id: String, round: RoundUpdate) -> RoundResponse:
+func update_round(round_id: String, round: RoundUpdate) -> Round:
 	var route: String = "%s/%s" % [route_base, round_id]
 
 	await HTTPRequests.PATCH(route, round.to_dictionary())
 	if HTTPRequests.failed():
 		return null
 
-	return RoundResponse.new(HTTPRequests.get_response_body())
+	return Round.new(HTTPRequests.get_response_body())
 
 
 func delete_round(round_id: String) -> void:
@@ -87,64 +87,64 @@ func delete_all_scores_in_round(round_id: String) -> void:
 	await HTTPRequests.DELETE(route)
 
 
-func start_round(round_id: String) -> RoundResponse:
+func start_round(round_id: String) -> Round:
 	var route: String = "%s/%s/start" % [route_base, round_id]
 
 	await HTTPRequests.POST(route)
 	if HTTPRequests.failed():
 		return null
 
-	return RoundResponse.new(HTTPRequests.get_response_body())
+	return Round.new(HTTPRequests.get_response_body())
 
 
-func cancel_round_start(round_id: String) -> RoundResponse:
+func cancel_round_start(round_id: String) -> Round:
 	var route: String = "%s/%s/cancel-start" % [route_base, round_id]
 
 	await HTTPRequests.POST(route)
 	if HTTPRequests.failed():
 		return null
 
-	return RoundResponse.new(HTTPRequests.get_response_body())
+	return Round.new(HTTPRequests.get_response_body())
 
 
-func pause_round(round_id: String) -> RoundResponse:
+func pause_round(round_id: String) -> Round:
 	var route: String = "%s/%s/pause" % [route_base, round_id]
 
 	await HTTPRequests.POST(route)
 	if HTTPRequests.failed():
 		return null
 
-	return RoundResponse.new(HTTPRequests.get_response_body())
+	return Round.new(HTTPRequests.get_response_body())
 
 
-func unpause_round(round_id: String) -> RoundResponse:
+func unpause_round(round_id: String) -> Round:
 	var route: String = "%s/%s/unpause" % [route_base, round_id]
 
 	await HTTPRequests.POST(route)
 	if HTTPRequests.failed():
 		return null
 
-	return RoundResponse.new(HTTPRequests.get_response_body())
+	return Round.new(HTTPRequests.get_response_body())
 
 
-func finish_round(round_id: String) -> RoundResponse:
+func finish_round(round_id: String) -> Round:
 	var route: String = "%s/%s/finish" % [route_base, round_id]
 
 	await HTTPRequests.POST(route)
 	if HTTPRequests.failed():
 		return null
 
-	return RoundResponse.new(HTTPRequests.get_response_body())
+	return Round.new(HTTPRequests.get_response_body())
 
 
-func cancel_round_finish(round_id: String) -> RoundResponse:
+func cancel_round_finish(round_id: String) -> Round:
 	var route: String = "%s/%s/cancel-finish" % [route_base, round_id]
 
 	await HTTPRequests.POST(route)
 	if HTTPRequests.failed():
 		return null
 
-	return RoundResponse.new(HTTPRequests.get_response_body())
+	return Round.new(HTTPRequests.get_response_body())
 
 
 func get_qualifying_players_in_round(round_id: String) -> Array[Player]:

@@ -180,27 +180,27 @@ func remove_player_from_tournament(tournament_id: String, player_id: String) -> 
 	return HTTPRequests.get_response_body()
 
 
-func list_rounds_in_tournament(tournament_id: String) -> Array[RoundResponse]:
+func list_rounds_in_tournament(tournament_id: String) -> Array[Round]:
 	var route: String = "%s/%s/rounds" % [route_base, tournament_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return []
 
-	var rounds: Array[RoundResponse] = []
+	var rounds: Array[Round] = []
 	for round_json: Dictionary in HTTPRequests.get_response_body():
-		rounds.append(RoundResponse.new(round_json))
+		rounds.append(Round.new(round_json))
 	return rounds
 
 
-func change_round_order_in_tournament(tournament_id: String, new_round_order: Array[String]) -> Array[RoundResponse]:
+func change_round_order_in_tournament(tournament_id: String, new_round_order: Array[String]) -> Array[Round]:
 	var route: String = "%s/%s/rounds/order" % [route_base, tournament_id]
 
 	await HTTPRequests.PUT(route, new_round_order)
 	if HTTPRequests.failed():
 		return []
 
-	var rounds: Array[RoundResponse] = []
+	var rounds: Array[Round] = []
 	for round_json: Dictionary in HTTPRequests.get_response_body():
-		rounds.append(RoundResponse.new(round_json))
+		rounds.append(Round.new(round_json))
 	return rounds

@@ -1,5 +1,8 @@
-class_name RoundBase
+class_name Round
 extends Serializable
+
+var id = ""
+var tournament_id = ""
 
 var name = null
 var levels = null
