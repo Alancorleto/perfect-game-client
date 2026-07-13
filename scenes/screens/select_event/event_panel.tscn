@@ -4,14 +4,21 @@
 [ext_resource type="Script" uid="uid://qeu3wbt6bm18" path="res://scenes/screens/select_event/event_panel.gd" id="2_3n0kp"]
 [ext_resource type="Texture2D" uid="uid://b8jpwo1slvb55" path="res://icon.svg" id="3_bhvuf"]
 
-[node name="EventPanel" type="PanelContainer" unique_id=1093113055]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jo2o2"]
+
+[node name="EventPanel" type="PanelContainer" unique_id=305856583]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 209.0
+offset_bottom = 294.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_4xakw")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jo2o2")
 script = ExtResource("2_3n0kp")
+
+[node name="Button" type="Button" parent="." unique_id=791378429]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1117251940]
 layout_mode = 2

@@ -3,7 +3,7 @@ extends Node
 var route_base = "/events"
 
 
-func list_events(country_code: String = "") -> Array[EventResponse]:
+func list_events(country_code: String = "") -> Array[Event]:
 	var route: String = route_base
 	if country_code != "":
 		route += "?country_code=%s" % country_code
@@ -12,43 +12,53 @@ func list_events(country_code: String = "") -> Array[EventResponse]:
 	if HTTPRequests.failed():
 		return []
 
-	var events: Array[EventResponse] = []
+	var events: Array[Event] = []
 
 	for event_json: Dictionary in HTTPRequests.get_response_body():
-		var event: EventResponse = EventResponse.new(event_json)
+		var event: Event = Event.new(event_json)
+		await event.try_load_logo()
 		events.append(event)
 
 	return events
 
 
-func get_event(event_id: String) -> EventResponse:
+func get_event(event_id: String) -> Event:
 	var route: String = "%s/%s" % [route_base, event_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return null
 
-	return EventResponse.new(HTTPRequests.get_response_body())
+	var event := Event.new(HTTPRequests.get_response_body())
+	await event.try_load_logo()
+	
+	return event
 
 
-func create_event(event: EventCreate) -> EventResponse:
+func create_event(event_create: EventCreate) -> Event:
 	var route: String = route_base
 
-	await HTTPRequests.POST(route, event.to_dictionary())
+	await HTTPRequests.POST(route, event_create.to_dictionary())
 	if HTTPRequests.failed():
 		return null
+	
+	var event := Event.new(HTTPRequests.get_response_body())
+	await event.try_load_logo()
+	
+	return event
 
-	return EventResponse.new(HTTPRequests.get_response_body())
 
-
-func update_event(event_id: String, event: EventUpdate) -> EventResponse:
+func update_event(event_id: String, event_update: EventUpdate) -> Event:
 	var route: String = "%s/%s" % [route_base, event_id]
 
-	await HTTPRequests.PATCH(route, event.to_dictionary())
+	await HTTPRequests.PATCH(route, event_update.to_dictionary())
 	if HTTPRequests.failed():
 		return null
 
-	return EventResponse.new(HTTPRequests.get_response_body())
+	var event := Event.new(HTTPRequests.get_response_body())
+	await event.try_load_logo()
+	
+	return event
 
 
 func delete_event(event_id: String) -> void:
@@ -121,7 +131,7 @@ func remove_organizer_from_event(event_id: String, player_id: String) -> Array[P
 	return organizers
 
 
-func upload_event_logo(event_id: String, logo: PackedByteArray) -> EventResponse:
+func upload_event_logo(event_id: String, logo: PackedByteArray) -> Event:
 	var route: String = "%s/%s/logo" % [route_base, event_id]
 	var body: Dictionary = {
 		"logo": logo,
@@ -131,4 +141,7 @@ func upload_event_logo(event_id: String, logo: PackedByteArray) -> EventResponse
 	if HTTPRequests.failed():
 		return null
 
-	return EventResponse.new(HTTPRequests.get_response_body())
+	var event := Event.new(HTTPRequests.get_response_body())
+	await event.try_load_logo()
+	
+	return event
