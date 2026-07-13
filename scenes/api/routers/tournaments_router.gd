@@ -55,20 +55,20 @@ func delete_tournament(tournament_id: String) -> void:
 	await HTTPRequests.DELETE(route)
 
 
-func add_guest_player_to_tournament(tournament_id: String, player_id: String) -> Array[PlayerResponse]:
+func add_guest_player_to_tournament(tournament_id: String, player_id: String) -> Array[Player]:
 	var route: String = "%s/%s/players/%s" % [route_base, tournament_id, player_id]
 
 	await HTTPRequests.POST(route)
 	if HTTPRequests.failed():
 		return []
 
-	var players: Array[PlayerResponse] = []
+	var players: Array[Player] = []
 	for player_json: Dictionary in HTTPRequests.get_response_body():
-		players.append(PlayerResponse.new(player_json))
+		players.append(Player.new(player_json))
 	return players
 
 
-func bulk_add_guest_players_to_tournament(tournament_id: String, player_ids: Array[String]) -> Array[PlayerResponse]:
+func bulk_add_guest_players_to_tournament(tournament_id: String, player_ids: Array[String]) -> Array[Player]:
 	var route: String = "%s/%s/players/bulk" % [route_base, tournament_id]
 	var body: Array = player_ids
 
@@ -76,9 +76,9 @@ func bulk_add_guest_players_to_tournament(tournament_id: String, player_ids: Arr
 	if HTTPRequests.failed():
 		return []
 
-	var players: Array[PlayerResponse] = []
+	var players: Array[Player] = []
 	for player_json: Dictionary in HTTPRequests.get_response_body():
-		players.append(PlayerResponse.new(player_json))
+		players.append(Player.new(player_json))
 	return players
 
 

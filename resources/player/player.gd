@@ -1,5 +1,9 @@
-class_name PlayerBase
+class_name Player
 extends Serializable
+
+var id = ""
+var user_id = null
+var guest_event_id = null
 
 var nickname = ""
 var country_code = ""

@@ -147,15 +147,15 @@ func cancel_round_finish(round_id: String) -> RoundResponse:
 	return RoundResponse.new(HTTPRequests.get_response_body())
 
 
-func get_qualifying_players_in_round(round_id: String) -> Array[PlayerResponse]:
+func get_qualifying_players_in_round(round_id: String) -> Array[Player]:
 	var route: String = "%s/%s/qualifying-players" % [route_base, round_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return []
 
-	var players: Array[PlayerResponse] = []
+	var players: Array[Player] = []
 	for player_json: Dictionary in HTTPRequests.get_response_body():
-		players.append(PlayerResponse.new(player_json))
+		players.append(Player.new(player_json))
 
 	return players

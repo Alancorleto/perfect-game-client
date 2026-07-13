@@ -81,58 +81,58 @@ func update_score_column_order_in_score_table(score_table_id: String, new_order:
 	return score_columns
 
 
-func bulk_add_players_to_score_table(score_table_id: String, player_ids: Array[String]) -> Array[PlayerResponse]:
+func bulk_add_players_to_score_table(score_table_id: String, player_ids: Array[String]) -> Array[Player]:
 	var route: String = "%s/%s/players/bulk" % [route_base, score_table_id]
 
 	await HTTPRequests.POST(route, player_ids)
 	if HTTPRequests.failed():
 		return []
 
-	var players: Array[PlayerResponse] = []
+	var players: Array[Player] = []
 	for player_json: Dictionary in HTTPRequests.get_response_body():
-		players.append(PlayerResponse.new(player_json))
+		players.append(Player.new(player_json))
 
 	return players
 
 
-func list_players_in_score_table(score_table_id: String) -> Array[PlayerResponse]:
+func list_players_in_score_table(score_table_id: String) -> Array[Player]:
 	var route: String = "%s/%s/players" % [route_base, score_table_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return []
 
-	var players: Array[PlayerResponse] = []
+	var players: Array[Player] = []
 	for player_json: Dictionary in HTTPRequests.get_response_body():
-		players.append(PlayerResponse.new(player_json))
+		players.append(Player.new(player_json))
 
 	return players
 
 
-func update_player_order_in_score_table(score_table_id: String, player_ids: Array[String]) -> Array[PlayerResponse]:
+func update_player_order_in_score_table(score_table_id: String, player_ids: Array[String]) -> Array[Player]:
 	var route: String = "%s/%s/players/order" % [route_base, score_table_id]
 
 	await HTTPRequests.PUT(route, player_ids)
 	if HTTPRequests.failed():
 		return []
 
-	var players: Array[PlayerResponse] = []
+	var players: Array[Player] = []
 	for player_json: Dictionary in HTTPRequests.get_response_body():
-		players.append(PlayerResponse.new(player_json))
+		players.append(Player.new(player_json))
 
 	return players
 
 
-func remove_player_from_score_table(score_table_id: String, player_id: String) -> Array[PlayerResponse]:
+func remove_player_from_score_table(score_table_id: String, player_id: String) -> Array[Player]:
 	var route: String = "%s/%s/players/%s" % [route_base, score_table_id, player_id]
 
 	await HTTPRequests.DELETE(route)
 	if HTTPRequests.failed():
 		return []
 
-	var players: Array[PlayerResponse] = []
+	var players: Array[Player] = []
 	for player_json: Dictionary in HTTPRequests.get_response_body():
-		players.append(PlayerResponse.new(player_json))
+		players.append(Player.new(player_json))
 
 	return players
 
@@ -151,15 +151,15 @@ func get_score_table_results(score_table_id: String) -> Array[PlayerResults]:
 	return results
 
 
-func list_candidate_players_for_score_table(score_table_id: String) -> Array[PlayerResponse]:
+func list_candidate_players_for_score_table(score_table_id: String) -> Array[Player]:
 	var route: String = "%s/%s/candidate-players" % [route_base, score_table_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return []
 
-	var players: Array[PlayerResponse] = []
+	var players: Array[Player] = []
 	for player_json: Dictionary in HTTPRequests.get_response_body():
-		players.append(PlayerResponse.new(player_json))
+		players.append(Player.new(player_json))
 
 	return players

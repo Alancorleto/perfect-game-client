@@ -83,49 +83,49 @@ func list_event_tournaments(event_id: String) -> Array[Tournament]:
 	return tournaments
 
 
-func list_event_organizers(event_id: String) -> Array[PlayerResponse]:
+func list_event_organizers(event_id: String) -> Array[Player]:
 	var route: String = "%s/%s/organizers" % [route_base, event_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return []
 
-	var organizers: Array[PlayerResponse] = []
+	var organizers: Array[Player] = []
 
 	for player_json: Dictionary in HTTPRequests.get_response_body():
-		var player: PlayerResponse = PlayerResponse.new(player_json)
+		var player: Player = Player.new(player_json)
 		organizers.append(player)
 
 	return organizers
 
 
-func add_organizer_to_event(event_id: String, player_id: String) -> Array[PlayerResponse]:
+func add_organizer_to_event(event_id: String, player_id: String) -> Array[Player]:
 	var route: String = "%s/%s/organizers/%s" % [route_base, event_id, player_id]
 
 	await HTTPRequests.POST(route)
 	if HTTPRequests.failed():
 		return []
 
-	var organizers: Array[PlayerResponse] = []
+	var organizers: Array[Player] = []
 
 	for player_json: Dictionary in HTTPRequests.get_response_body():
-		var player: PlayerResponse = PlayerResponse.new(player_json)
+		var player: Player = Player.new(player_json)
 		organizers.append(player)
 
 	return organizers
 
 
-func remove_organizer_from_event(event_id: String, player_id: String) -> Array[PlayerResponse]:
+func remove_organizer_from_event(event_id: String, player_id: String) -> Array[Player]:
 	var route: String = "%s/%s/organizers/%s" % [route_base, event_id, player_id]
 
 	await HTTPRequests.DELETE(route)
 	if HTTPRequests.failed():
 		return []
 
-	var organizers: Array[PlayerResponse] = []
+	var organizers: Array[Player] = []
 
 	for player_json: Dictionary in HTTPRequests.get_response_body():
-		var player: PlayerResponse = PlayerResponse.new(player_json)
+		var player: Player = Player.new(player_json)
 		organizers.append(player)
 
 	return organizers

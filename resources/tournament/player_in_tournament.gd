@@ -1,5 +1,5 @@
 class_name PlayerInTournament
 extends Serializable
 
-var player: PlayerResponse
+var player: Player
 var has_paid_entry: bool = false
