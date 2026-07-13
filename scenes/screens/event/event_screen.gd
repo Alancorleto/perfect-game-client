@@ -23,6 +23,12 @@ func _ready() -> void:
 
 	event = Globals.current_event
 
+	name_label.text = event.name
+	date_label.text = event.start_date
+	location_label.text = event.location
+	description_label.text = event.description
+	logo.texture = event.logo
+
 	await _populate_tournaments()
 
 	await _populate_organizers()
