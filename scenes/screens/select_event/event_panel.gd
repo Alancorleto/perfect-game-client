@@ -7,7 +7,7 @@ extends PanelContainer
 @onready var logo_rect: TextureRect = %LogoRect
 @onready var button: Button = %Button
 
-const EVENT_SCREEN_SCENE_PATH := ""
+const EVENT_SCREEN_SCENE_PATH := "res://scenes/screens/event/event_screen.tscn"
 
 
 func populate(event: Event) -> void:
@@ -15,7 +15,7 @@ func populate(event: Event) -> void:
 	date_label.text = event.start_date
 	location_label.text = event.location
 	logo_rect.texture = event.logo
-	
+
 	button.pressed.connect(_go_to_event_screen.bind(event))
 
 

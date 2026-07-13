@@ -1,3 +1,4 @@
+class_name TournamentPanel
 extends PanelContainer
 
 @onready var button: Button = %Button

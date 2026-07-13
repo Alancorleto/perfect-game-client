@@ -22,6 +22,7 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1117251940]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
@@ -29,12 +30,14 @@ theme_override_constants/margin_bottom = 32
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1698406944]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 32
 
 [node name="LogoRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=2038742879]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("3_bhvuf")
 expand_mode = 1
 stretch_mode = 5
@@ -42,6 +45,7 @@ stretch_mode = 5
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=2040217086]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
 [node name="NameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1535868605]
 unique_name_in_owner = true
