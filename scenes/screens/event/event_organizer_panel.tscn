@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://b28ml78dlcpei"]
+
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_mv4s2"]
+[ext_resource type="Script" uid="uid://brx3nul2vopg8" path="res://scenes/screens/event/event_organizer_panel.gd" id="2_mv4s2"]
+[ext_resource type="Texture2D" uid="uid://1rnkdgu10rq3" path="res://assets/icons/remove_icon.svg" id="3_to08u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jo2o2"]
+
+[node name="EventOrganizerPanel" type="PanelContainer" unique_id=305856583]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 67.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_mv4s2")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jo2o2")
+script = ExtResource("2_mv4s2")
+
+[node name="Button" type="Button" parent="." unique_id=791378429]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1752582044]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1946530286]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 24
+
+[node name="NamePanel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=2010459981]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Tournament Name"
+autowrap_mode = 3
+text_overrun_behavior = 5
+
+[node name="DeleteButtonMargin" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=646464605]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="DeleteButton" type="TextureButton" parent="MarginContainer/HBoxContainer/DeleteButtonMargin" unique_id=174230713]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+texture_normal = ExtResource("3_to08u")
+texture_pressed = ExtResource("3_to08u")
+texture_hover = ExtResource("3_to08u")
+stretch_mode = 5
