@@ -67,17 +67,17 @@ func delete_event(event_id: String) -> void:
 	await HTTPRequests.DELETE(route)
 
 
-func list_event_tournaments(event_id: String) -> Array[TournamentResponse]:
+func list_event_tournaments(event_id: String) -> Array[Tournament]:
 	var route: String = "%s/%s/tournaments" % [route_base, event_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return []
 
-	var tournaments: Array[TournamentResponse] = []
+	var tournaments: Array[Tournament] = []
 
 	for tournament_json: Dictionary in HTTPRequests.get_response_body():
-		var tournament: TournamentResponse = TournamentResponse.new(tournament_json)
+		var tournament: Tournament = Tournament.new(tournament_json)
 		tournaments.append(tournament)
 
 	return tournaments

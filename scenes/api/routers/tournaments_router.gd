@@ -3,50 +3,50 @@ extends Node
 var route_base = "/tournaments"
 
 
-func list_tournaments() -> Array[TournamentResponse]:
+func list_tournaments() -> Array[Tournament]:
 	var route: String = route_base
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return []
 
-	var tournaments: Array[TournamentResponse] = []
+	var tournaments: Array[Tournament] = []
 
 	for tournament_json: Dictionary in HTTPRequests.get_response_body():
-		var tournament: TournamentResponse = TournamentResponse.new(tournament_json)
+		var tournament: Tournament = Tournament.new(tournament_json)
 		tournaments.append(tournament)
 
 	return tournaments
 
 
-func get_tournament(tournament_id: String) -> TournamentResponse:
+func get_tournament(tournament_id: String) -> Tournament:
 	var route: String = "%s/%s" % [route_base, tournament_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return null
 
-	return TournamentResponse.new(HTTPRequests.get_response_body())
+	return Tournament.new(HTTPRequests.get_response_body())
 
 
-func create_tournament(tournament: TournamentCreate) -> TournamentResponse:
+func create_tournament(tournament: TournamentCreate) -> Tournament:
 	var route: String = route_base
 
 	await HTTPRequests.POST(route, tournament.to_dictionary())
 	if HTTPRequests.failed():
 		return null
 
-	return TournamentResponse.new(HTTPRequests.get_response_body())
+	return Tournament.new(HTTPRequests.get_response_body())
 
 
-func update_tournament(tournament_id: String, tournament: TournamentUpdate) -> TournamentResponse:
+func update_tournament(tournament_id: String, tournament: TournamentUpdate) -> Tournament:
 	var route: String = "%s/%s" % [route_base, tournament_id]
 
 	await HTTPRequests.PATCH(route, tournament.to_dictionary())
 	if HTTPRequests.failed():
 		return null
 
-	return TournamentResponse.new(HTTPRequests.get_response_body())
+	return Tournament.new(HTTPRequests.get_response_body())
 
 
 func delete_tournament(tournament_id: String) -> void:

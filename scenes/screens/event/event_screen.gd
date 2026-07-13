@@ -12,12 +12,9 @@ extends Control
 @onready var organizers_container: VBoxContainer = %OrganizersContainer
 @onready var new_organizer_button: Button = %NewOrganizerButton
 
-
 var event: Event
 
 
 func _ready() -> void:
 	event = Globals.current_event
-	
-	
 	
