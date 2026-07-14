@@ -6,7 +6,8 @@ extends PanelContainer
 @onready var name_panel: Label = %NamePanel
 @onready var delete_button: TextureButton = %DeleteButton
 
-const ROUND_SCREEN_SCENE_PATH := "res://scenes/screens/round/round_screen.tscn"
+const SCORE_SUM_SCREEN_SCENE_PATH := "res://scenes/placeholder/screens/score_sum_screen.tscn"
+const BATTLE_SCREEN_SCENE_PATH := "res://scenes/placeholder/screens/battle_screen.tscn"
 
 
 func populate(round: Round) -> void:
@@ -16,4 +17,7 @@ func populate(round: Round) -> void:
 
 func _go_to_round(round: Round) -> void:
 	Globals.current_round = round
-	App.change_screen(ROUND_SCREEN_SCENE_PATH)
+	if round.format == "score_sum":
+		App.change_screen(SCORE_SUM_SCREEN_SCENE_PATH)
+	else:
+		App.change_screen(BATTLE_SCREEN_SCENE_PATH)
