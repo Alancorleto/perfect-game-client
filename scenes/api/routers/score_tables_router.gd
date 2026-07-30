@@ -137,18 +137,14 @@ func remove_player_from_score_table(score_table_id: String, player_id: String) -
 	return players
 
 
-func get_score_table_results(score_table_id: String) -> Array[PlayerResults]:
+func get_score_table_results(score_table_id: String) -> Results:
 	var route: String = "%s/%s/results" % [route_base, score_table_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
-		return []
+		return null
 
-	var results: Array[PlayerResults] = []
-	for result_json: Dictionary in HTTPRequests.get_response_body():
-		results.append(PlayerResults.new(result_json))
-
-	return results
+	return Results.new(HTTPRequests.get_response_body())
 
 
 func list_candidate_players_for_score_table(score_table_id: String) -> Array[Player]:
