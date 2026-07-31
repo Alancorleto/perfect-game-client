@@ -1,4 +1,6 @@
 class_name ScoreTableUpdate
-extends ScoreTableBase
+extends Serializable
 
-var levels = null
+var qualifiers_count = null
+var format = ScoreTableFormat.SCORE_SUM
+var order_index = 0

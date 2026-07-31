@@ -3,48 +3,48 @@ extends Node
 var route_base = "/score_tables"
 
 
-func create_score_table(score_table: ScoreTableCreate) -> ScoreTableResponse:
+func create_score_table(score_table: ScoreTableCreate) -> ScoreTable:
 	var route: String = route_base
 
 	await HTTPRequests.POST(route, score_table.to_dictionary())
 	if HTTPRequests.failed():
 		return null
 
-	return ScoreTableResponse.new(HTTPRequests.get_response_body())
+	return ScoreTable.new(HTTPRequests.get_response_body())
 
 
-func list_score_tables() -> Array[ScoreTableResponse]:
+func list_score_tables() -> Array[ScoreTable]:
 	var route: String = route_base
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return []
 
-	var score_tables: Array[ScoreTableResponse] = []
+	var score_tables: Array[ScoreTable] = []
 	for score_table_json: Dictionary in HTTPRequests.get_response_body():
-		score_tables.append(ScoreTableResponse.new(score_table_json))
+		score_tables.append(ScoreTable.new(score_table_json))
 
 	return score_tables
 
 
-func get_score_table(score_table_id: String) -> ScoreTableResponse:
+func get_score_table(score_table_id: String) -> ScoreTable:
 	var route: String = "%s/%s" % [route_base, score_table_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return null
 
-	return ScoreTableResponse.new(HTTPRequests.get_response_body())
+	return ScoreTable.new(HTTPRequests.get_response_body())
 
 
-func update_score_table(score_table_id: String, score_table: ScoreTableUpdate) -> ScoreTableResponse:
+func update_score_table(score_table_id: String, score_table: ScoreTableUpdate) -> ScoreTable:
 	var route: String = "%s/%s" % [route_base, score_table_id]
 
 	await HTTPRequests.PATCH(route, score_table.to_dictionary())
 	if HTTPRequests.failed():
 		return null
 
-	return ScoreTableResponse.new(HTTPRequests.get_response_body())
+	return ScoreTable.new(HTTPRequests.get_response_body())
 
 
 func delete_score_table(score_table_id: String) -> void:

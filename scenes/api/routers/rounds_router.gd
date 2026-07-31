@@ -53,30 +53,30 @@ func delete_round(round_id: String) -> void:
 	await HTTPRequests.DELETE(route)
 
 
-func list_score_tables_in_round(round_id: String) -> Array[ScoreTableResponse]:
+func list_score_tables_in_round(round_id: String) -> Array[ScoreTable]:
 	var route: String = "%s/%s/score_tables" % [route_base, round_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return []
 
-	var score_tables: Array[ScoreTableResponse] = []
+	var score_tables: Array[ScoreTable] = []
 	for score_table_json: Dictionary in HTTPRequests.get_response_body():
-		score_tables.append(ScoreTableResponse.new(score_table_json))
+		score_tables.append(ScoreTable.new(score_table_json))
 
 	return score_tables
 
 
-func change_score_table_order_in_round(round_id: String, new_score_table_order: Array[String]) -> Array[ScoreTableResponse]:
+func change_score_table_order_in_round(round_id: String, new_score_table_order: Array[String]) -> Array[ScoreTable]:
 	var route: String = "%s/%s/score_tables/order" % [route_base, round_id]
 
 	await HTTPRequests.PUT(route, new_score_table_order)
 	if HTTPRequests.failed():
 		return []
 
-	var score_tables: Array[ScoreTableResponse] = []
+	var score_tables: Array[ScoreTable] = []
 	for score_table_json: Dictionary in HTTPRequests.get_response_body():
-		score_tables.append(ScoreTableResponse.new(score_table_json))
+		score_tables.append(ScoreTable.new(score_table_json))
 
 	return score_tables
 
