@@ -6,7 +6,7 @@ extends PanelContainer
 @onready var name_panel: Label = %NamePanel
 @onready var delete_button: TextureButton = %DeleteButton
 
-const SCORE_SUM_SCREEN_SCENE_PATH := "res://scenes/placeholder/screens/score_sum_screen.tscn"
+const SCORE_SUM_SCREEN_SCENE_PATH := "res://scenes/screens/round/score_sum_round_screen.tscn"
 const BATTLE_SCREEN_SCENE_PATH := "res://scenes/placeholder/screens/battle_screen.tscn"
 
 

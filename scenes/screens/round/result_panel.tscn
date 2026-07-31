@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bu3sv0h8i1jqo"]
+
+[ext_resource type="Texture2D" uid="uid://b8jpwo1slvb55" path="res://icon.svg" id="1_3r8pb"]
+[ext_resource type="Script" uid="uid://rtrl6gxamm8x" path="res://scenes/screens/round/result_panel.gd" id="1_ralav"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blcf6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.6215238, 0.6215239, 0.62152356, 1)
+
+[node name="ResultPanel" type="HBoxContainer" unique_id=1687034388]
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+script = ExtResource("1_ralav")
+
+[node name="PlaceLabel" type="Label" parent="." unique_id=1274113665]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NicknameLabel" type="Label" parent="." unique_id=799792673]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "Miura Aran"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="Control" type="PanelContainer" parent="." unique_id=2073598365]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blcf6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=296258950]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer" unique_id=608930858]
+visible = false
+layout_mode = 2
+texture = ExtResource("1_3r8pb")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer" unique_id=1362543814]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("1_3r8pb")
+stretch_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1946099910]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_blcf6")
+text = "986879"
+horizontal_alignment = 2
+vertical_alignment = 1

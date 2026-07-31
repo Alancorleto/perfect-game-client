@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://3gss4u6s4r4o"]
+
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_s2nqc"]
+[ext_resource type="Script" uid="uid://uf38rwxlf1xc" path="res://scenes/screens/round/score_column_panel.gd" id="2_o3ay5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gt8h"]
+bg_color = Color(0.20392033, 0.20392036, 0.20392022, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.15127605, 0.15127608, 0.15127596, 1)
+
+[node name="ScoreColumnPanel" type="VBoxContainer" unique_id=1166279546]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_s2nqc")
+theme_override_constants/separation = 0
+script = ExtResource("2_o3ay5")
+
+[node name="ScoreColumnHeaders" type="HBoxContainer" parent="." unique_id=1919367394]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label3" type="Label" parent="ScoreColumnHeaders" unique_id=1858311725]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "#"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="ScoreColumnHeaders" unique_id=627401992]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Player"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="ScoreColumnHeaders" unique_id=1682977023]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Chart"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ScoreColumnHeaders" unique_id=2027843796]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gt8h")
+text = "Score"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=695684845]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="ResultsContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1790681188]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
