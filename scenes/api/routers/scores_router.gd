@@ -3,19 +3,16 @@ extends Node
 var route_base = "/scores"
 
 
-func list_scores() -> Array[ScoreResponse]:
+func list_scores() -> ListScoresResponse:
 	var route: String = route_base
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
-		return []
+		return null
 
-	var scores: Array[ScoreResponse] = []
-	for score_json: Dictionary in HTTPRequests.get_response_body():
-		scores.append(ScoreResponse.new(score_json))
+	var response := ListScoresResponse.new(HTTPRequests.get_response_body())
 
-	return scores
-
+	return response
 
 func get_score(score_id: String) -> ScoreResponse:
 	var route: String = "%s/%s" % [route_base, score_id]

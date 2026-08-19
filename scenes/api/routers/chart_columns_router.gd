@@ -1,20 +1,18 @@
 extends Node
 
-var route_base = "/chart_columns"
+var route_base = "/chart-columns"
 
 
-func list_chart_columns() -> Array[ChartColumnResponse]:
+func list_chart_columns() -> ListChartColumnsResponse:
 	var route: String = route_base
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
-		return []
+		return null
 
-	var chart_columns: Array[ChartColumnResponse] = []
-	for chart_column_json: Dictionary in HTTPRequests.get_response_body():
-		chart_columns.append(ChartColumnResponse.new(chart_column_json))
+	var response := ListChartColumnsResponse.new(HTTPRequests.get_response_body())
 
-	return chart_columns
+	return response
 
 
 func create_chart_column(chart_column: ChartColumnCreate) -> ChartColumnResponse:

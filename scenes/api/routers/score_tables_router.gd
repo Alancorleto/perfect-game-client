@@ -1,6 +1,6 @@
 extends Node
 
-var route_base = "/score_tables"
+var route_base = "/score-tables"
 
 
 func create_score_table(score_table: ScoreTableCreate) -> ScoreTable:
@@ -13,18 +13,16 @@ func create_score_table(score_table: ScoreTableCreate) -> ScoreTable:
 	return ScoreTable.new(HTTPRequests.get_response_body())
 
 
-func list_score_tables() -> Array[ScoreTable]:
+func list_score_tables() -> ListScoreTablesResponse:
 	var route: String = route_base
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
-		return []
+		return null
 
-	var score_tables: Array[ScoreTable] = []
-	for score_table_json: Dictionary in HTTPRequests.get_response_body():
-		score_tables.append(ScoreTable.new(score_table_json))
+	var response := ListScoreTablesResponse.new(HTTPRequests.get_response_body())
 
-	return score_tables
+	return response
 
 
 func get_score_table(score_table_id: String) -> ScoreTable:
@@ -54,7 +52,7 @@ func delete_score_table(score_table_id: String) -> void:
 
 
 func list_score_columns_for_score_table(score_table_id: String) -> Array[ScoreColumnResponse]:
-	var route: String = "%s/%s/score_columns" % [route_base, score_table_id]
+	var route: String = "%s/%s/score-columns" % [route_base, score_table_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
@@ -68,7 +66,7 @@ func list_score_columns_for_score_table(score_table_id: String) -> Array[ScoreCo
 
 
 func update_score_column_order_in_score_table(score_table_id: String, new_order: Array[String]) -> Array[ScoreColumnResponse]:
-	var route: String = "%s/%s/score_columns/order" % [route_base, score_table_id]
+	var route: String = "%s/%s/score-columns/order" % [route_base, score_table_id]
 
 	await HTTPRequests.PUT(route, new_order)
 	if HTTPRequests.failed():

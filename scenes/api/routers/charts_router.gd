@@ -3,18 +3,16 @@ extends Node
 var route_base = "/charts"
 
 
-func list_charts() -> Array[ChartResponse]:
+func list_charts() -> ListChartsResponse:
 	var route: String = route_base
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
-		return []
+		return null
 
-	var charts: Array[ChartResponse] = []
-	for chart_json: Dictionary in HTTPRequests.get_response_body():
-		charts.append(ChartResponse.new(chart_json))
+	var response := ListChartsResponse.new(HTTPRequests.get_response_body())
 
-	return charts
+	return response
 
 
 func fuzzy_search_titles(search: String) -> Array[String]:

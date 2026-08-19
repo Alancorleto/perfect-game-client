@@ -3,23 +3,21 @@ extends Node
 var route_base = "/events"
 
 
-func list_events(country_code: String = "") -> Array[Event]:
+func list_events(country_code: String = "") -> ListEventsResponse:
 	var route: String = route_base
 	if country_code != "":
 		route += "?country_code=%s" % country_code
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
-		return []
+		return null
 
-	var events: Array[Event] = []
+	var response := ListEventsResponse.new(HTTPRequests.get_response_body())
 
-	for event_json: Dictionary in HTTPRequests.get_response_body():
-		var event: Event = Event.new(event_json)
-		await event.try_load_logo()
-		events.append(event)
+	# for event: Event in response.events:
+	# 	await event.try_load_logo()
 
-	return events
+	return response
 
 
 func get_event(event_id: String) -> Event:
@@ -31,7 +29,7 @@ func get_event(event_id: String) -> Event:
 
 	var event := Event.new(HTTPRequests.get_response_body())
 	await event.try_load_logo()
-	
+
 	return event
 
 
@@ -41,10 +39,10 @@ func create_event(event_create: EventCreate) -> Event:
 	await HTTPRequests.POST(route, event_create.to_dictionary())
 	if HTTPRequests.failed():
 		return null
-	
+
 	var event := Event.new(HTTPRequests.get_response_body())
 	await event.try_load_logo()
-	
+
 	return event
 
 
@@ -57,7 +55,7 @@ func update_event(event_id: String, event_update: EventUpdate) -> Event:
 
 	var event := Event.new(HTTPRequests.get_response_body())
 	await event.try_load_logo()
-	
+
 	return event
 
 
@@ -143,5 +141,5 @@ func upload_event_logo(event_id: String, logo: PackedByteArray) -> Event:
 
 	var event := Event.new(HTTPRequests.get_response_body())
 	await event.try_load_logo()
-	
+
 	return event

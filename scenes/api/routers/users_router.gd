@@ -3,20 +3,16 @@ extends Node
 var route_base = "/users"
 
 
-func list_users() -> Array[UserResponse]:
+func list_users() -> ListUsersResponse:
 	var route: String = route_base
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
-		return []
+		return null
 
-	var users: Array[UserResponse] = []
+	var response := ListUsersResponse.new(HTTPRequests.get_response_body())
 
-	for user_json: Dictionary in HTTPRequests.get_response_body():
-		var user: UserResponse = UserResponse.new(user_json)
-		users.append(user)
-
-	return users
+	return response
 
 
 func create_user(user: UserCreate) -> UserResponse:

@@ -1,20 +1,18 @@
 extends Node
 
-var route_base = "/score_columns"
+var route_base = "/score-columns"
 
 
-func list_score_columns() -> Array[ScoreColumnResponse]:
+func list_score_columns() -> ListScoreColumnsResponse:
 	var route: String = route_base
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
-		return []
+		return null
 
-	var score_columns: Array[ScoreColumnResponse] = []
-	for score_column_json: Dictionary in HTTPRequests.get_response_body():
-		score_columns.append(ScoreColumnResponse.new(score_column_json))
+	var response := ListScoreColumnsResponse.new(HTTPRequests.get_response_body())
 
-	return score_columns
+	return response
 
 
 func create_score_column(score_column: ScoreColumnCreate) -> ScoreColumnResponse:

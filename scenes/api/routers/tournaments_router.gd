@@ -3,20 +3,16 @@ extends Node
 var route_base = "/tournaments"
 
 
-func list_tournaments() -> Array[Tournament]:
+func list_tournaments() -> ListTournamentsResponse:
 	var route: String = route_base
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
-		return []
+		return null
 
-	var tournaments: Array[Tournament] = []
+	var response := ListTournamentsResponse.new(HTTPRequests.get_response_body())
 
-	for tournament_json: Dictionary in HTTPRequests.get_response_body():
-		var tournament: Tournament = Tournament.new(tournament_json)
-		tournaments.append(tournament)
-
-	return tournaments
+	return response
 
 
 func get_tournament(tournament_id: String) -> Tournament:
@@ -115,7 +111,7 @@ func decline_tournament_invitation(tournament_id: String) -> void:
 
 
 func list_tournament_join_requests(tournament_id: String) -> Array[TournamentJoinRequestResponse]:
-	var route: String = "%s/%s/join_requests" % [route_base, tournament_id]
+	var route: String = "%s/%s/join-requests" % [route_base, tournament_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
@@ -129,19 +125,19 @@ func list_tournament_join_requests(tournament_id: String) -> Array[TournamentJoi
 
 
 func request_join_tournament(tournament_id: String) -> void:
-	var route: String = "%s/%s/join_requests" % [route_base, tournament_id]
+	var route: String = "%s/%s/join-requests" % [route_base, tournament_id]
 
 	await HTTPRequests.POST(route)
 
 
 func accept_tournament_join_request(tournament_id: String, player_id: String) -> void:
-	var route: String = "%s/%s/join_requests/%s/accept" % [route_base, tournament_id, player_id]
+	var route: String = "%s/%s/join-requests/%s/accept" % [route_base, tournament_id, player_id]
 
 	await HTTPRequests.POST(route)
 
 
 func decline_tournament_join_request(tournament_id: String, player_id: String) -> void:
-	var route: String = "%s/%s/join_requests/%s/decline" % [route_base, tournament_id, player_id]
+	var route: String = "%s/%s/join-requests/%s/decline" % [route_base, tournament_id, player_id]
 
 	await HTTPRequests.POST(route)
 

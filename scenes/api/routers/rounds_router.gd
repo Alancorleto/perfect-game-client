@@ -3,18 +3,16 @@ extends Node
 var route_base = "/rounds"
 
 
-func list_rounds() -> Array[Round]:
+func list_rounds() -> ListRoundsResponse:
 	var route: String = route_base
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
-		return []
+		return null
 
-	var rounds: Array[Round] = []
-	for round_json: Dictionary in HTTPRequests.get_response_body():
-		rounds.append(Round.new(round_json))
+	var response := ListRoundsResponse.new(HTTPRequests.get_response_body())
 
-	return rounds
+	return response
 
 
 func get_round(round_id: String) -> Round:
@@ -54,7 +52,7 @@ func delete_round(round_id: String) -> void:
 
 
 func list_score_tables_in_round(round_id: String) -> Array[ScoreTable]:
-	var route: String = "%s/%s/score_tables" % [route_base, round_id]
+	var route: String = "%s/%s/score-tables" % [route_base, round_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
@@ -68,7 +66,7 @@ func list_score_tables_in_round(round_id: String) -> Array[ScoreTable]:
 
 
 func change_score_table_order_in_round(round_id: String, new_score_table_order: Array[String]) -> Array[ScoreTable]:
-	var route: String = "%s/%s/score_tables/order" % [route_base, round_id]
+	var route: String = "%s/%s/score-tables/order" % [route_base, round_id]
 
 	await HTTPRequests.PUT(route, new_score_table_order)
 	if HTTPRequests.failed():
