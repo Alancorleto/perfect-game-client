@@ -175,7 +175,7 @@ func _on_request_completed(
 	response_headers = headers
 	print("Response headers: " + str(headers))
 
-	if JSON_HEADER in headers:
+	if JSON_HEADER.to_lower() in headers:
 		var body_string: String = body.get_string_from_utf8()
 		if body_string != "":
 			print("Body: " + JSON.stringify(JSON.parse_string(body_string), "\t"))

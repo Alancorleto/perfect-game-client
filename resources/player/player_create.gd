@@ -8,3 +8,4 @@ var team_name = null
 var birth_date = null
 var city = null
 var profile_picture_url = null
+var user_id = ""
