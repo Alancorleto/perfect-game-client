@@ -8,9 +8,12 @@ const EventPanelScene: PackedScene = preload("res://scenes/screens/select_event/
 func _ready() -> void:
 	App.show_loading_sign("Loading events...")
 
-	var events: Array[Event] = await EventsRouter.list_events()
+	var response := await EventsRouter.list_events()
+	if response == null:
+		App.hide_loading_sign()
+		return
 
-	for event: Event in events:
+	for event: Event in response.events:
 		var event_panel: EventPanel = EventPanelScene.instantiate()
 		events_container.add_child(event_panel)
 		event_panel.populate(event)
