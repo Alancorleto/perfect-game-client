@@ -3,8 +3,10 @@ extends Node
 var route_base = "/score-columns"
 
 
-func list_score_columns() -> ListScoreColumnsResponse:
+func list_score_columns(offset: int = 0, size: int = 20) -> ListScoreColumnsResponse:
 	var route: String = route_base
+
+	route += "?offset=%d&size=%d" % [offset, size]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():

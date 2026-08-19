@@ -13,8 +13,10 @@ func create_score_table(score_table: ScoreTableCreate) -> ScoreTable:
 	return ScoreTable.new(HTTPRequests.get_response_body())
 
 
-func list_score_tables() -> ListScoreTablesResponse:
+func list_score_tables(offset: int = 0, size: int = 20) -> ListScoreTablesResponse:
 	var route: String = route_base
+
+	route += "?offset=%d&size=%d" % [offset, size]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():

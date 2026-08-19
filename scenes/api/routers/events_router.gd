@@ -3,10 +3,25 @@ extends Node
 var route_base = "/events"
 
 
-func list_events(country_code: String = "") -> ListEventsResponse:
+func list_events(
+	offset: int = 0,
+    size: int = 20,
+	country_code: String = "",
+    organized_by: String = "",
+    include_upcoming: bool = true,
+) -> ListEventsResponse:
 	var route: String = route_base
+
+	route += "?offset=%d&size=%d" % [offset, size]
+
 	if country_code != "":
-		route += "?country_code=%s" % country_code
+		route += "&country_code=%s" % country_code
+
+	if organized_by != "":
+		route += "&organized_by=%s" % organized_by
+
+	if not include_upcoming:
+		route += "&include_upcoming=false"
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():

@@ -3,10 +3,13 @@ extends Node
 var route_base = "/players"
 
 
-func list_players(country_code: String = "") -> ListPlayersResponse:
+func list_players(country_code: String = "", offset: int = 0, size: int = 20) -> ListPlayersResponse:
 	var route: String = route_base
+
+	route += "?offset=%d&size=%d" % [offset, size]
+
 	if country_code != "":
-		route += "?country_code=%s" % country_code
+		route += "&country_code=%s" % country_code
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():

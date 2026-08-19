@@ -3,8 +3,10 @@ extends Node
 var route_base = "/tournaments"
 
 
-func list_tournaments() -> ListTournamentsResponse:
+func list_tournaments(offset: int = 0, size: int = 20) -> ListTournamentsResponse:
 	var route: String = route_base
+
+	route += "?offset=%d&size=%d" % [offset, size]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
