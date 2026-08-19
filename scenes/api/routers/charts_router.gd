@@ -45,8 +45,8 @@ func create_chart_for_score_column(chart: ChartCreate, score_column_id: String) 
 	return ChartResponse.new(HTTPRequests.get_response_body())
 
 
-func create_chart_for_chart_column(chart: ChartCreate, chart_column_id: String, chart_column_player_id: String) -> ChartResponse:
-	var route: String = "%s?chart_column_id=%s&chart_column_player_id=%s" % [route_base, chart_column_id, chart_column_player_id]
+func create_chart_for_score(chart: ChartCreate, score_id: String) -> ChartResponse:
+	var route: String = "%s?score_id=%s" % [route_base, score_id]
 
 	await HTTPRequests.POST(route, chart.to_dictionary())
 	if HTTPRequests.failed():
