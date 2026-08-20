@@ -5,10 +5,10 @@ var route_base = "/events"
 
 func list_events(
 	offset: int = 0,
-    size: int = 20,
+	size: int = 20,
 	country_code: String = "",
-    organized_by: String = "",
-    include_upcoming: bool = true,
+	organized_by: String = "",
+	include_upcoming: bool = true,
 ) -> ListEventsResponse:
 	var route: String = route_base
 
