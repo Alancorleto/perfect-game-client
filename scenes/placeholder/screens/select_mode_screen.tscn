@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cogwm205i7e2k"]
 
 [ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_4jb8x"]
+[ext_resource type="Script" uid="uid://yjbnfk2q32p1" path="res://scenes/placeholder/screens/select_mode_screen.gd" id="2_pttvx"]
 
 [node name="SelectModeScreen" type="Control" unique_id=80987437]
 layout_mode = 3
@@ -10,31 +11,43 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_4jb8x")
+script = ExtResource("2_pttvx")
 
-[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=2139501840]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1070888341]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 167.0
-offset_top = 242.0
-offset_right = -167.0
-offset_bottom = -82.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 128
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2139501840]
+layout_mode = 2
 theme_override_constants/separation = 128
 alignment = 1
 
-[node name="SpectateButton" type="Button" parent="HBoxContainer" unique_id=193269330]
+[node name="ViewTournamentsButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=193269330]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 96
-text = "View Tournament Results"
+text = "View Tournaments"
 autowrap_mode = 3
 
-[node name="ManageButton" type="Button" parent="HBoxContainer" unique_id=1841313385]
+[node name="OrganizeTournamentsButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1841313385]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 96
-text = "Manage Tournaments"
+text = "Organize Tournaments"
+autowrap_mode = 3
+
+[node name="LogInButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=742302279]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 96
+text = "Log In"
 autowrap_mode = 3

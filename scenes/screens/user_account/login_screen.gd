@@ -8,7 +8,7 @@ extends Control
 @onready var reset_password_button: Button = %ResetPasswordButton
 @onready var create_account_button: Button = %CreateAccountButton
 
-const SELECT_EVENT_SCREEN_PATH: String = "res://scenes/screens/select_event/select_event_screen.tscn"
+const SELECT_MODE_SCREEN_PATH: String = "res://scenes/placeholder/screens/select_mode_screen.tscn"
 const CREATE_ACCOUNT_SCREEN_PATH: String = "res://scenes/screens/user_account/create_account_screen.tscn"
 const RESET_PASSWORD_SCREEN_PATH: String = "res://scenes/screens/user_account/reset_password_screen_1.tscn"
 
@@ -25,6 +25,8 @@ func _login() -> void:
 	var email: String = email_field.text
 	var password: String = password_field.text
 	var token: Token = await UsersRouter.login(email, password)
+	
+	Globals.current_user = await UsersRouter.get_currently_logged_user()
 
 	App.hide_loading_sign()
 
@@ -32,7 +34,7 @@ func _login() -> void:
 		App.show_error_dialog("Failed to log in.")
 		return
 
-	App.change_screen(SELECT_EVENT_SCREEN_PATH)
+	App.change_screen(SELECT_MODE_SCREEN_PATH)
 
 
 func _go_to_create_account_screen() -> void:

@@ -1,9 +1,7 @@
 extends Control
 
 @onready var events_container: VBoxContainer = %EventsContainer
-@onready var log_in_button: Button = %LogInButton
 @onready var country_option_button: OptionButton = %CountryOptionButton
-@onready var organized_by_me_check_box: CheckBox = %OrganizedByMeCheckBox
 @onready var include_upcoming_check_box: CheckBox = %IncludeUpcomingCheckBox
 @onready var create_tournament_button: Button = %CreateTournamentButton
 
@@ -13,13 +11,11 @@ const EventPanelScene: PackedScene = preload("res://scenes/screens/select_event/
 
 
 func _ready() -> void:
-	log_in_button.pressed.connect(App.change_screen.bind(LOGIN_SCREEN_SCENE_PATH))
-	
 	App.show_loading_sign("Loading events...")
 	
 	_show_options()
 
-	var response := await EventsRouter.list_events()
+	var response := await _list_events()
 	if response == null:
 		App.hide_loading_sign()
 		return
@@ -33,11 +29,34 @@ func _ready() -> void:
 
 
 func _show_options() -> void:
-	if Globals.is_logged_in():
-		log_in_button.hide()
-		organized_by_me_check_box.show()
+	if Globals.organizer_mode_enabled:
 		create_tournament_button.show()
+		include_upcoming_check_box.hide()
+		country_option_button.hide()
 	else:
-		log_in_button.show()
-		organized_by_me_check_box.hide()
 		create_tournament_button.hide()
+		include_upcoming_check_box.show()
+		country_option_button.show()
+
+
+func _list_events() -> ListEventsResponse:
+	var organized_by: String = ""
+	var country_code: String = ""
+	var include_upcoming: bool = include_upcoming_check_box.button_pressed
+	
+	if Globals.organizer_mode_enabled:
+		organized_by = Globals.current_user.id
+		include_upcoming = true
+	
+	if country_option_button.selected != 0:
+		country_code = country_option_button.text
+	
+	var response := await EventsRouter.list_events(
+		0,
+		20,
+		country_code,
+		organized_by,
+		include_upcoming
+	)
+	
+	return response

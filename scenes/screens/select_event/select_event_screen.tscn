@@ -26,12 +26,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="LogInButton" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=915930204]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "Log In"
-
 [node name="CountryHBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=363390269]
 layout_mode = 2
 theme_override_constants/separation = 32
@@ -53,11 +47,6 @@ popup/item_1/text = "AR"
 popup/item_1/id = 1
 popup/item_2/text = "BR"
 popup/item_2/id = 2
-
-[node name="OrganizedByMeCheckBox" type="CheckBox" parent="ScrollContainer/VBoxContainer" unique_id=1807940017]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Organized By Me"
 
 [node name="IncludeUpcomingCheckBox" type="CheckBox" parent="ScrollContainer/VBoxContainer" unique_id=1665565796]
 unique_name_in_owner = true
