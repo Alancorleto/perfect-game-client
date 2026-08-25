@@ -78,7 +78,7 @@ func list_tournament_invitations(tournament_id: String) -> Array[TournamentInvit
 
 
 func invite_player_to_tournament(tournament_id: String, player_id: String) -> void:
-	var route: String = "%s/%s/invitations/%s/" % [route_base, tournament_id, player_id]
+	var route: String = "%s/%s/invitations/%s" % [route_base, tournament_id, player_id]
 
 	await HTTPRequests.POST(route)
 
