@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ccgmyhj3867p3"]
+
+[ext_resource type="Script" uid="uid://dlfq7gc6yo8c7" path="res://scenes/ui_elements/country_picker.gd" id="1_7rhpx"]
+
+[node name="CountryPicker" type="OptionButton" unique_id=1550536553]
+offset_right = 40.0
+offset_bottom = 20.0
+script = ExtResource("1_7rhpx")
