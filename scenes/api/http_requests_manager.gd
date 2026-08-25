@@ -10,19 +10,36 @@ var response_body: Variant
 var access_token: String = ""
 
 var JSON_HEADER: String = "Content-Type: application/json"
+var FORM_HEADER: String = "Content-Type: application/x-www-form-urlencoded"
 
 
 func _ready() -> void:
 	request_completed.connect(_on_request_completed)
 
 
-func make_request(method : HTTPClient.Method, route: String, body: Variant = null, headers: PackedStringArray = []) -> void:
+func make_request(
+	method : HTTPClient.Method,
+	route: String,
+	body: Variant = null,
+	is_form: bool = false
+) -> void:
 	var url = base_url
 	url += route
+	
 	if body == null:
-		body = ""
-	var body_string: String = JSON.stringify(body, "\t")
-	#var body_string: String = JSON.stringify(body)
+		body = {}
+	
+	var headers: PackedStringArray = []
+	
+	var body_string: String = ""
+	if not is_form:
+		headers.append(JSON_HEADER)
+		body_string = JSON.stringify(body, "\t")
+	else:
+		headers.append(FORM_HEADER)
+		var http_client := HTTPClient.new()
+		body_string = http_client.query_string_from_dict(body)
+	
 	if access_token != "":
 		headers.append("Authorization: Bearer " + access_token)
 
@@ -30,7 +47,7 @@ func make_request(method : HTTPClient.Method, route: String, body: Variant = nul
 	print("URL: " + url)
 	print("Method: " + _find_native_enum_label("HTTPClient", "Method", method))
 	print("Headers: " + str(headers))
-	print("Body: " + body_string)
+	print("Body: " + body_string.substr(0, 1000))
 	print("")
 
 	request(url, headers, method, body_string)
@@ -62,24 +79,24 @@ func make_request_with_body(method : HTTPClient.Method, route: String, body: Var
 	make_request(method, route, body)
 
 
-func GET(route: String, body: Variant = null) -> void:
-	await make_request(HTTPClient.METHOD_GET, route, body, [JSON_HEADER])
+func GET(route: String, body: Variant = null, is_form: bool = false) -> void:
+	await make_request(HTTPClient.METHOD_GET, route, body, is_form)
 
 
-func POST(route: String, body: Variant = null) -> void:
-	await make_request(HTTPClient.METHOD_POST, route, body, [JSON_HEADER])
+func POST(route: String, body: Variant = null, is_form: bool = false) -> void:
+	await make_request(HTTPClient.METHOD_POST, route, body, is_form)
 
 
-func PATCH(route: String, body: Variant = null) -> void:
-	await make_request(HTTPClient.METHOD_PATCH, route, body, [JSON_HEADER])
+func PATCH(route: String, body: Variant = null, is_form: bool = false) -> void:
+	await make_request(HTTPClient.METHOD_PATCH, route, body, is_form)
 
 
-func PUT(route: String, body: Variant = null) -> void:
-	await make_request(HTTPClient.METHOD_PUT, route, body, [JSON_HEADER])
+func PUT(route: String, body: Variant = null, is_form: bool = false) -> void:
+	await make_request(HTTPClient.METHOD_PUT, route, body, is_form)
 
 
-func DELETE(route: String, body: Variant = null) -> void:
-	await make_request(HTTPClient.METHOD_DELETE, route, body, [JSON_HEADER])
+func DELETE(route: String, body: Variant = null, is_form: bool = false) -> void:
+	await make_request(HTTPClient.METHOD_DELETE, route, body, is_form)
 
 
 func success() -> bool:

@@ -66,7 +66,13 @@ func delete_user(user_id: String) -> void:
 func login(username: String, password: String) -> Token:
 	var route: String = "/token"
 
-	await HTTPRequests.make_login_request(route, username, password)
+	var body: Dictionary = {
+			"username": username,
+			"password": password
+		}
+
+	await HTTPRequests.POST(route, body, true)
+	
 	if HTTPRequests.failed():
 		return null
 

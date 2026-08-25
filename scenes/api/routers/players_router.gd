@@ -57,7 +57,6 @@ func create_player(player: PlayerCreate) -> Player:
 	return Player.new(HTTPRequests.get_response_body())
 
 
-
 func update_player(player_id: String, player: PlayerUpdate) -> Player:
 	var route: String = "%s/%s" % [route_base, player_id]
 
@@ -80,7 +79,7 @@ func upload_profile_picture(player_id: String, profile_picture: PackedByteArray)
 		"profile_picture": profile_picture,
 	}
 
-	await HTTPRequests.POST(route, body)
+	await HTTPRequests.POST(route, body, true)
 	if HTTPRequests.failed():
 		return null
 
