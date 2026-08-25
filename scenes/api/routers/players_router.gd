@@ -48,7 +48,7 @@ func get_player(player_id: String) -> Player:
 
 
 func create_player(player: PlayerCreate) -> Player:
-	var route: String = route_base
+	var route: String = route_base + "/"
 
 	await HTTPRequests.POST(route, player.to_dictionary())
 	if HTTPRequests.failed():

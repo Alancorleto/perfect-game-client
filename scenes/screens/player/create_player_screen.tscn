@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://lxjl2imns1iy"]
+
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_qd0lu"]
+[ext_resource type="Script" uid="uid://245l2sw1jeo0" path="res://scenes/screens/player/create_player_screen.gd" id="2_gko6v"]
+
+[node name="CreatePlayerScreen" type="Control" unique_id=1879815585]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qd0lu")
+script = ExtResource("2_gko6v")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=944965512]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2017113531]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="NicknameContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1588142276]
+layout_mode = 2
+
+[node name="NicknameLabel" type="Label" parent="MarginContainer/VBoxContainer/NicknameContainer" unique_id=1386150206]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Nickname*"
+
+[node name="NicknameLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/NicknameContainer" unique_id=1914246427]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1730384541]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer/NameContainer" unique_id=1029962026]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="NameLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/NameContainer" unique_id=309662430]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CountryContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=833450492]
+layout_mode = 2
+
+[node name="CountryLabel" type="Label" parent="MarginContainer/VBoxContainer/CountryContainer" unique_id=1780878690]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Country Code"
+
+[node name="CountryLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/CountryContainer" unique_id=857101808]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TeamNameContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=773607563]
+layout_mode = 2
+
+[node name="TeamNameLabel" type="Label" parent="MarginContainer/VBoxContainer/TeamNameContainer" unique_id=2031496412]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Team Name"
+
+[node name="TeamNameLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/TeamNameContainer" unique_id=544633468]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BarthDateContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=775796464]
+layout_mode = 2
+
+[node name="BirthDateLabel" type="Label" parent="MarginContainer/VBoxContainer/BarthDateContainer" unique_id=518424142]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Birth Date"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/BarthDateContainer" unique_id=86126389]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="BirthDateDayLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/BarthDateContainer/HBoxContainer" unique_id=2132329621]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(128, -1)
+layout_mode = 2
+placeholder_text = "D"
+virtual_keyboard_type = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/BarthDateContainer/HBoxContainer" unique_id=1456761606]
+layout_mode = 2
+text = "/"
+
+[node name="BirthDateMonthLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/BarthDateContainer/HBoxContainer" unique_id=1676420979]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(128, -1)
+layout_mode = 2
+placeholder_text = "M"
+virtual_keyboard_type = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/BarthDateContainer/HBoxContainer" unique_id=1542352170]
+layout_mode = 2
+text = "/"
+
+[node name="BirthDateYearLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/BarthDateContainer/HBoxContainer" unique_id=1971188866]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(128, -1)
+layout_mode = 2
+placeholder_text = "Y"
+virtual_keyboard_type = 2
+
+[node name="CityContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1819841179]
+layout_mode = 2
+
+[node name="CityLabel" type="Label" parent="MarginContainer/VBoxContainer/CityContainer" unique_id=492673360]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "City"
+
+[node name="CityLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/CityContainer" unique_id=1541123255]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1573443751]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=62154756]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Confirm"
