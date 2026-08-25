@@ -30,7 +30,25 @@ layout_mode = 2
 theme_override_constants/separation = 128
 alignment = 1
 
+[node name="CreateProfileButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=582676474]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 96
+text = "Create Profile"
+autowrap_mode = 3
+
+[node name="EditProfileButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1692092556]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 96
+text = "Edit Profile"
+autowrap_mode = 3
+
 [node name="ViewTournamentsButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=193269330]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 96
@@ -38,7 +56,7 @@ text = "View Tournaments"
 autowrap_mode = 3
 
 [node name="OrganizeTournamentsButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1841313385]
-visible = false
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 96
@@ -46,6 +64,8 @@ text = "Organize Tournaments"
 autowrap_mode = 3
 
 [node name="LogInButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=742302279]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 96

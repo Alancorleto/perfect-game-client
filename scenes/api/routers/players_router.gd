@@ -22,6 +22,21 @@ func list_players(country_code: String = "", offset: int = 0, size: int = 20) ->
 	return response
 
 
+func get_currently_logged_player() -> Player:
+	var route: String = "%s/me" % [route_base]
+	
+	await HTTPRequests.GET(route)
+	if HTTPRequests.failed():
+		return null
+	
+	var response_body = HTTPRequests.get_response_body()
+	
+	if response_body == null:
+		return null
+	else:
+		return Player.new(response_body)
+
+
 func get_player(player_id: String) -> Player:
 	var route: String = "%s/%s" % [route_base, player_id]
 

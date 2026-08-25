@@ -1,6 +1,7 @@
 extends Control
 
 @onready var events_container: VBoxContainer = %EventsContainer
+@onready var country_h_box_container: HBoxContainer = $ScrollContainer/VBoxContainer/CountryHBoxContainer
 @onready var country_option_button: OptionButton = %CountryOptionButton
 @onready var include_upcoming_check_box: CheckBox = %IncludeUpcomingCheckBox
 @onready var create_tournament_button: Button = %CreateTournamentButton
@@ -32,11 +33,11 @@ func _show_options() -> void:
 	if Globals.organizer_mode_enabled:
 		create_tournament_button.show()
 		include_upcoming_check_box.hide()
-		country_option_button.hide()
+		country_h_box_container.hide()
 	else:
 		create_tournament_button.hide()
 		include_upcoming_check_box.show()
-		country_option_button.show()
+		country_h_box_container.show()
 
 
 func _list_events() -> ListEventsResponse:
