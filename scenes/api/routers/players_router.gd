@@ -76,7 +76,7 @@ func delete_player(player_id: String) -> void:
 func upload_profile_picture(player_id: String, profile_picture_path: String) -> Player:
 	var route: String = "%s/%s/profile-picture" % [route_base, player_id]
 	
-	await HTTPRequests.upload_image(route, profile_picture_path, "image/png", "profile_picture")
+	await HTTPRequests.upload_image(route, profile_picture_path, "image/" + profile_picture_path.get_extension(), "profile_picture")
 	if HTTPRequests.failed():
 		return null
 	
