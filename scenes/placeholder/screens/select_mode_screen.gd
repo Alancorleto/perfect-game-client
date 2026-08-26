@@ -5,6 +5,7 @@ extends Control
 @onready var view_tournaments_button: Button = %ViewTournamentsButton
 @onready var organize_tournaments_button: Button = %OrganizeTournamentsButton
 @onready var log_in_button: Button = %LogInButton
+@onready var log_out_button: Button = %LogOutButton
 
 const LOGIN_SCREEN_PATH := "res://scenes/screens/user_account/login_screen.tscn"
 const SELECT_EVENT_SCREEN_PATH := "res://scenes/screens/select_event/select_event_screen.tscn"
@@ -18,11 +19,13 @@ func _ready() -> void:
 	view_tournaments_button.pressed.connect(_go_to_select_event_screen_as_spectator)
 	organize_tournaments_button.pressed.connect(_go_to_select_event_screen_as_organizer)
 	log_in_button.pressed.connect(_go_to_login_screen)
+	log_out_button.pressed.connect(_go_to_login_screen)
 	
 	Globals.organizer_mode_enabled = false
 	
 	if Globals.is_logged_in():
 		log_in_button.hide()
+		log_out_button.show()
 		organize_tournaments_button.show()
 		if Globals.current_player != null:
 			create_profile_button.hide()
@@ -32,6 +35,7 @@ func _ready() -> void:
 			edit_profile_button.hide()
 	else:
 		log_in_button.show()
+		log_out_button.hide()
 		organize_tournaments_button.hide()
 		create_profile_button.hide()
 		edit_profile_button.hide()
