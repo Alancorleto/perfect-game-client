@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b5voh38xcojuj"]
+
+[ext_resource type="PackedScene" uid="uid://lxjl2imns1iy" path="res://scenes/screens/player/player_screen_base.tscn" id="1_k15im"]
+[ext_resource type="Script" uid="uid://bwo1siit3l0sv" path="res://scenes/screens/player/update_player_screen.gd" id="2_1vb54"]
+
+[node name="UpdatePlayerScreen" unique_id=1879815585 instance=ExtResource("1_k15im")]
+script = ExtResource("2_1vb54")
+success_message = "Player profile updated successfully!"
+failure_message = "An error ocurred while updating player profile."

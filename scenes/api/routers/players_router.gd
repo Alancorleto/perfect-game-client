@@ -73,14 +73,11 @@ func delete_player(player_id: String) -> void:
 	await HTTPRequests.DELETE(route)
 
 
-func upload_profile_picture(player_id: String, profile_picture: PackedByteArray) -> Player:
+func upload_profile_picture(player_id: String, profile_picture_path: String) -> Player:
 	var route: String = "%s/%s/profile-picture" % [route_base, player_id]
-	var body: Dictionary = {
-		"profile_picture": profile_picture,
-	}
-
-	await HTTPRequests.POST(route, body, true)
+	
+	await HTTPRequests.upload_image(route, profile_picture_path, "image/png", "profile_picture")
 	if HTTPRequests.failed():
 		return null
-
+	
 	return Player.new(HTTPRequests.get_response_body())

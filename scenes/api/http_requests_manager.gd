@@ -79,6 +79,60 @@ func make_request_with_body(method : HTTPClient.Method, route: String, body: Var
 	make_request(method, route, body)
 
 
+func upload_image(route: String, file_path: String, content_type: String, field_name: String) -> void:
+	var url = base_url
+	url += route
+	
+	# 1. Generate a unique boundary
+	var crypto := Crypto.new()
+	var random_bytes := crypto.generate_random_bytes(16)
+	var boundary := "--GodotBoundary" + random_bytes.hex_encode()
+	
+	# 2. Prepare headers
+	var headers := [
+		"Content-Type: multipart/form-data; boundary=" + boundary
+	]
+	
+	if access_token != "":
+		headers.append("Authorization: Bearer " + access_token)
+	
+	# 3. Construct the body
+	var body := PackedByteArray()
+	
+	# Add the file part
+	body.append_array(("\r\n--" + boundary + "\r\n").to_utf8_buffer())
+	body.append_array(("Content-Disposition: form-data; name=\"" + field_name + "\"; filename=\"" + file_path.get_file() + "\"\r\n").to_utf8_buffer())
+	body.append_array(("Content-Type: " + content_type + "\r\n\r\n").to_utf8_buffer())
+	
+	# Load file content
+	var file := FileAccess.open(file_path, FileAccess.READ)
+	if file:
+		var file_content := file.get_buffer(file.get_length())
+		body.append_array(file_content)
+		file.close()
+	else:
+		push_error("Failed to open file: " + file_path)
+		return
+		
+	# End the multipart body
+	body.append_array(("\r\n--" + boundary + "--\r\n").to_utf8_buffer())
+	
+	# 4. Send the raw request
+	var error := request_raw(url, headers, HTTPClient.METHOD_POST, body)
+	if error != OK:
+		push_error("Request failed: " + str(error))
+		return
+	
+	print("--- NEW REQUEST ---")
+	print("URL: " + url)
+	print("Method: " + _find_native_enum_label("HTTPClient", "Method", HTTPClient.METHOD_POST))
+	print("Headers: " + str(headers))
+	print("Body: [File]")
+	print("")
+	
+	await request_completed
+
+
 func GET(route: String, body: Variant = null, is_form: bool = false) -> void:
 	await make_request(HTTPClient.METHOD_GET, route, body, is_form)
 

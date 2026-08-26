@@ -9,10 +9,12 @@ extends Control
 const LOGIN_SCREEN_PATH := "res://scenes/screens/user_account/login_screen.tscn"
 const SELECT_EVENT_SCREEN_PATH := "res://scenes/screens/select_event/select_event_screen.tscn"
 const CREATE_PLAYER_SCREEN_PATH := "res://scenes/screens/player/create_player_screen.tscn"
+const UPDATE_PLAYER_SCREEN_PATH := "res://scenes/screens/player/update_player_screen.tscn"
 
 
 func _ready() -> void:
 	create_profile_button.pressed.connect(_go_to_create_player_screen)
+	edit_profile_button.pressed.connect(_go_to_update_player_screen)
 	view_tournaments_button.pressed.connect(_go_to_select_event_screen_as_spectator)
 	organize_tournaments_button.pressed.connect(_go_to_select_event_screen_as_organizer)
 	log_in_button.pressed.connect(_go_to_login_screen)
@@ -37,6 +39,10 @@ func _ready() -> void:
 
 func _go_to_create_player_screen() -> void:
 	App.change_screen(CREATE_PLAYER_SCREEN_PATH)
+
+
+func _go_to_update_player_screen() -> void:
+	App.change_screen(UPDATE_PLAYER_SCREEN_PATH)
 
 
 func _go_to_select_event_screen_as_spectator() -> void:
