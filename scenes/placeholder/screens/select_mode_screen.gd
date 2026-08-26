@@ -19,9 +19,11 @@ func _ready() -> void:
 	view_tournaments_button.pressed.connect(_go_to_select_event_screen_as_spectator)
 	organize_tournaments_button.pressed.connect(_go_to_select_event_screen_as_organizer)
 	log_in_button.pressed.connect(_go_to_login_screen)
-	log_out_button.pressed.connect(_go_to_login_screen)
+	log_out_button.pressed.connect(_log_out)
 	
 	Globals.organizer_mode_enabled = false
+	
+	await _try_refresh_access_token()
 	
 	if Globals.is_logged_in():
 		log_in_button.hide()
@@ -61,3 +63,32 @@ func _go_to_select_event_screen_as_organizer() -> void:
 
 func _go_to_login_screen() -> void:
 	App.change_screen(LOGIN_SCREEN_PATH)
+
+
+func _try_refresh_access_token() -> void:
+	var refresh_token: String = ""
+	
+	var config = ConfigFile.new()
+	var error: Error = config.load("user://config.cfg")
+	if error == OK:
+		refresh_token = config.get_value("user", "refresh_token", "")
+	
+	if refresh_token:
+		var token: Token = await UsersRouter.refresh_access_token(refresh_token)
+		if token:
+			Globals.current_user = await UsersRouter.get_currently_logged_user()
+			Globals.current_player = await PlayersRouter.get_currently_logged_player()
+			await Globals.current_player.try_load_profile_picture()
+
+
+func _log_out() -> void:
+	_clear_refresh_token()
+	_go_to_login_screen()
+
+
+func _clear_refresh_token() -> void:
+	var config = ConfigFile.new()
+	var error: Error = config.load("user://config.cfg")
+	if error == OK:
+		config.set_value("user", "refresh_token", "")
+		config.save("user://config.cfg")

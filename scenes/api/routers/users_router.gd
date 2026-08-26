@@ -84,12 +84,12 @@ func login(username: String, password: String) -> Token:
 
 
 func refresh_access_token(refresh_token: String) -> Token:
-	var route: String = "/token/refresh"
-	var body: Dictionary = {
-		"refresh_token": refresh_token,
-	}
+	var route: String = "/token/refresh?refresh_token=%s" % [refresh_token]
+	#var body: Dictionary = {
+		#"refresh_token": refresh_token,
+	#}
 
-	await HTTPRequests.POST(route, body)
+	await HTTPRequests.POST(route)
 	if HTTPRequests.failed():
 		return null
 
