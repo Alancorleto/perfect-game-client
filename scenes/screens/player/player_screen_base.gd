@@ -1,8 +1,9 @@
 class_name PlayerScreenBase
 extends Control
 
-@export_multiline var success_message: String
-@export_multiline var failure_message: String
+@export var in_progress_message: String
+@export var success_message: String
+@export var failure_message: String
 
 @onready var nickname_line_edit: LineEdit = %NicknameLineEdit
 @onready var name_line_edit: LineEdit = %NameLineEdit
@@ -43,7 +44,7 @@ func _populate() -> void:
 
 
 func _on_confirm_button_pressed() -> void:
-	App.show_loading_sign("Creating player profile...")
+	App.show_loading_sign(in_progress_message)
 
 	var success: bool = await _submit_form()
 

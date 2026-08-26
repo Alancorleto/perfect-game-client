@@ -5,5 +5,6 @@
 
 [node name="CreatePlayerScreen" unique_id=1879815585 instance=ExtResource("1_qd0lu")]
 script = ExtResource("2_gko6v")
+in_progress_message = "Creating player profile..."
 success_message = "Player profile created successfully!"
 failure_message = "An error ocurred while creating player profile."

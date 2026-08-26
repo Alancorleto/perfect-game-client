@@ -5,5 +5,6 @@
 
 [node name="UpdatePlayerScreen" unique_id=1879815585 instance=ExtResource("1_k15im")]
 script = ExtResource("2_1vb54")
+in_progress_message = "Updating player profile..."
 success_message = "Player profile updated successfully!"
 failure_message = "An error ocurred while updating player profile."
