@@ -27,7 +27,9 @@ func _login() -> void:
 	var token: Token = await UsersRouter.login(email, password)
 	
 	Globals.current_user = await UsersRouter.get_currently_logged_user()
+	
 	Globals.current_player = await PlayersRouter.get_currently_logged_player()
+	await Globals.current_player.try_load_profile_picture()
 
 	App.hide_loading_sign()
 

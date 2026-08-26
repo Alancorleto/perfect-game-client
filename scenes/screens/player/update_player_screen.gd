@@ -13,6 +13,8 @@ func _populate() -> void:
 	birth_date_year_line_edit.text = birth_date.substr(0, 4)
 	
 	city_line_edit.text = Globals.current_player.city
+	
+	profile_picture.texture = Globals.current_player.profile_picture
 
 
 func _submit_form() -> bool:
@@ -36,6 +38,8 @@ func _submit_form() -> bool:
 			
 			if not player:
 				return false
+			
+		await player.try_load_profile_picture()
 		
 		Globals.current_player = player
 		
