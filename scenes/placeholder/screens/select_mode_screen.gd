@@ -23,7 +23,11 @@ func _ready() -> void:
 	
 	Globals.organizer_mode_enabled = false
 	
+	App.show_loading_sign("Trying automatic log in...")
+	
 	await _try_refresh_access_token()
+	
+	App.hide_loading_sign()
 	
 	if Globals.is_logged_in():
 		log_in_button.hide()
