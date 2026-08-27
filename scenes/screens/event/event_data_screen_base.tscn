@@ -170,7 +170,7 @@ layout_mode = 2
 [node name="LogoLabel" type="Label" parent="MarginContainer/VBoxContainer/LogoContainer" unique_id=2001310912]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Profile Picture"
+text = "Logo"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/LogoContainer" unique_id=504960309]
 layout_mode = 2

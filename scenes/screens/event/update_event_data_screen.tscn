@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b1wa6i2d116ks"]
+
+[ext_resource type="PackedScene" uid="uid://bauj6avb3cksl" path="res://scenes/screens/event/event_data_screen_base.tscn" id="1_86p45"]
+[ext_resource type="Script" uid="uid://cwx2kfaeqiuq0" path="res://scenes/screens/event/update_event_data_screen.gd" id="2_vf0qa"]
+
+[node name="UpdateEventDataScreen" unique_id=1879815585 instance=ExtResource("1_86p45")]
+script = ExtResource("2_vf0qa")
+in_progress_message = "Updating event data..."
+success_message = "Event data updated successfully!"
+failure_message = "An error ocurred while updating event data."

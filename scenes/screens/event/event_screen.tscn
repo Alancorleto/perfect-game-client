@@ -46,10 +46,11 @@ layout_mode = 2
 
 [node name="Logo" type="TextureRect" parent="ScrollContainer/MarginContainer/VBoxContainer/DataContainer" unique_id=1388372059]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(256, 256)
+custom_minimum_size = Vector2(512, 512)
+custom_maximum_size = Vector2(512, 512)
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("2_4lgc5")
-stretch_mode = 5
 
 [node name="NameLabel" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/DataContainer" unique_id=2135710646]
 unique_name_in_owner = true
@@ -76,6 +77,12 @@ layout_mode = 2
 text = "Description"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="UpdateButton" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/DataContainer" unique_id=538420481]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Edit Data"
 
 [node name="CategoriesPanel" type="PanelContainer" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1542249432]
 layout_mode = 2

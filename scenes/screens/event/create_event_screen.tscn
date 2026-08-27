@@ -5,3 +5,6 @@
 
 [node name="CreateEventScreen" unique_id=1879815585 instance=ExtResource("1_ataqr")]
 script = ExtResource("2_uhuts")
+in_progress_message = "Creating event..."
+success_message = "Event created successfully!"
+failure_message = "An error ocurred while creating the event."

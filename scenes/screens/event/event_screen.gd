@@ -6,6 +6,8 @@ extends Control
 @onready var location_label: Label = %LocationLabel
 @onready var description_label: Label = %DescriptionLabel
 
+@onready var update_button: Button = %UpdateButton
+
 @onready var tournaments_container: VBoxContainer = %TournamentsContainer
 @onready var new_tournament_button: Button = %NewTournamentButton
 
@@ -14,11 +16,15 @@ extends Control
 
 var event: Event
 
+const UPDATE_EVENT_DATA_SCREEN_PATH: String = "res://scenes/screens/event/update_event_data_screen.tscn"
+
 const TournamentPanelScene := preload("res://scenes/screens/event/tournament_panel.tscn")
 const EventOrganizerPanelScene := preload("res://scenes/screens/event/event_organizer_panel.tscn")
 
 
 func _ready() -> void:
+	update_button.pressed.connect(_go_to_update_event_data_screen)
+	
 	App.show_loading_sign("Loading event...")
 
 	event = Globals.current_event
@@ -32,6 +38,11 @@ func _ready() -> void:
 	await _populate_tournaments()
 
 	await _populate_organizers()
+
+	if Globals.organizer_mode_enabled:
+		update_button.show()
+	else:
+		update_button.hide()
 
 	App.hide_loading_sign()
 
@@ -68,3 +79,7 @@ func _populate_organizers() -> void:
 			var organizer_panel: EventOrganizerPanel = EventOrganizerPanelScene.instantiate()
 			organizers_container.add_child(organizer_panel)
 			organizer_panel.populate(organizer)
+
+
+func _go_to_update_event_data_screen() -> void:
+	App.change_screen(UPDATE_EVENT_DATA_SCREEN_PATH)
