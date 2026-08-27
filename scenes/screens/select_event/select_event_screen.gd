@@ -7,11 +7,14 @@ extends Control
 @onready var create_tournament_button: Button = %CreateTournamentButton
 
 const LOGIN_SCREEN_SCENE_PATH: String = "res://scenes/screens/user_account/login_screen.tscn"
+const CREATE_EVENT_SCREEN_PATH: String = "res://scenes/screens/event/create_event_screen.tscn"
 
 const EventPanelScene: PackedScene = preload("res://scenes/screens/select_event/event_panel.tscn")
 
 
 func _ready() -> void:
+	create_tournament_button.pressed.connect(_go_to_create_event_screen)
+	
 	App.show_loading_sign("Loading events...")
 	
 	_show_options()
@@ -61,3 +64,7 @@ func _list_events() -> ListEventsResponse:
 	)
 	
 	return response
+
+
+func _go_to_create_event_screen() -> void:
+	App.change_screen(CREATE_EVENT_SCREEN_PATH)

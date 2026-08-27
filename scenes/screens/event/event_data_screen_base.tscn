@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://bauj6avb3cksl"]
+
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_268fq"]
+[ext_resource type="Script" uid="uid://c8m8atyl2urby" path="res://scenes/screens/event/event_data_screen_base.gd" id="2_268fq"]
+[ext_resource type="Texture2D" uid="uid://b8jpwo1slvb55" path="res://icon.svg" id="3_wmvwp"]
+
+[node name="EventDataScreenBase" type="Control" unique_id=1879815585]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_268fq")
+script = ExtResource("2_268fq")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=944965512]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2017113531]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="NameContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1730384541]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer/NameContainer" unique_id=1029962026]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name*"
+
+[node name="NameLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/NameContainer" unique_id=309662430]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CountryContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=833450492]
+layout_mode = 2
+
+[node name="CountryLabel" type="Label" parent="MarginContainer/VBoxContainer/CountryContainer" unique_id=1780878690]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Country Code"
+
+[node name="CountryLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/CountryContainer" unique_id=857101808]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LocationContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1819841179]
+layout_mode = 2
+
+[node name="LocationLabel" type="Label" parent="MarginContainer/VBoxContainer/LocationContainer" unique_id=492673360]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Location"
+
+[node name="LocationLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/LocationContainer" unique_id=1541123255]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DateContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=775796464]
+layout_mode = 2
+
+[node name="DateLabel" type="Label" parent="MarginContainer/VBoxContainer/DateContainer" unique_id=518424142]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Date"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/DateContainer" unique_id=86126389]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="DateDayLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/DateContainer/HBoxContainer" unique_id=2132329621]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(128, -1)
+layout_mode = 2
+placeholder_text = "DD"
+virtual_keyboard_type = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/DateContainer/HBoxContainer" unique_id=1456761606]
+layout_mode = 2
+text = "/"
+
+[node name="DateMonthLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/DateContainer/HBoxContainer" unique_id=1676420979]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(128, -1)
+layout_mode = 2
+placeholder_text = "MM"
+virtual_keyboard_type = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/DateContainer/HBoxContainer" unique_id=1542352170]
+layout_mode = 2
+text = "/"
+
+[node name="DateYearLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/DateContainer/HBoxContainer" unique_id=1971188866]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(128, -1)
+layout_mode = 2
+placeholder_text = "YY"
+virtual_keyboard_type = 2
+
+[node name="TimeContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=968814544]
+layout_mode = 2
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/VBoxContainer/TimeContainer" unique_id=1653007171]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Time"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TimeContainer" unique_id=641096233]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="TimeHourLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/TimeContainer/HBoxContainer" unique_id=377122311]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(128, -1)
+layout_mode = 2
+placeholder_text = "HH"
+virtual_keyboard_type = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TimeContainer/HBoxContainer" unique_id=191706092]
+layout_mode = 2
+text = ":"
+
+[node name="TimeMinuteLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/TimeContainer/HBoxContainer" unique_id=1812776214]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(128, -1)
+layout_mode = 2
+placeholder_text = "MM"
+virtual_keyboard_type = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/TimeContainer/HBoxContainer" unique_id=1258599365]
+layout_mode = 2
+text = "hs"
+
+[node name="DescriptionContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=773607563]
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/VBoxContainer/DescriptionContainer" unique_id=2031496412]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Description"
+
+[node name="DescriptionTextEdit" type="TextEdit" parent="MarginContainer/VBoxContainer/DescriptionContainer" unique_id=2112125969]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_horizontal = 3
+wrap_mode = 1
+
+[node name="LogoContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1309340984]
+layout_mode = 2
+
+[node name="LogoLabel" type="Label" parent="MarginContainer/VBoxContainer/LogoContainer" unique_id=2001310912]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Profile Picture"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/LogoContainer" unique_id=504960309]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="MarginContainer/VBoxContainer/LogoContainer/VBoxContainer" unique_id=1281994165]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 300)
+custom_maximum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_wmvwp")
+
+[node name="UploadLogoButton" type="Button" parent="MarginContainer/VBoxContainer/LogoContainer/VBoxContainer" unique_id=1188097662]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Upload"
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1573443751]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=62154756]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Confirm"
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=1449991308]
+oversampling_override = 1.0
+title = "Open a File"
+position = Vector2i(0, 36)
+size = Vector2i(897, 360)
+file_mode = 0
+access = 2
+use_native_dialog = true

@@ -29,8 +29,8 @@ func list_events(
 
 	var response := ListEventsResponse.new(HTTPRequests.get_response_body())
 
-	# for event: Event in response.events:
-	# 	await event.try_load_logo()
+	for event: Event in response.events:
+		await event.try_load_logo()
 
 	return response
 
@@ -144,17 +144,14 @@ func remove_organizer_from_event(event_id: String, player_id: String) -> Array[P
 	return organizers
 
 
-func upload_event_logo(event_id: String, logo: PackedByteArray) -> Event:
+func upload_event_logo(event_id: String, logo_path: String) -> Event:
 	var route: String = "%s/%s/logo" % [route_base, event_id]
-	var body: Dictionary = {
-		"logo": logo,
-	}
-
-	await HTTPRequests.POST(route, body)
+	
+	await HTTPRequests.upload_image(route, logo_path, "image/" + logo_path.get_extension(), "logo")
 	if HTTPRequests.failed():
 		return null
-
+	
 	var event := Event.new(HTTPRequests.get_response_body())
 	await event.try_load_logo()
-
+	
 	return event

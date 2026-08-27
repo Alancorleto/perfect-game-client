@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://by82vporalq13"]
+
+[ext_resource type="PackedScene" uid="uid://bauj6avb3cksl" path="res://scenes/screens/event/event_data_screen_base.tscn" id="1_ataqr"]
+[ext_resource type="Script" uid="uid://dgslq0jxj7tc2" path="res://scenes/screens/event/create_event_screen.gd" id="2_uhuts"]
+
+[node name="CreateEventScreen" unique_id=1879815585 instance=ExtResource("1_ataqr")]
+script = ExtResource("2_uhuts")

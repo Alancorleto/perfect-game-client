@@ -80,4 +80,7 @@ func upload_profile_picture(player_id: String, profile_picture_path: String) -> 
 	if HTTPRequests.failed():
 		return null
 	
-	return Player.new(HTTPRequests.get_response_body())
+	var player := Player.new(HTTPRequests.get_response_body())
+	await player.try_load_profile_picture()
+	
+	return player

@@ -8,7 +8,7 @@ var total_count: int = 0
 
 func _init(from_dict: Dictionary = {}) -> void:
 	super(from_dict)
-
-	events.clear()
-	for ev_dict: Dictionary in from_dict["events"]:
-		events.append(Event.new(ev_dict))
+	
+	for i in events.size():
+		var event_dict: Dictionary = events[i]
+		events[i] = Event.new(event_dict)

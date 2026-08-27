@@ -70,15 +70,15 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TeamNameContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=773607563]
+[node name="CityContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1819841179]
 layout_mode = 2
 
-[node name="TeamNameLabel" type="Label" parent="MarginContainer/VBoxContainer/TeamNameContainer" unique_id=2031496412]
+[node name="CityLabel" type="Label" parent="MarginContainer/VBoxContainer/CityContainer" unique_id=492673360]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Team Name"
+text = "City"
 
-[node name="TeamNameLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/TeamNameContainer" unique_id=544633468]
+[node name="CityLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/CityContainer" unique_id=1541123255]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -126,15 +126,15 @@ layout_mode = 2
 placeholder_text = "Y"
 virtual_keyboard_type = 2
 
-[node name="CityContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1819841179]
+[node name="TeamNameContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=773607563]
 layout_mode = 2
 
-[node name="CityLabel" type="Label" parent="MarginContainer/VBoxContainer/CityContainer" unique_id=492673360]
+[node name="TeamNameLabel" type="Label" parent="MarginContainer/VBoxContainer/TeamNameContainer" unique_id=2031496412]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "City"
+text = "Team Name"
 
-[node name="CityLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/CityContainer" unique_id=1541123255]
+[node name="TeamNameLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/TeamNameContainer" unique_id=544633468]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
