@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dwp0bcette2cp"]
+
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_iaddh"]
+[ext_resource type="Script" uid="uid://dcp3hpcwmnw5" path="res://scenes/screens/add_organizer/add_organizer_screen.gd" id="2_1a40i"]
+
+[node name="AddOrganizerScreen" type="Control" unique_id=1875091915]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iaddh")
+script = ExtResource("2_1a40i")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=173102374]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=305161022]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="CountryContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1383415555]
+layout_mode = 2
+
+[node name="CountryLabel" type="Label" parent="MarginContainer/VBoxContainer/CountryContainer" unique_id=5426004]
+layout_mode = 2
+text = "Country "
+
+[node name="CountryLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/CountryContainer" unique_id=662766897]
+unique_name_in_owner = true
+layout_mode = 2
+max_length = 2
+
+[node name="SeachButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1189724649]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Search"
+
+[node name="PlayersLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1316092945]
+layout_mode = 2
+text = "Players"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=741162534]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayersContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer" unique_id=362610215]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

@@ -10,6 +10,6 @@ var total_count: int = 0
 func _init(from_dict: Dictionary = {}) -> void:
 	super(from_dict)
 
-	players.clear()
-	for player_dict: Dictionary in from_dict["players"]:
-		players.append(Player.new(player_dict))
+	for i in players.size():
+		var player_dict: Dictionary = players[i]
+		players[i] = Player.new(player_dict)

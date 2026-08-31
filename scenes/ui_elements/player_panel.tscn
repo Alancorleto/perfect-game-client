@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bbv1d85dj5pn0"]
+
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_ehwcm"]
+[ext_resource type="Script" uid="uid://pyw2gv0bv5l8" path="res://scenes/ui_elements/player_panel.gd" id="2_ehwcm"]
+[ext_resource type="Texture2D" uid="uid://b8jpwo1slvb55" path="res://icon.svg" id="3_x67kw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jo2o2"]
+
+[node name="PlayerPanel" type="PanelContainer" unique_id=305856583]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 104.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ehwcm")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jo2o2")
+script = ExtResource("2_ehwcm")
+
+[node name="Button" type="Button" parent="." unique_id=791378429]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1117251940]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1698406944]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="FlagTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=2038742879]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_x67kw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=2040217086]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="NicknameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1535868605]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Player Nickname"
+autowrap_mode = 3
