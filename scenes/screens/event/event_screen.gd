@@ -83,6 +83,9 @@ func _populate_organizers() -> void:
 			var organizer_panel: EventOrganizerPanel = EventOrganizerPanelScene.instantiate()
 			organizers_container.add_child(organizer_panel)
 			organizer_panel.populate(organizer)
+			if Globals.organizer_mode_enabled:
+				organizer_panel.show_delete_button()
+				organizer_panel.delete_pressed.connect(_remove_organizer.bind(organizer))
 
 
 func _go_to_update_event_data_screen() -> void:
@@ -91,3 +94,21 @@ func _go_to_update_event_data_screen() -> void:
 
 func _go_to_add_organizer_screen() -> void:
 	App.change_screen(ADD_ORGANIZER_SCREEN_PATH)
+
+
+func _remove_organizer(organizer: Player) -> void:
+	App.show_loading_sign("Removing organizer...")
+	
+	await EventsRouter.remove_organizer_from_event(Globals.current_event.id, organizer.id)
+	
+	App.hide_loading_sign()
+	
+	if HTTPRequests.failed():
+		await App.show_error_dialog("Error removing organizer.")
+		return
+	
+	await App.show_dialog("Organizer removed successfully!")
+	
+	await _populate_organizers()
+	
+	
