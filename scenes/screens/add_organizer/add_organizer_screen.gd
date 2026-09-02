@@ -1,5 +1,6 @@
 extends Control
 
+@onready var nickname_line_edit: LineEdit = %NicknameLineEdit
 @onready var country_line_edit: LineEdit = %CountryLineEdit
 @onready var seach_button: Button = %SeachButton
 @onready var players_container: VBoxContainer = %PlayersContainer
@@ -19,8 +20,9 @@ func _search_players() -> void:
 	
 	App.show_loading_sign("Searching players...")
 	
+	var nickname: String = nickname_line_edit.text
 	var country_code: String = country_line_edit.text
-	var response: ListPlayersResponse = await PlayersRouter.list_players(country_code)
+	var response: ListPlayersResponse = await PlayersRouter.list_players(nickname, country_code)
 	
 	if not response:
 		App.hide_loading_sign()

@@ -209,6 +209,7 @@ layout_mode = 2
 size_flags_vertical = 0
 
 [node name="PlayersHeader" type="HBoxContainer" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayersPanel/VBoxContainer/PlayersTable" unique_id=32327272]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayersPanel/VBoxContainer/PlayersTable/PlayersHeader" unique_id=1643959665]
@@ -234,7 +235,8 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Button" type="Button" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayersPanel/VBoxContainer" unique_id=1762128721]
+[node name="AddPlayerButton" type="Button" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayersPanel/VBoxContainer" unique_id=1762128721]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
-text = "Add Players"
+text = "Add Player"

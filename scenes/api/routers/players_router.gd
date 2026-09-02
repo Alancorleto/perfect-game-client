@@ -3,22 +3,30 @@ extends Node
 var route_base = "/players"
 
 
-func list_players(country_code: String = "", offset: int = 0, size: int = 20) -> ListPlayersResponse:
+func list_players(
+	nickname: String = "",
+	country_code: String = "",
+	offset: int = 0,
+	size: int = 20
+) -> ListPlayersResponse:
 	var route: String = route_base
-
+	
 	route += "?offset=%d&size=%d" % [offset, size]
-
+	
+	if nickname != "":
+		route+= "&nickname_filter=%s" % nickname
+	
 	if country_code != "":
 		route += "&country_code=%s" % country_code
-
+	
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return null
-
+	
 	var response_json = HTTPRequests.get_response_body()
-
+	
 	var response = ListPlayersResponse.new(response_json)
-
+	
 	return response
 
 
