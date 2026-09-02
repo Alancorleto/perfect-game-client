@@ -3,14 +3,19 @@ extends Control
 @onready var name_label: Label = %NameLabel
 @onready var rounds_container: VBoxContainer = %RoundsContainer
 @onready var players_container: VBoxContainer = %PlayersContainer
+@onready var update_button: Button = %UpdateButton
 
 var tournament: Tournament
 
 const TournamentPlayerPanelScene := preload("res://scenes/screens/tournament/tournament_player_panel.tscn")
 const RoundPanelScene := preload("res://scenes/screens/tournament/round_panel.tscn")
 
+const UPDATE_TOURNAMENT_DATA_SCREEN_PATH: String = "res://scenes/screens/tournament/update_tournament_data_screen.tscn"
+
 
 func _ready() -> void:
+	update_button.pressed.connect(_go_to_update_tournament_screen)
+	
 	App.show_loading_sign("Loading rounds...")
 
 	tournament = Globals.current_tournament
@@ -57,3 +62,7 @@ func _populate_players() -> void:
 			var player_panel: TournamentPlayerPanel = TournamentPlayerPanelScene.instantiate()
 			players_container.add_child(player_panel)
 			player_panel.populate(player)
+
+
+func _go_to_update_tournament_screen() -> void:
+	App.change_screen(UPDATE_TOURNAMENT_DATA_SCREEN_PATH)

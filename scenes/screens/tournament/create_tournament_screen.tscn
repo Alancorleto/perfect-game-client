@@ -5,3 +5,6 @@
 
 [node name="CreateTournamentScreen" unique_id=1879815585 instance=ExtResource("1_djmy4")]
 script = ExtResource("2_3ydt7")
+in_progress_message = "Creating tournament..."
+success_message = "Tournament created successfully!"
+failure_message = "Error creating tournament."

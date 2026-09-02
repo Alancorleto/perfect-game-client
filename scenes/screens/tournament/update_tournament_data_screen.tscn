@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bg37moctawb4a"]
+
+[ext_resource type="PackedScene" uid="uid://6hgcwo8rb7gt" path="res://scenes/screens/tournament/tournament_data_screen_base.tscn" id="1_msis1"]
+[ext_resource type="Script" uid="uid://bc1wgmikjp86g" path="res://scenes/screens/tournament/update_tournament_data_screen.gd" id="2_ab1lq"]
+
+[node name="UpdateTournamentDataScreen" unique_id=1879815585 instance=ExtResource("1_msis1")]
+script = ExtResource("2_ab1lq")
+in_progress_message = "Updating tournament..."
+success_message = "Tournament updated successfully!"
+failure_message = "Error updating tournament."
