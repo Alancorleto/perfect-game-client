@@ -18,6 +18,7 @@ var event: Event
 
 const UPDATE_EVENT_DATA_SCREEN_PATH: String = "res://scenes/screens/event/update_event_data_screen.tscn"
 const ADD_ORGANIZER_SCREEN_PATH: String = "res://scenes/screens/add_organizer/add_organizer_screen.tscn"
+const CREATE_TOURNAMENT_SCREEN_PATH: String = "res://scenes/screens/tournament/create_tournament_screen.tscn"
 
 const TournamentPanelScene := preload("res://scenes/screens/event/tournament_panel.tscn")
 const EventOrganizerPanelScene := preload("res://scenes/screens/event/event_organizer_panel.tscn")
@@ -26,6 +27,7 @@ const EventOrganizerPanelScene := preload("res://scenes/screens/event/event_orga
 func _ready() -> void:
 	update_button.pressed.connect(_go_to_update_event_data_screen)
 	new_organizer_button.pressed.connect(_go_to_add_organizer_screen)
+	new_tournament_button.pressed.connect(_go_to_create_tournament_screen)
 	
 	App.show_loading_sign("Loading event...")
 
@@ -44,9 +46,11 @@ func _ready() -> void:
 	if Globals.organizer_mode_enabled:
 		update_button.show()
 		new_organizer_button.show()
+		new_tournament_button.show()
 	else:
 		update_button.hide()
 		new_organizer_button.hide()
+		new_tournament_button.hide()
 
 	App.hide_loading_sign()
 
@@ -94,6 +98,10 @@ func _go_to_update_event_data_screen() -> void:
 
 func _go_to_add_organizer_screen() -> void:
 	App.change_screen(ADD_ORGANIZER_SCREEN_PATH)
+
+
+func _go_to_create_tournament_screen() -> void:
+	App.change_screen(CREATE_TOURNAMENT_SCREEN_PATH)
 
 
 func _remove_organizer(organizer: Player) -> void:

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://s76aaq2lfqtm"]
+
+[ext_resource type="PackedScene" uid="uid://6hgcwo8rb7gt" path="res://scenes/screens/tournament/tournament_data_screen_base.tscn" id="1_djmy4"]
+[ext_resource type="Script" uid="uid://qj1ilhqorakk" path="res://scenes/screens/tournament/create_tournament_screen.gd" id="2_3ydt7"]
+
+[node name="CreateTournamentScreen" unique_id=1879815585 instance=ExtResource("1_djmy4")]
+script = ExtResource("2_3ydt7")
