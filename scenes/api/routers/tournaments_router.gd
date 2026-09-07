@@ -153,12 +153,19 @@ func update_player_in_tournament(tournament_id: String, player_id: String, playe
 
 func remove_player_from_tournament(tournament_id: String, player_id: String) -> Array[PlayerInTournament]:
 	var route: String = "%s/%s/players/%s" % [route_base, tournament_id, player_id]
-
+	
 	await HTTPRequests.DELETE(route)
 	if HTTPRequests.failed():
 		return []
-
-	return HTTPRequests.get_response_body()
+	
+	var players_dicts: Array = HTTPRequests.get_response_body()
+	
+	var players_in_tournament: Array[PlayerInTournament] = []
+	
+	for player_dict: Dictionary in players_dicts:
+		players_in_tournament.append(PlayerInTournament.new(player_dict))
+	
+	return players_in_tournament
 
 
 func list_rounds_in_tournament(tournament_id: String) -> Array[Round]:

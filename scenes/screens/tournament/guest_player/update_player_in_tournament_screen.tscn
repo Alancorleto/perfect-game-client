@@ -9,3 +9,6 @@ in_progress_message = "Updating player..."
 success_message = "Player updated successfully!"
 failure_message = "Error updating player."
 next_screen_path = "res://scenes/screens/tournament/tournament_screen.tscn"
+
+[node name="RemoveButton" parent="MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1735848756) index="1" unique_id=231569446]
+visible = true

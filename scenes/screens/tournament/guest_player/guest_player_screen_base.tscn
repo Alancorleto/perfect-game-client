@@ -25,56 +25,69 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2017113531]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1735848756]
 layout_mode = 2
+alignment = 1
+
+[node name="FormContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=2017113531]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="NicknameContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1588142276]
+[node name="NicknameContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/FormContainer" unique_id=1588142276]
 layout_mode = 2
 
-[node name="NicknameLabel" type="Label" parent="MarginContainer/VBoxContainer/NicknameContainer" unique_id=1386150206]
+[node name="NicknameLabel" type="Label" parent="MarginContainer/VBoxContainer/FormContainer/NicknameContainer" unique_id=1386150206]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Nickname*"
 
-[node name="NicknameLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/NicknameContainer" unique_id=1914246427]
+[node name="NicknameLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/FormContainer/NicknameContainer" unique_id=1914246427]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CountryContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=833450492]
+[node name="CountryContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/FormContainer" unique_id=833450492]
 layout_mode = 2
 
-[node name="CountryLabel" type="Label" parent="MarginContainer/VBoxContainer/CountryContainer" unique_id=1780878690]
+[node name="CountryLabel" type="Label" parent="MarginContainer/VBoxContainer/FormContainer/CountryContainer" unique_id=1780878690]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Country Code"
 
-[node name="CountryLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/CountryContainer" unique_id=857101808]
+[node name="CountryLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/FormContainer/CountryContainer" unique_id=857101808]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HasPaidContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1048425955]
+[node name="HasPaidContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/FormContainer" unique_id=1048425955]
 layout_mode = 2
 
-[node name="HasPaidLabel" type="Label" parent="MarginContainer/VBoxContainer/HasPaidContainer" unique_id=118267066]
+[node name="HasPaidLabel" type="Label" parent="MarginContainer/VBoxContainer/FormContainer/HasPaidContainer" unique_id=118267066]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Has Paid"
 
-[node name="HasPaidCheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/HasPaidContainer" unique_id=245973459]
+[node name="HasPaidCheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/FormContainer/HasPaidContainer" unique_id=245973459]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1573443751]
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/FormContainer" unique_id=1573443751]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
-[node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=62154756]
+[node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer/FormContainer" unique_id=62154756]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Confirm"
+
+[node name="RemoveButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=231569446]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Remove from tournament"

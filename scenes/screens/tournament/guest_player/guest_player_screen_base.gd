@@ -12,9 +12,12 @@ extends Control
 
 @onready var confirm_button: Button = %ConfirmButton
 
+@onready var remove_button: Button = %RemoveButton
+
 
 func _ready() -> void:
 	confirm_button.pressed.connect(_on_confirm_button_pressed)
+	remove_button.pressed.connect(_on_remove_button_pressed)
 	
 	_populate()
 
@@ -39,3 +42,23 @@ func _on_confirm_button_pressed() -> void:
 		App.change_screen(next_screen_path)
 	else:
 		await App.show_error_dialog(failure_message)
+
+
+func _on_remove_button_pressed() -> void:
+	App.show_loading_sign("Removing player from tournament...")
+	
+	var players_in_tournament: Array[PlayerInTournament] = await TournamentsRouter.remove_player_from_tournament(
+		Globals.current_tournament.id,
+		Globals.current_player_in_tournament.player.id,
+	)
+	
+	App.hide_loading_sign()
+	
+	for player_in_tournament: PlayerInTournament in players_in_tournament:
+		if player_in_tournament.player.id == Globals.current_player_in_tournament.player.id:
+			await App.show_error_dialog("Error removing player from tournament.")
+			return
+	
+	await App.show_dialog("Player removed successfully!")
+	
+	App.change_screen(next_screen_path)
