@@ -9,6 +9,8 @@ var current_event: Event
 var current_tournament: Tournament
 var current_round: Round
 
+var current_player_in_tournament: PlayerInTournament
+
 var organizer_mode_enabled: bool = false
 
 

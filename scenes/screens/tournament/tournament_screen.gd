@@ -13,6 +13,7 @@ const RoundPanelScene := preload("res://scenes/screens/tournament/round_panel.ts
 
 const UPDATE_TOURNAMENT_DATA_SCREEN_PATH: String = "res://scenes/screens/tournament/update_tournament_data_screen.tscn"
 const CREATE_GUEST_PLAYER_SCREEN_PATH: String = "res://scenes/screens/tournament/guest_player/create_guest_player_screen.tscn"
+const UPDATE_PLAYER_IN_TOURNAMENT_SCREEN: String = "res://scenes/screens/tournament/guest_player/update_player_in_tournament_screen.tscn"
 
 
 func _ready() -> void:
@@ -72,6 +73,7 @@ func _populate_players() -> void:
 			var player_panel: TournamentPlayerPanel = TournamentPlayerPanelScene.instantiate()
 			players_container.add_child(player_panel)
 			player_panel.populate(player)
+			player_panel.pressed.connect(_go_to_update_player_in_tournament_screen)
 
 
 func _go_to_update_tournament_screen() -> void:
@@ -80,3 +82,8 @@ func _go_to_update_tournament_screen() -> void:
 
 func _go_to_create_guest_player_screen() -> void:
 	App.change_screen(CREATE_GUEST_PLAYER_SCREEN_PATH)
+
+
+func _go_to_update_player_in_tournament_screen(player_in_tournament: PlayerInTournament) -> void:
+	Globals.current_player_in_tournament = player_in_tournament
+	App.change_screen(UPDATE_PLAYER_IN_TOURNAMENT_SCREEN)

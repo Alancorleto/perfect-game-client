@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bg5v2dym5b44p"]
+
+[ext_resource type="PackedScene" uid="uid://xvraq07drsyp" path="res://scenes/screens/tournament/guest_player/guest_player_screen_base.tscn" id="1_wbful"]
+[ext_resource type="Script" uid="uid://dsskd5nxefd3k" path="res://scenes/screens/tournament/guest_player/update_player_in_tournament_screen.gd" id="2_wbful"]
+
+[node name="UpdatePlayerInTournamentScreen" unique_id=1879815585 instance=ExtResource("1_wbful")]
+script = ExtResource("2_wbful")
+in_progress_message = "Updating player..."
+success_message = "Player updated successfully!"
+failure_message = "Error updating player."
+next_screen_path = "res://scenes/screens/tournament/tournament_screen.tscn"
