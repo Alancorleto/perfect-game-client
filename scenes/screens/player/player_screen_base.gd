@@ -4,6 +4,7 @@ extends Control
 @export var in_progress_message: String
 @export var success_message: String
 @export var failure_message: String
+@export_file_path("*.tscn") var next_screen_path: String = ""
 
 @onready var nickname_line_edit: LineEdit = %NicknameLineEdit
 @onready var name_line_edit: LineEdit = %NameLineEdit
@@ -20,7 +21,6 @@ extends Control
 
 @onready var file_dialog: FileDialog = $FileDialog
 
-const SELECT_MODE_SCREEN_PATH := "res://scenes/placeholder/screens/select_mode_screen.tscn"
 
 var profile_picture_bytes: PackedByteArray
 var profile_picture_path: String = ""
@@ -51,7 +51,7 @@ func _on_confirm_button_pressed() -> void:
 	App.hide_loading_sign()
 	if success:
 		await App.show_dialog(success_message)
-		App.change_screen(SELECT_MODE_SCREEN_PATH)
+		App.change_screen(next_screen_path)
 	else:
 		await App.show_error_dialog(failure_message)
 

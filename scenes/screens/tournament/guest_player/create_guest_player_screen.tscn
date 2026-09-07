@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d2lyvq8qi0y1r"]
+
+[ext_resource type="PackedScene" uid="uid://xvraq07drsyp" path="res://scenes/screens/tournament/guest_player/guest_player_screen_base.tscn" id="1_hgwjk"]
+[ext_resource type="Script" uid="uid://cd4ag1jmgh7xp" path="res://scenes/screens/tournament/guest_player/create_guest_player_screen.gd" id="2_s2c25"]
+
+[node name="CreateGuestPlayerScreen" unique_id=1879815585 instance=ExtResource("1_hgwjk")]
+script = ExtResource("2_s2c25")
+in_progress_message = "Creating guest player..."
+success_message = "Guest player created successfully!"
+failure_message = "Error creating guest player."
+next_screen_path = "res://scenes/screens/tournament/tournament_screen.tscn"

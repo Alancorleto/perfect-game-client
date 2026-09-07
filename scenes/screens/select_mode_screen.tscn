@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cogwm205i7e2k"]
 
 [ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_4jb8x"]
-[ext_resource type="Script" uid="uid://yjbnfk2q32p1" path="res://scenes/placeholder/screens/select_mode_screen.gd" id="2_pttvx"]
+[ext_resource type="Script" uid="uid://yjbnfk2q32p1" path="res://scenes/screens/select_mode_screen.gd" id="2_pttvx"]
 
 [node name="SelectModeScreen" type="Control" unique_id=80987437]
 layout_mode = 3

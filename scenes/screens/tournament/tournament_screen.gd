@@ -4,6 +4,7 @@ extends Control
 @onready var rounds_container: VBoxContainer = %RoundsContainer
 @onready var players_container: VBoxContainer = %PlayersContainer
 @onready var update_button: Button = %UpdateButton
+@onready var add_player_button: Button = %AddPlayerButton
 
 var tournament: Tournament
 
@@ -11,16 +12,25 @@ const TournamentPlayerPanelScene := preload("res://scenes/screens/tournament/tou
 const RoundPanelScene := preload("res://scenes/screens/tournament/round_panel.tscn")
 
 const UPDATE_TOURNAMENT_DATA_SCREEN_PATH: String = "res://scenes/screens/tournament/update_tournament_data_screen.tscn"
+const CREATE_GUEST_PLAYER_SCREEN_PATH: String = "res://scenes/screens/tournament/guest_player/create_guest_player_screen.tscn"
 
 
 func _ready() -> void:
 	update_button.pressed.connect(_go_to_update_tournament_screen)
+	add_player_button.pressed.connect(_go_to_create_guest_player_screen)
 	
 	App.show_loading_sign("Loading rounds...")
 
 	tournament = Globals.current_tournament
 
 	name_label.text = tournament.name
+	
+	if Globals.organizer_mode_enabled:
+		update_button.show()
+		add_player_button.show()
+	else:
+		update_button.hide()
+		add_player_button.hide()
 
 	await _populate_rounds()
 
@@ -66,3 +76,7 @@ func _populate_players() -> void:
 
 func _go_to_update_tournament_screen() -> void:
 	App.change_screen(UPDATE_TOURNAMENT_DATA_SCREEN_PATH)
+
+
+func _go_to_create_guest_player_screen() -> void:
+	App.change_screen(CREATE_GUEST_PLAYER_SCREEN_PATH)

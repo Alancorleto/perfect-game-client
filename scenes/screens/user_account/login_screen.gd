@@ -8,7 +8,7 @@ extends Control
 @onready var reset_password_button: Button = %ResetPasswordButton
 @onready var create_account_button: Button = %CreateAccountButton
 
-const SELECT_MODE_SCREEN_PATH: String = "res://scenes/placeholder/screens/select_mode_screen.tscn"
+const SELECT_MODE_SCREEN_PATH: String = "res://scenes/screens/select_mode_screen.tscn"
 const CREATE_ACCOUNT_SCREEN_PATH: String = "res://scenes/screens/user_account/create_account_screen.tscn"
 const RESET_PASSWORD_SCREEN_PATH: String = "res://scenes/screens/user_account/reset_password_screen_1.tscn"
 

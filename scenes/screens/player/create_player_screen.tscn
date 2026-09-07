@@ -8,3 +8,4 @@ script = ExtResource("2_gko6v")
 in_progress_message = "Creating player profile..."
 success_message = "Player profile created successfully!"
 failure_message = "An error ocurred while creating player profile."
+next_screen_path = "res://scenes/screens/select_mode_screen.tscn"
