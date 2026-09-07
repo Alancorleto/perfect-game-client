@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_u4q52"]
 [ext_resource type="Script" uid="uid://b17occsss75we" path="res://scenes/screens/tournament/tournament_player_panel.gd" id="2_u4q52"]
 [ext_resource type="Texture2D" uid="uid://1rnkdgu10rq3" path="res://assets/icons/remove_icon.svg" id="3_j4i82"]
+[ext_resource type="Texture2D" uid="uid://ccyyxo2b3547g" path="res://assets/icons/check.png" id="5_01ufy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jo2o2"]
 
@@ -88,3 +89,21 @@ texture_normal = ExtResource("3_j4i82")
 texture_pressed = ExtResource("3_j4i82")
 texture_hover = ExtResource("3_j4i82")
 stretch_mode = 5
+
+[node name="HasPaidContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1028531541]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MoneyLabel" type="Label" parent="MarginContainer/HBoxContainer/HasPaidContainer" unique_id=1512253369]
+layout_mode = 2
+text = "💵"
+
+[node name="HasPaidCheckTexture" type="TextureRect" parent="MarginContainer/HBoxContainer/HasPaidContainer" unique_id=1624337612]
+custom_minimum_size = Vector2(48, 64)
+custom_maximum_size = Vector2(48, 64)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("5_01ufy")
