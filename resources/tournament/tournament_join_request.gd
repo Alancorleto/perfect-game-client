@@ -1,8 +1,8 @@
-class_name TournamentInvitationResponse
+class_name TournamentJoinRequest
 extends Serializable
 
 var status = TournamentRequestStatus.PENDING
 var issued_at = null
 
-var tournament_id: String
-var player = null
+var player_id: String
+var tournament = null

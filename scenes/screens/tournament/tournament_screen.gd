@@ -6,6 +6,11 @@ extends Control
 @onready var update_button: Button = %UpdateButton
 @onready var add_player_button: Button = %AddPlayerButton
 
+@onready var join_request_rejected_label: Label = %JoinRequestRejectedLabel
+@onready var join_request_button: Button = %JoinRequestButton
+@onready var join_request_waiting_label: Label = %JoinRequestWaitingLabel
+@onready var join_request_accepted_label: Label = %JoinRequestAcceptedLabel
+
 var tournament: Tournament
 
 const TournamentPlayerPanelScene := preload("res://scenes/screens/tournament/tournament_player_panel.tscn")

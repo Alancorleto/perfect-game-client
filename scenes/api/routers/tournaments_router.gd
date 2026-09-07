@@ -63,16 +63,16 @@ func create_guest_player(tournament_id: String, player: GuestPlayerCreate) -> Pl
 	return Player.new(HTTPRequests.get_response_body())
 
 
-func list_tournament_invitations(tournament_id: String) -> Array[TournamentInvitationResponse]:
+func list_tournament_invitations(tournament_id: String) -> Array[TournamentInvitation]:
 	var route: String = "%s/%s/invitations" % [route_base, tournament_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return []
 
-	var invitations: Array[TournamentInvitationResponse] = []
+	var invitations: Array[TournamentInvitation] = []
 	for invitation_json: Dictionary in HTTPRequests.get_response_body():
-		invitations.append(TournamentInvitationResponse.new(invitation_json))
+		invitations.append(TournamentInvitation.new(invitation_json))
 
 	return invitations
 
@@ -95,16 +95,16 @@ func decline_tournament_invitation(tournament_id: String) -> void:
 	await HTTPRequests.POST(route)
 
 
-func list_tournament_join_requests(tournament_id: String) -> Array[TournamentJoinRequestResponse]:
+func list_tournament_join_requests(tournament_id: String) -> Array[TournamentJoinRequest]:
 	var route: String = "%s/%s/join-requests" % [route_base, tournament_id]
 
 	await HTTPRequests.GET(route)
 	if HTTPRequests.failed():
 		return []
 
-	var join_requests: Array[TournamentJoinRequestResponse] = []
+	var join_requests: Array[TournamentJoinRequest] = []
 	for join_request_json: Dictionary in HTTPRequests.get_response_body():
-		join_requests.append(TournamentJoinRequestResponse.new(join_request_json))
+		join_requests.append(TournamentJoinRequest.new(join_request_json))
 
 	return join_requests
 
