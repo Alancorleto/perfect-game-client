@@ -93,78 +93,29 @@ layout_mode = 2
 text = "You are a player for this category."
 horizontal_alignment = 1
 
-[node name="OrganizerJoinRequestsContainer" type="PanelContainer" parent="ScrollContainer/MarginContainer/HBoxContainer" unique_id=420869265]
+[node name="OrganizerJoinRequestsPanel" type="PanelContainer" parent="ScrollContainer/MarginContainer/HBoxContainer" unique_id=420869265]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tlow6")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer" unique_id=1029774085]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsPanel" unique_id=1029774085]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Label" type="Button" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer/VBoxContainer" unique_id=907214573]
+[node name="Label" type="Button" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsPanel/VBoxContainer" unique_id=907214573]
 layout_mode = 2
 text = "Join Requests"
 
-[node name="HSeparator" type="HSeparator" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer/VBoxContainer" unique_id=556245439]
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsPanel/VBoxContainer" unique_id=556245439]
 layout_mode = 2
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer/VBoxContainer" unique_id=824549348]
+[node name="JoinRequestsContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsPanel/VBoxContainer" unique_id=824549348]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer/VBoxContainer/VBoxContainer4" unique_id=1849600875]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer/VBoxContainer/VBoxContainer4/HBoxContainer" unique_id=1759623387]
-layout_mode = 2
-size_flags_horizontal = 2
-text = "Player 1"
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer/VBoxContainer/VBoxContainer4/HBoxContainer" unique_id=849400549]
-layout_mode = 2
-text = "Accept"
-
-[node name="Button2" type="Button" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer/VBoxContainer/VBoxContainer4/HBoxContainer" unique_id=1945247535]
-layout_mode = 2
-text = "Reject"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer/VBoxContainer/VBoxContainer4" unique_id=617151012]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer/VBoxContainer/VBoxContainer4/HBoxContainer2" unique_id=1794270072]
-layout_mode = 2
-size_flags_horizontal = 2
-text = "Player 2"
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer/VBoxContainer/VBoxContainer4/HBoxContainer2" unique_id=894264151]
-layout_mode = 2
-text = "Accept"
-
-[node name="Button2" type="Button" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer/VBoxContainer/VBoxContainer4/HBoxContainer2" unique_id=1711719881]
-layout_mode = 2
-text = "Reject"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer/VBoxContainer/VBoxContainer4" unique_id=455690107]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer/VBoxContainer/VBoxContainer4/HBoxContainer3" unique_id=2044102239]
-layout_mode = 2
-size_flags_horizontal = 2
-text = "Player 3"
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer/VBoxContainer/VBoxContainer4/HBoxContainer3" unique_id=3646412]
-layout_mode = 2
-text = "Accept"
-
-[node name="Button2" type="Button" parent="ScrollContainer/MarginContainer/HBoxContainer/OrganizerJoinRequestsContainer/VBoxContainer/VBoxContainer4/HBoxContainer3" unique_id=1069038647]
-layout_mode = 2
-text = "Reject"
 
 [node name="RoundsPanel" type="PanelContainer" parent="ScrollContainer/MarginContainer/HBoxContainer" unique_id=1542249432]
 layout_mode = 2

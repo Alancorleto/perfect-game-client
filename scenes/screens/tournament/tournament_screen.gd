@@ -6,6 +6,9 @@ extends Control
 @onready var update_button: Button = %UpdateButton
 @onready var add_player_button: Button = %AddPlayerButton
 
+@onready var organizer_join_requests_panel: PanelContainer = %OrganizerJoinRequestsPanel
+@onready var join_requests_container: VBoxContainer = %JoinRequestsContainer
+
 @onready var join_request_declined_label: Label = %JoinRequestDeclinedLabel
 @onready var join_request_button: Button = %JoinRequestButton
 @onready var join_request_pending_label: Label = %JoinRequestPendingLabel
@@ -15,6 +18,7 @@ var tournament: Tournament
 
 const TournamentPlayerPanelScene := preload("res://scenes/screens/tournament/tournament_player_panel.tscn")
 const RoundPanelScene := preload("res://scenes/screens/tournament/round_panel.tscn")
+const JoinRequestPanelScene := preload("res://scenes/screens/tournament/join_request_panel.tscn")
 
 const UPDATE_TOURNAMENT_DATA_SCREEN_PATH: String = "res://scenes/screens/tournament/update_tournament_data_screen.tscn"
 const CREATE_GUEST_PLAYER_SCREEN_PATH: String = "res://scenes/screens/tournament/guest_player/create_guest_player_screen.tscn"
@@ -47,6 +51,12 @@ func _ready() -> void:
 	await _populate_players()
 	
 	await _populate_join_request_status()
+	
+	if Globals.organizer_mode_enabled:
+		organizer_join_requests_panel.show()
+		await _populate_join_requests_as_organizer()
+	else:
+		organizer_join_requests_panel.hide()
 	
 	App.hide_loading_sign()
 
@@ -118,6 +128,24 @@ func _populate_join_request_status() -> void:
 				join_request_button.show()
 
 
+func _populate_join_requests_as_organizer() -> void:
+	var join_requests: Array[TournamentJoinRequest] = (
+		await TournamentsRouter.list_tournament_join_requests(
+			Globals.current_tournament.id
+		)
+	)
+	
+	for join_request: TournamentJoinRequest in join_requests:
+		if join_request.status != TournamentRequestStatus.PENDING:
+			continue
+		
+		var join_request_panel: JoinRequestPanel = JoinRequestPanelScene.instantiate()
+		join_requests_container.add_child(join_request_panel)
+		join_request_panel.populate(join_request.player)
+		join_request_panel.accepted.connect(_accept_join_request.bind(join_request.player_id))
+		join_request_panel.declined.connect(_decline_join_request.bind(join_request.player_id))
+
+
 func _request_join() -> void:
 	App.show_loading_sign("Sending request...")
 	
@@ -139,6 +167,36 @@ func _go_to_create_guest_player_screen() -> void:
 func _go_to_update_player_in_tournament_screen(player_in_tournament: PlayerInTournament) -> void:
 	Globals.current_player_in_tournament = player_in_tournament
 	App.change_screen(UPDATE_PLAYER_IN_TOURNAMENT_SCREEN)
+
+
+func _accept_join_request(player_id: String) -> void:
+	App.show_loading_sign("Accepting request...")
+	
+	await TournamentsRouter.accept_tournament_join_request(
+		Globals.current_tournament.id,
+		player_id,
+	)
+	
+	App.hide_loading_sign()
+	
+	await App.show_dialog("Request accepted successfully!")
+	
+	App.change_screen(scene_file_path)
+
+
+func _decline_join_request(player_id: String) -> void:
+	App.show_loading_sign("Declined request...")
+	
+	await TournamentsRouter.decline_tournament_join_request(
+		Globals.current_tournament.id,
+		player_id,
+	)
+	
+	App.hide_loading_sign()
+	
+	await App.show_dialog("Request declined successfully.")
+	
+	App.change_screen(scene_file_path)
 
 
 func _on_join_request_button_pressed() -> void:
