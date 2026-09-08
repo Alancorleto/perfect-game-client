@@ -1,8 +1,7 @@
 class_name TournamentRequestStatus
 extends Object
 
-enum {
-	PENDING,
-	ACCEPTED,
-	DECLINED,
-}
+
+const PENDING = "pending"
+const ACCEPTED = "accepted"
+const DECLINED = "declined"

@@ -109,6 +109,20 @@ func list_tournament_join_requests(tournament_id: String) -> Array[TournamentJoi
 	return join_requests
 
 
+func get_tournament_join_request_for_player(tournament_id: String, player_id: String) -> Array[TournamentJoinRequest]:
+	var route: String = "%s/%s/join-requests/%s" % [route_base, tournament_id, player_id]
+	
+	await HTTPRequests.GET(route)
+	if HTTPRequests.failed():
+		return []
+	
+	var join_requests: Array[TournamentJoinRequest] = []
+	for join_request_json: Dictionary in HTTPRequests.get_response_body():
+		join_requests.append(TournamentJoinRequest.new(join_request_json))
+	
+	return join_requests
+
+
 func request_join_tournament(tournament_id: String) -> void:
 	var route: String = "%s/%s/join-requests" % [route_base, tournament_id]
 

@@ -58,11 +58,11 @@ layout_mode = 2
 text = "Auto-accept join requests"
 
 [node name="PlayerJoinRequestContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/HBoxContainer" unique_id=1144615802]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label3" type="Label" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayerJoinRequestContainer" unique_id=196094405]
+[node name="JoinRequestDeclinedLabel" type="Label" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayerJoinRequestContainer" unique_id=196094405]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -70,11 +70,14 @@ text = "Your last request to join was rejected by an organizer."
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Button" type="Button" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayerJoinRequestContainer" unique_id=2035972636]
+[node name="JoinRequestButton" type="Button" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayerJoinRequestContainer" unique_id=2035972636]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "Request to join"
 
-[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayerJoinRequestContainer" unique_id=1978333999]
+[node name="JoinRequestPendingLabel" type="Label" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayerJoinRequestContainer" unique_id=1978333999]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(500, 10)
 layout_mode = 2
@@ -83,7 +86,8 @@ Wait for an organizer to accept or reject your request."
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Label2" type="Label" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayerJoinRequestContainer" unique_id=1299718407]
+[node name="JoinRequestAcceptedLabel" type="Label" parent="ScrollContainer/MarginContainer/HBoxContainer/PlayerJoinRequestContainer" unique_id=1299718407]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 text = "You are a player for this category."

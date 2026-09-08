@@ -36,7 +36,8 @@ func _login() -> void:
 	Globals.current_user = await UsersRouter.get_currently_logged_user()
 	
 	Globals.current_player = await PlayersRouter.get_currently_logged_player()
-	await Globals.current_player.try_load_profile_picture()
+	if Globals.current_player:
+		await Globals.current_player.try_load_profile_picture()
 	
 	App.hide_loading_sign()
 	
