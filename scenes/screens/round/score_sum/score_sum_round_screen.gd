@@ -6,6 +6,10 @@ extends Control
 @onready var next_column_button: Button = %NextColumnButton
 @onready var column_description_label: Label = %ColumnDescriptionLabel
 
+@onready var chart_container: HBoxContainer = %ChartContainer
+@onready var chart_title_texture: TextureRect = %ChartTitleTexture
+@onready var chart_level_label: Label = %ChartLevelLabel
+
 const ScoreColumnPanelScene := preload("res://scenes/screens/round/score_column_panel.tscn")
 
 var round: Round

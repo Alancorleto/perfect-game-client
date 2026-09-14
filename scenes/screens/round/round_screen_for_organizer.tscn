@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://vf8hihn8f5lo"]
+[gd_scene format=3 uid="uid://chd0fiigme82s"]
 
-[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_lhcml"]
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_twel5"]
 
 [node name="RoundScreenForOrganizer" type="Control" unique_id=647876315]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_lhcml")
+theme = ExtResource("1_twel5")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1347791564]
 layout_mode = 0

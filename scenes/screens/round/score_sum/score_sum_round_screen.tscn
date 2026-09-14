@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://bn01ajiwjaokk"]
+
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_1pfve"]
+[ext_resource type="Texture2D" uid="uid://b8jpwo1slvb55" path="res://icon.svg" id="2_cp14i"]
+[ext_resource type="Script" uid="uid://calxywhqp5sr2" path="res://scenes/screens/round/score_sum/score_sum_round_screen.gd" id="2_yaavh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8id0h"]
+bg_color = Color(0.15607512, 0.15607515, 0.15607506, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[node name="ScoreSumRoundScreen" type="Control" unique_id=647876315]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1pfve")
+script = ExtResource("2_yaavh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=717322291]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1347791564]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=882022842]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+
+[node name="DataContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=555725623]
+layout_mode = 2
+
+[node name="Column1" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/DataContainer" unique_id=1034598944]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FormatLabel" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/DataContainer/Column1" unique_id=1645199608]
+layout_mode = 2
+text = "Format: Battle"
+horizontal_alignment = 1
+
+[node name="LevelsLabel" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/DataContainer/Column1" unique_id=2134386792]
+layout_mode = 2
+text = "Levels: S16 - S18"
+horizontal_alignment = 1
+
+[node name="Column2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/DataContainer" unique_id=633321413]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QualifiersCountLabel" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/DataContainer/Column2" unique_id=114127124]
+layout_mode = 2
+text = "Qualifiers Count: 8"
+horizontal_alignment = 1
+
+[node name="StateLabel" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/DataContainer/Column2" unique_id=1920673597]
+layout_mode = 2
+text = "State: In progress"
+horizontal_alignment = 1
+
+[node name="ScoreTableContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1292993297]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="ColumnSelector" type="PanelContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ScoreTableContainer" unique_id=1449671461]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8id0h")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ScoreTableContainer/ColumnSelector" unique_id=1196132806]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="PreviousColumnButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ScoreTableContainer/ColumnSelector/HBoxContainer" unique_id=822194615]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "<="
+
+[node name="ColumnDescriptionLabel" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/ScoreTableContainer/ColumnSelector/HBoxContainer" unique_id=291093279]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Total"
+
+[node name="ChartContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ScoreTableContainer/ColumnSelector/HBoxContainer" unique_id=1176066087]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="ChartTitleTexture" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/ScoreTableContainer/ColumnSelector/HBoxContainer/ChartContainer" unique_id=1031434665]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+texture = ExtResource("2_cp14i")
+
+[node name="ChartLevelLabel" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/ScoreTableContainer/ColumnSelector/HBoxContainer/ChartContainer" unique_id=2053114352]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Single 16"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="NextColumnButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ScoreTableContainer/ColumnSelector/HBoxContainer" unique_id=362818109]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "=>"
+
+[node name="ScoreColumnPanelsContainer" type="Control" parent="VBoxContainer/MarginContainer/VBoxContainer/ScoreTableContainer" unique_id=1974395260]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
