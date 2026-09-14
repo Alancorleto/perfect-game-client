@@ -22,7 +22,10 @@ const JoinRequestPanelScene := preload("res://scenes/screens/tournament/join_req
 
 const UPDATE_TOURNAMENT_DATA_SCREEN_PATH: String = "res://scenes/screens/tournament/update_tournament_data_screen.tscn"
 const CREATE_GUEST_PLAYER_SCREEN_PATH: String = "res://scenes/screens/tournament/guest_player/create_guest_player_screen.tscn"
-const UPDATE_PLAYER_IN_TOURNAMENT_SCREEN: String = "res://scenes/screens/tournament/guest_player/update_player_in_tournament_screen.tscn"
+const UPDATE_PLAYER_IN_TOURNAMENT_SCREEN_PATH: String = "res://scenes/screens/tournament/guest_player/update_player_in_tournament_screen.tscn"
+const ROUND_SCREEN_FOR_ORGANIZER_PATH: String = "res://scenes/screens/round/round_screen_for_organizer.tscn"
+const SCORE_SUM_SCREEN_SCENE_PATH: String = "res://scenes/screens/round/score_sum_round_screen.tscn"
+const BATTLE_SCREEN_SCENE_PATH: String = "res://scenes/placeholder/screens/battle_screen.tscn"
 
 var is_already_in: bool = false
 
@@ -76,6 +79,7 @@ func _populate_rounds() -> void:
 			var round_panel: RoundPanel = RoundPanelScene.instantiate()
 			rounds_container.add_child(round_panel)
 			round_panel.populate(round)
+			round_panel.pressed.connect(_go_to_round_screen.bind(round))
 
 
 func _populate_players() -> void:
@@ -166,7 +170,17 @@ func _go_to_create_guest_player_screen() -> void:
 
 func _go_to_update_player_in_tournament_screen(player_in_tournament: PlayerInTournament) -> void:
 	Globals.current_player_in_tournament = player_in_tournament
-	App.change_screen(UPDATE_PLAYER_IN_TOURNAMENT_SCREEN)
+	App.change_screen(UPDATE_PLAYER_IN_TOURNAMENT_SCREEN_PATH)
+
+
+func _go_to_round_screen(round: Round) -> void:
+	Globals.current_round = round
+	if Globals.organizer_mode_enabled:
+		App.change_screen(ROUND_SCREEN_FOR_ORGANIZER_PATH)
+	elif round.format == "score_sum":
+		App.change_screen(SCORE_SUM_SCREEN_SCENE_PATH)
+	else:
+		App.change_screen(BATTLE_SCREEN_SCENE_PATH)
 
 
 func _accept_join_request(player_id: String) -> void:
