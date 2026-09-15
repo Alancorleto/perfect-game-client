@@ -5,6 +5,7 @@ extends Control
 @onready var players_container: VBoxContainer = %PlayersContainer
 @onready var update_button: Button = %UpdateButton
 @onready var add_player_button: Button = %AddPlayerButton
+@onready var add_round_button: Button = %AddRoundButton
 
 @onready var organizer_join_requests_panel: PanelContainer = %OrganizerJoinRequestsPanel
 @onready var join_requests_container: VBoxContainer = %JoinRequestsContainer
@@ -26,6 +27,7 @@ const UPDATE_PLAYER_IN_TOURNAMENT_SCREEN_PATH: String = "res://scenes/screens/to
 const ROUND_SCREEN_FOR_ORGANIZER_PATH: String = "res://scenes/screens/round/round_screen_for_organizer.tscn"
 const SCORE_SUM_SCREEN_SCENE_PATH: String = "res://scenes/screens/round/score_sum_round_screen.tscn"
 const BATTLE_SCREEN_SCENE_PATH: String = "res://scenes/placeholder/screens/battle_screen.tscn"
+const CREATE_ROUND_SCREEN_PATH: String = "res://scenes/screens/round/create_round_screen.tscn"
 
 var is_already_in: bool = false
 
@@ -34,6 +36,7 @@ func _ready() -> void:
 	if Globals.organizer_mode_enabled:
 		update_button.pressed.connect(_go_to_update_tournament_screen)
 		add_player_button.pressed.connect(_go_to_create_guest_player_screen)
+		add_round_button.pressed.connect(_go_to_create_round_screen)
 	join_request_button.pressed.connect(_on_join_request_button_pressed)
 	
 	App.show_loading_sign("Loading rounds...")
@@ -45,9 +48,11 @@ func _ready() -> void:
 	if Globals.organizer_mode_enabled:
 		update_button.show()
 		add_player_button.show()
+		add_round_button.show()
 	else:
 		update_button.hide()
 		add_player_button.hide()
+		add_round_button.hide()
 	
 	await _populate_rounds()
 	
@@ -171,6 +176,10 @@ func _go_to_create_guest_player_screen() -> void:
 func _go_to_update_player_in_tournament_screen(player_in_tournament: PlayerInTournament) -> void:
 	Globals.current_player_in_tournament = player_in_tournament
 	App.change_screen(UPDATE_PLAYER_IN_TOURNAMENT_SCREEN_PATH)
+
+
+func _go_to_create_round_screen() -> void:
+	App.change_screen(CREATE_ROUND_SCREEN_PATH)
 
 
 func _go_to_round_screen(round: Round) -> void:

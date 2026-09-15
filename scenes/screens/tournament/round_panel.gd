@@ -10,5 +10,5 @@ signal pressed()
 
 
 func populate(round: Round) -> void:
-	name_panel.text = round.name
+	name_panel.text = round.get_display_name()
 	button.pressed.connect(pressed.emit)

@@ -27,6 +27,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 96
 
+[node name="RoundNameLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=670446243]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Round Name"
+horizontal_alignment = 1
+
 [node name="DataContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=478667759]
 layout_mode = 2
 

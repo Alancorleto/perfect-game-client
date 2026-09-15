@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://dxopvhmsga7su"]
+
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_prti7"]
+[ext_resource type="Script" uid="uid://buvq0wfnpnbh3" path="res://scenes/screens/round/round_data_screen_base.gd" id="2_prti7"]
+
+[node name="RoundDataScreenBase" type="Control" unique_id=1879815585]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_prti7")
+script = ExtResource("2_prti7")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=944965512]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2017113531]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="NameContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1730384541]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer/NameContainer" unique_id=1029962026]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="NameLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/NameContainer" unique_id=309662430]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FormatContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1066323150]
+layout_mode = 2
+
+[node name="FormatLabel" type="Label" parent="MarginContainer/VBoxContainer/FormatContainer" unique_id=1240424742]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Format"
+
+[node name="FormatOptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/FormatContainer" unique_id=1106725231]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Score Sum"
+popup/item_0/id = 0
+popup/item_1/text = "Battle"
+popup/item_1/id = 1
+
+[node name="LevelsContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1962051138]
+layout_mode = 2
+
+[node name="LevelsLabel" type="Label" parent="MarginContainer/VBoxContainer/LevelsContainer" unique_id=919488498]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Levels"
+
+[node name="LevelsLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/LevelsContainer" unique_id=285020923]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QualifiersCountContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1891051225]
+layout_mode = 2
+
+[node name="QualifiersCountLabel" type="Label" parent="MarginContainer/VBoxContainer/QualifiersCountContainer" unique_id=210349325]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Number of Qualifiers"
+
+[node name="QualifiersCountLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/QualifiersCountContainer" unique_id=1186533267]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+virtual_keyboard_type = 2
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1573443751]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=62154756]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Confirm"

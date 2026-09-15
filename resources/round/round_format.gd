@@ -1,7 +1,6 @@
 class_name RoundFormat
 extends Object
 
-enum {
-	SCORE_SUM,
-	BATTLE,
-}
+
+const SCORE_SUM = "score_sum"
+const BATTLE = "battle"
