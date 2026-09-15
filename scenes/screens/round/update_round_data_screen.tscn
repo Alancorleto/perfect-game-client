@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://drjkv3yaw0jux"]
+
+[ext_resource type="PackedScene" uid="uid://dxopvhmsga7su" path="res://scenes/screens/round/round_data_screen_base.tscn" id="1_vwkwj"]
+[ext_resource type="Script" uid="uid://t07v8e0olk7k" path="res://scenes/screens/round/update_round_data_screen.gd" id="2_vwkwj"]
+
+[node name="UpdateRoundDataScreen" unique_id=1879815585 instance=ExtResource("1_vwkwj")]
+script = ExtResource("2_vwkwj")
+in_progress_message = "Updating round..."
+success_message = "Round updated successfully!"
+failure_message = "Error while updating round."
+
+[node name="NameLineEdit" parent="MarginContainer/VBoxContainer/NameContainer" parent_id_path=PackedInt32Array(1730384541) index="1" unique_id=309662430]
+placeholder_text = "First Round"
+
+[node name="LevelsLineEdit" parent="MarginContainer/VBoxContainer/LevelsContainer" parent_id_path=PackedInt32Array(1962051138) index="1" unique_id=285020923]
+placeholder_text = "No level range"
+
+[node name="QualifiersCountLineEdit" parent="MarginContainer/VBoxContainer/QualifiersCountContainer" parent_id_path=PackedInt32Array(1891051225) index="1" unique_id=1186533267]
+placeholder_text = "All players qualify"

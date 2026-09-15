@@ -85,6 +85,8 @@ func _populate_rounds() -> void:
 			rounds_container.add_child(round_panel)
 			round_panel.populate(round)
 			round_panel.pressed.connect(_go_to_round_screen.bind(round))
+	
+	Globals.current_tournament_rounds_count = rounds.size()
 
 
 func _populate_players() -> void:

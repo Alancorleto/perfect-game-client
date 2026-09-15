@@ -13,4 +13,11 @@ var order_index = 0
 
 
 func get_display_name() -> String:
+	if name != null:
+		return name
+	else:
+		return get_default_name()
+
+
+func get_default_name() -> String:
 	return "Round " + str(int(order_index + 1))

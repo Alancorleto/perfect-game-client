@@ -1,5 +1,10 @@
 extends RoundDataScreenBase
 
+
+func _populate() -> void:
+	name_line_edit.placeholder_text = "Round " + str(Globals.current_tournament_rounds_count + 1)
+
+
 func _submit_form() -> bool:
 	var round_create := RoundCreate.new()
 	
