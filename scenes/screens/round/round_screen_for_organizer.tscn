@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://chd0fiigme82s"]
 
 [ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_twel5"]
+[ext_resource type="Script" uid="uid://comeasxarlir6" path="res://scenes/screens/round/round_screen_for_organizer.gd" id="2_hj6b5"]
 
 [node name="RoundScreenForOrganizer" type="Control" unique_id=647876315]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_twel5")
+script = ExtResource("2_hj6b5")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1347791564]
 layout_mode = 0
@@ -27,7 +29,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 96
 
-[node name="RoundNameLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=670446243]
+[node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=670446243]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
