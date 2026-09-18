@@ -9,6 +9,7 @@ extends Control
 @onready var format_option_button: OptionButton = %FormatOptionButton
 @onready var levels_line_edit: LineEdit = %LevelsLineEdit
 @onready var qualifiers_count_line_edit: LineEdit = %QualifiersCountLineEdit
+@onready var state_option_button: OptionButton = %StateOptionButton
 
 @onready var confirm_button: Button = %ConfirmButton
 

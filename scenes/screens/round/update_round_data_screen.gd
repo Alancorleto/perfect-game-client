@@ -1,10 +1,5 @@
 extends RoundDataScreenBase
 
-var format_indexes: Array[String] = [
-	RoundFormat.SCORE_SUM,
-	RoundFormat.BATTLE,
-]
-
 
 func _populate() -> void:
 	var round: Round = Globals.current_round
@@ -14,13 +9,15 @@ func _populate() -> void:
 	if round.name != null:
 		name_line_edit.text = round.name
 	
-	format_option_button.select(format_indexes.find(round.format))
+	format_option_button.select(RoundFormat.values.find(round.format))
 	
 	if round.levels != null:
 		levels_line_edit.text = round.levels
 	
 	if round.qualifiers_count != null:
 		qualifiers_count_line_edit.text = str(int(round.qualifiers_count))
+	
+	state_option_button.select(RoundState.values.find(round.state))
 
 
 func _submit_form() -> bool:
@@ -33,6 +30,7 @@ func _submit_form() -> bool:
 		round_update.levels = levels_line_edit.text
 	if qualifiers_count_line_edit.text:
 		round_update.qualifiers_count = int(qualifiers_count_line_edit.text)
+	round_update.state = state_option_button.text.to_snake_case()
 	
 	var new_round: Round = await RoundsRouter.update_round(
 		Globals.current_round.id,

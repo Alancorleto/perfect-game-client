@@ -8,7 +8,7 @@ var name = null
 var levels = null
 var format = RoundFormat.SCORE_SUM
 var qualifiers_count = null
-var state = RoundState.NOT_STARTED
+var state = RoundState.UNDEFINED
 var order_index = 0
 
 
