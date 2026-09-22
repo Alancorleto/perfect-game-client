@@ -45,6 +45,17 @@ theme_override_font_sizes/font_size = 96
 text = "Players"
 horizontal_alignment = 1
 
+[node name="ChangeOrderButton" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1881924007]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Change Player Order"
+
+[node name="ConfirmOrderChangeButton" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=233395939]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Confirm Order Change"
+
 [node name="PlayersPanel" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1257486561]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -88,5 +99,6 @@ mouse_filter = 2
 theme_override_constants/separation = 0
 
 [node name="AddPlayersButton" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/PlayersPanel" unique_id=1050641508]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Add Players"

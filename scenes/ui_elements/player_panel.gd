@@ -3,8 +3,8 @@ extends PanelContainer
 
 signal pressed()
 signal delete_pressed()
-signal move_button_pressed()
-signal move_button_released()
+signal move_button_down()
+signal move_button_up()
 
 @onready var button: Button = %Button
 @onready var flag_texture_rect: TextureRect = %FlagTextureRect
@@ -49,5 +49,5 @@ func toggle(value: bool) -> void:
 func _ready() -> void:
 	button.pressed.connect(pressed.emit)
 	delete_button.pressed.connect(delete_pressed.emit)
-	move_button.pressed.connect(move_button_pressed.emit)
-	move_button.button_up.connect(move_button_released.emit)
+	move_button.button_down.connect(move_button_down.emit)
+	move_button.button_up.connect(move_button_up.emit)
