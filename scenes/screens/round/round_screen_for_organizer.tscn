@@ -81,6 +81,23 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Manage Players"
 
+[node name="ScoreTableWarningLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1255565021]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.57633334, 0.18, 1)
+text = "This round does not have a score table"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="CreateScoreTableButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2029972367]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Create Score Table"
+
 [node name="ManageScoresButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=510403199]
 unique_name_in_owner = true
 layout_mode = 2
