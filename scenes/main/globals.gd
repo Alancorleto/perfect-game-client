@@ -8,6 +8,7 @@ var current_player: Player
 var current_event: Event
 var current_tournament: Tournament
 var current_round: Round
+var current_score_table: ScoreTable
 
 var current_player_in_tournament: PlayerInTournament
 var current_tournament_rounds_count: int = 0

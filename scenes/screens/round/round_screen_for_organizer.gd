@@ -14,10 +14,12 @@ extends Control
 @onready var create_score_table_button: Button = %CreateScoreTableButton
 
 const UPDATE_ROUND_DATA_SCREEN_PATH: String = "res://scenes/screens/round/update_round_data_screen.tscn"
+const ROUND_PLAYERS_SCREEN_PATH: String = "res://scenes/screens/round/players/round_players_screen.tscn"
 
 
 func _ready() -> void:
 	edit_data_button.pressed.connect(_go_to_update_round_data_screen)
+	manage_players_button.pressed.connect(_go_to_round_players_screen)
 	create_score_table_button.pressed.connect(_create_score_table)
 	
 	App.show_loading_sign("Loading...")
@@ -30,12 +32,15 @@ func _ready() -> void:
 		await RoundsRouter.list_score_tables_in_round(round.id)
 	)
 	
-	if round.format == RoundFormat.SCORE_SUM and score_tables.is_empty():
-		score_table_warning_label.show()
-		create_score_table_button.show()
-		manage_charts_button.hide()
-		manage_players_button.hide()
-		manage_scores_button.hide()
+	if round.format == RoundFormat.SCORE_SUM:
+		if score_tables.is_empty():
+			score_table_warning_label.show()
+			create_score_table_button.show()
+			manage_charts_button.hide()
+			manage_players_button.hide()
+			manage_scores_button.hide()
+		else:
+			Globals.current_score_table = score_tables[0]
 	
 	App.hide_loading_sign()
 
@@ -82,3 +87,7 @@ func _create_score_table() -> void:
 
 func _go_to_update_round_data_screen() -> void:
 	App.change_screen(UPDATE_ROUND_DATA_SCREEN_PATH)
+
+
+func _go_to_round_players_screen() -> void:
+	App.change_screen(ROUND_PLAYERS_SCREEN_PATH)

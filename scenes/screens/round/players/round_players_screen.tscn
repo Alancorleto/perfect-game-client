@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://bircy1ybla5r4"]
+[gd_scene format=3 uid="uid://bqijnk770vtle"]
 
-[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_mw4q0"]
+[ext_resource type="Theme" uid="uid://1oid1ii8ydjf" path="res://resources/default_theme.tres" id="1_yw0gk"]
+[ext_resource type="Script" uid="uid://k2trmabqtsyr" path="res://scenes/screens/round/players/round_players_screen.gd" id="2_rayqe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gt8h"]
 bg_color = Color(0.20392033, 0.20392036, 0.20392022, 1)
@@ -10,14 +11,15 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.15127605, 0.15127608, 0.15127596, 1)
 
-[node name="Control" type="Control" unique_id=647876315]
+[node name="RoundPlayersScreen" type="Control" unique_id=647876315]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_mw4q0")
+theme = ExtResource("1_yw0gk")
+script = ExtResource("2_rayqe")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1347791564]
 layout_mode = 0
@@ -78,12 +80,13 @@ text = "Player"
 horizontal_alignment = 1
 
 [node name="PlayersContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/PlayersPanel" unique_id=375220347]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="Button" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/PlayersPanel" unique_id=1050641508]
+[node name="AddPlayersButton" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer/PlayersPanel" unique_id=1050641508]
 layout_mode = 2
 text = "Add Players"
